@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro Acalanto</title>
+</head>
+<body>
+
+
+    <div style="justify-content: center; text-align: center">
+
+    
+        <h1 style="color: #9737BD;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+            Simulador Financeiro
+        </h1>
+
+
+
+        <h5 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; display: flex; flex-direction: row; justify-content: center; align-items: center; color: grey;">
+            *Considere as informações mensais
+        </h5>
+
+
+
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+            Quantos frascos doados são recebidos:
+        </span>
+        <br>
+        <input id="leite_doado" placeholder="Informe quantos frascos de leite recebeu" style="width: 250px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; text-align: center;">
+
+        <br>
+        <br>
+
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+            Quantos frascos são perdidos:
+        </span>
+        <br>
+        <input id= "leite_perdido" placeholder="Informe quantos frascos foram perdidos" style="width: 250px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; text-align: center;">
+
+        <br>
+        <br>
+
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+            Qual o valor gasto com suplementação para <br>substituir o leite materno perdido (em reais R$):
+        </span>
+        <br>
+        <input id="gasto_suplemento" placeholder="Informe o gasto em R$" style="width: 250px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; text-align: center;">
+
+        <br>
+        <br>
+
+        <button onclick="simular()" style="background-color: #785088; width: 258px; height: 30px; color: white; border-style: none; border-radius: 5px;">
+             Simule agora
+         </button>
+
+        <br>
+        <br>
+
+        <div id="simulacao" style=" font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; width: 650px;margin: auto; "></div>
+
+
+
+        <br>
+
+        <br>
+
+    </div>
+
+
+
+</body>
+</html>
+
+
+<script>
+
+    function simular(){
+        var doacao = Number (leite_doado.value)
+        var perdido = Number (leite_perdido.value)
+        var custo = Number (gasto_suplemento.value)
+
+        var restante = doacao - perdido
+        var porc_restante = (restante * 100) / doacao
+        var porc_perdido = (perdido * 100) / doacao
+        var prejuizo = custo * perdido
+
+
+        simulacao.innerHTML = ` 
+            O número de doações de leites maternos recebidos foi de <b style="color:purple">${doacao} frascos</b>, desta doação apenas <b style="color:purple">${porc_restante.toFixed(2)}%</b> foram conservados adequadamente, os outros <b style="color:purple">${porc_perdido.toFixed(2)}%</b> foram descartados. 
+
+            Para suprimir a necessidade destes <b style="color:purple">${porc_perdido.toFixed(2)}%</b>, é usado o suplemento alimentar, sendo que a média do valor de cada suplemento é de <b style="color:purple">R$${custo.toLocaleString("pt-BR", {currency:'BRL'})}</b>. Ou seja, por mês o valor gasto é de <b style="color:purple">R$${prejuizo.toLocaleString("pt-BR", {currency:'BRL'})}</b>. 
+
+            Nós vamos te ajudar a reduzir este <b style="color:purple">${porc_perdido.toFixed(2)}%</b> fazendo com que o leite materno fique armazenado na temperatura adequada. Sendo assim, os <b style="color:purple">${porc_perdido.toFixed(2)}%</b> que você teve de perda e os gastos com os suplementos poderão diminuir em até 50%, (que já serão notados em 3 meses após a implementação). 
+            `
+   }
+
+</script>
