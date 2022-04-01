@@ -1,0 +1,58 @@
+/* Código relacionado ao header */
+
+.header .container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .container .container{
+    justify-content: space-around;
+    height: 60px;
+    width: 22%;
+    background-color: rgb(58, 51, 131);
+}
+
+.header .container img{
+    width: 8%;
+    border: 5px solid rgb(58, 51, 131);
+    padding: 1px;
+    border-radius: 10px;
+}
+
+.header .container h1{
+    background-color: rgb(58, 51, 131);
+    color: rgb(107, 95, 255);
+    width: 17%;
+    font-size: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar{
+    background-color: rgb(58, 51, 131);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    padding: 0;
+    height: 60px;
+    width: 53%;
+    align-items: center;
+}
+
+.btn{
+    background-color: rgb(107, 95, 255);
+    color: white;
+    height: 32px;
+    width: 120px;
+    font-size: 19px;
+    border-radius: 8px;
+}
+
+/* Término do código relacionado ao header */
