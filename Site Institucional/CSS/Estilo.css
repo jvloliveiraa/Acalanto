@@ -2,7 +2,7 @@
 
 h1{
     width: 90%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: clarendon Blk Bt Black;
 }
 
 .container{
@@ -11,6 +11,7 @@ h1{
 }
 
 .header .container{
+    font-family: Bahnschrift;
     margin: auto;
     align-items: center;
     justify-content: center;
@@ -21,7 +22,7 @@ h1{
     justify-content: space-around;
     height: 60px;
     width: 22%;
-    background-color: rgb(58, 51, 131);
+    background-color: #3a3383;
 }
 
 .header .container img{
@@ -62,11 +63,13 @@ li a{
 
 h1 a{
     text-decoration: none;
-    color: rgb(107, 95, 255);
+    color: #6c5eff;
+    font-family: clarendon Blk Bt Black;
 }
 
 .btn{
-    background-color: rgb(107, 95, 255);
+    font-family: Bahnschrift;
+    background-color: #6c5eff;
     color: white;
     height: 32px;
     width: 120px;
@@ -85,12 +88,17 @@ h1 a{
 
 /* Código relacionado ao simulador */
 
+h2{
+    font-family: Bahnschrift;
+}
+
 .banner .container{
     margin: auto;
     height: 550px;
 }
 
 .card_result{
+    font-family: Bahnschrift;
     background-color: rgb(58, 51, 131);
     margin: auto;
     display: flex;
@@ -113,7 +121,7 @@ h1 a{
     width: 90%;
     text-align: left;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .card{
@@ -128,6 +136,7 @@ h1 a{
 }
 
 .card h3{
+    font-family: Bahnschrift;
     color: rgb(107, 95, 255);
 }
 
@@ -174,3 +183,18 @@ h1 a{
 }
 
 /* Término do código relacionado ao Simulador */
+
+/* Início código Index/Home */
+
+.banner_home{
+    background-image: url(imgs/bg-jelly-fish-para-home.png);
+    background-size: cover;
+}
+
+.card_titulo{
+    background-color: aliceblue;
+    font-size: 180px;
+    font-family: clarendon Blk Bt Black;
+    color: #6c5eff;
+}
+
