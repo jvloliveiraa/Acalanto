@@ -1,11 +1,20 @@
 /* Código relacionado ao header */
 
-.header .container{
+h1{
     width: 90%;
-    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 90%;
     display: flex;
+}
+
+.header .container{
+    margin: auto;
     align-items: center;
     justify-content: center;
+    border-radius: 0 10px 10px 0px;
 }
 
 .header .container .container{
@@ -53,6 +62,105 @@
     width: 120px;
     font-size: 19px;
     border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+}
+
+.agora{
+    font-weight: bolder;
+    font-size: 22px;
 }
 
 /* Término do código relacionado ao header */
+
+/* Código relacionado ao simulador */
+
+.banner .container{
+    margin: auto;
+    height: 550px;
+}
+
+.card_result{
+    background-color: rgb(58, 51, 131);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    height: 540px;
+    width: 45%;
+}
+
+.banner .container .card_result h1{
+    color: rgb(107, 95, 255);
+    font-size: 45px;
+    margin: auto;
+}
+
+.banner .container .card_result p{
+    line-height: 40px;
+    height: 420px;
+    width: 90%;
+    text-align: left;
+    color: white;
+    font-size: 20px;
+}
+
+.card{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    height: 540px;
+    width: 45%;
+}
+
+.card h3{
+    color: rgb(107, 95, 255);
+}
+
+.card .container{
+    height: 70px;
+}
+
+.card .container .btn{
+    height: 60px;
+    width: 200px;
+    margin: auto;
+    font-size: 25px;
+}
+
+.label{
+    margin: auto;
+    width: 90%;
+}
+
+.label h2{
+    color: rgb(58, 51, 131);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.label input{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid rgb(59, 58, 58);
+    outline: none; /* Remove as bordas ao clicar na input */
+    min-width: 180px; /* O mínimo da largura que pode chegar o input é 180 */
+    font-size: 16px; 
+}
+
+.label input::-webkit-outer-spin-button,   /* Código para remover as setas do input number */
+.label input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.label .combo_box{
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+}
+
+/* Término do código relacionado ao Simulador */
