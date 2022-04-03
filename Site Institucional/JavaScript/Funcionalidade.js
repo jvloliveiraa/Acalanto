@@ -1,3 +1,19 @@
+/* Função do Header */
+
+function go_index(){
+    window.location.href = "Index.html";
+}
+
+function go_login(){
+    window.location.href = "Login.html";
+}
+
+function go_cadastro(){
+    window.location.href = "Cadastro.html";
+}
+
+/* Término da função do Header */
+
 /* Função do Simulador Financeiro */
 
 function simular_prejuizo() {

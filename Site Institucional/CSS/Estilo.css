@@ -29,6 +29,7 @@ h1{
     border: 5px solid rgb(58, 51, 131);
     padding: 1px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .header .container h1{
@@ -44,7 +45,6 @@ h1{
 
 .navbar{
     background-color: rgb(58, 51, 131);
-    color: white;
     font-size: 20px;
     display: flex;
     list-style: none;
@@ -53,6 +53,16 @@ h1{
     height: 60px;
     width: 53%;
     align-items: center;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+}
+
+h1 a{
+    text-decoration: none;
+    color: rgb(107, 95, 255);
 }
 
 .btn{
