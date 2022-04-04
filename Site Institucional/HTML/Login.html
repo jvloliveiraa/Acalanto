@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Estilo.css">
+    <script src="../JavaScript/Funcionalidade.js"></script>
+    <title>Acalanto - Login</title>
+</head>
+<body>
+    <!-- Menu  -->
+    <div class="header">
+        <div class="container">
+            <img onclick="go_index()" src="../img/Logo_Acalanto_icon.png">
+            <h1><a href="Index.html">Acalanto</a></h1>
+            <ul class="navbar">
+                <li><a href="Sobre Nós.html">Sobre nós</a></li>
+                <li class="agora"><a href="Simulador.html">Simulador</a></li>
+                <li><a href="Contato.html">Contato</a></li>
+                <li><a href="Serviços.html">Serviços</a></li>
+            </ul>
+            <div class="container">
+                <button onclick="go_login()" class="btn">Entrar</button>
+                <button onclick="go_cadastro()" class="btn">Cadastre-se</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Começando o login -->
+    <div class="banner">
+        <div class="container_login">
+            <!-- Div para colocar as outras duas div da foto e a outra do login -->
+            <div class="card">
+                    <!-- Div para colocar a foto do bb -->
+                <div class="card_foto">
+                    <img onclick="go_Login()" src="../img/bebe_login.jpg">
+                </div>
+                <!-- Div para o login -->
+                <div class="card_login">  
+                    <h2> Login </h2>
+                        <div class="icones_imagens"> 
+                             <img onclick="go_Login()" src="../img/Icon_facebook.png"> 
+                             <img onclick="go_Login()" src="../img/Icon_google+.png"> 
+                             <img onclick="go_Login()" src="../img/Icon_linkedin.png"> 
+                        </div>
+                        <div class="label"> 
+                            <h3> CNPJ: </h3>
+                            <input type="text" id="input_login_cnpj">
+                            <h3> Senha: </h3>
+                            <input type="text" id="input_login_senha">
+                        </div>
+                       <div class="botoes"> 
+                            <button class="btn">Entrar</button>
+                            <button class="btn">Cadastre-se</button>
+                       </div>
+                       <!-- <h4> Esqueceu a senha ?</h4> -->
+                </div>
+            </div>
+       </div>
+    </div>
+</body>
+</html>

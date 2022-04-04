@@ -92,6 +92,7 @@ h2{
     font-family: Bahnschrift;
 }
 
+
 .banner .container{
     margin: auto;
     height: 550px;
@@ -198,3 +199,72 @@ h2{
     color: #6c5eff;
 }
 
+/* Começo do login */
+
+.banner{
+    margin: auto;
+    height: 550px;
+    border: 2px solid seagreen;
+}
+.banner .container_login  .card{
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid orangered; */
+    height: 500px;
+    width: 90%;
+}
+.banner .container_login .card .card_foto{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    height: 490px;
+    width: 50%;
+    /* border: 2px solid blue; */
+    
+}
+.banner .container_login .card .card_foto img{
+    height: 600px;
+    width: 600px;
+    border-top-right-radius:10%;
+    border-bottom-right-radius:10%;
+}
+.banner  .container_login  .card_login{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    height: 490px;
+    width: 40%;
+    /* border: 2px solid rgb(107, 22, 124); */
+
+}
+.container_login .card_login h2{
+    font-weight: 1000;
+    color: #3a3383;
+    font-size: 28px;
+}
+.card_login .icones_imagens{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.card_login .icones_imagens img{
+    height: 50px;
+    width: 50px;
+}
+.card_login .botoes{
+    display: flex;
+    /* border:2px solid rgb(90, 53, 53); */
+    flex-direction: row;
+    height: 60px;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    
+}
+.card_login .btn{
+    /* border:2px solid firebrick; */
+    height: 50px;
+    width: 180px;
+}
