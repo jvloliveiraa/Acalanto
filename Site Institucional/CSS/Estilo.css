@@ -404,3 +404,27 @@ h2{
 }
 
 /* Fim Contato */  
+
+/* Rodapé começo */
+
+.footer.footer{
+   height: 100%;
+   background: #3a3383;
+   position: relative; 
+
+}
+
+.rodape{
+    text-decoration: none;
+
+}
+.paginas{
+    margin-left: 45px;
+}
+
+.footer.footer .container{
+    display: grid;
+    grid-template-columns: repeat(4,1 fr);
+ 
+}
+
