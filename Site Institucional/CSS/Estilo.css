@@ -268,3 +268,139 @@ h2{
     height: 50px;
     width: 180px;
 }
+
+
+/* Começo Contato */
+
+h2{
+    font-family: Bahnschrift;
+}
+
+
+.banner .container{
+    margin: auto;
+    height: 550px;
+}
+
+.card_result_formulario{
+    font-family: Bahnschrift;
+    background-color: rgb(107, 95, 255);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    height: 540px;
+    width: 45%;
+}
+
+.banner .container .card_result_formulario h1{
+    color: white;
+    font-size: 45px;
+    margin: auto;
+}
+
+.card_informacoes{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    height: 540px;
+    width: 45%;
+}
+
+.card_informacoes h3{
+    font-family: Bahnschrift;
+    color: rgb(107, 95, 255);
+}
+
+.card_result_formulario .container{
+    height: 70px;
+}
+
+.card_result_formulario .container .btn_formulario{
+    height: 60px;
+    width: 150px;
+    margin: auto;
+    font-size: 25px;
+}
+
+.btn_formulario{
+    font-family: Bahnschrift;
+    background-color: rgb(58, 51, 131);
+    color: white;
+    height: 32px;
+    width: 120px;
+    font-size: 19px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+}
+
+.label_formulario{
+    margin: auto;
+    width: 90%;
+}
+
+.label_formulario h2{
+    color: rgb(58, 51, 131);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card_informacoes .label h2{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.card_informacoes .label h3{
+    display: flex;
+    justify-content: center;
+}
+
+.card_informacoes #div_email{
+    border-top: 2px solid #6c5eff;
+    border-bottom: 2px solid #6c5eff;
+}
+
+.card_informacoes #div_endereco {
+    margin-bottom: 0;
+}
+
+.card_informacoes #div_endereco h3{
+    background-color: greenyellow;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Imagem */
+.card_informacoes #div_img_loca{
+    display: flex;
+    background-color: red;
+    width: 10px;
+    align-self: flex-end;
+}
+
+.card_informacoes #div_email{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.card_informacoes #div_telefone{
+    margin-top: 0;
+}
+
+.label_formulario input{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid rgb(59, 58, 58);
+    outline: none; /* Remove as bordas ao clicar na input */
+    min-width: 180px; /* O mínimo da largura que pode chegar o input é 180 */
+    font-size: 16px; 
+    background-color: #6c5eff;
+}
+
+/* Fim Contato */  
