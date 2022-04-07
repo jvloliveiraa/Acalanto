@@ -96,7 +96,7 @@ h2{
 .banner .container{
     margin: auto;
     height: 500px;
-    border: 2px solid darkblue;
+    /* border: 2px solid darkblue; */
 }
 
 .card_result{
@@ -199,133 +199,6 @@ h2{
     font-size: 180px;
     font-family: clarendon Blk Bt Black;
     color: #6c5eff;
-}
-
-/* Começo do login */
-
-.banner{
-    margin: auto;
-    height: 550px;
-    /* border: 2px solid seagreen; */
-}
-
-.banner .container_login  .card{
-    display: flex;
-    flex-direction: row;
-    /* border: 2px solid orangered; */
-    height: 500px;
-    width: 90%;
-}
-.banner .container_login .card .card_foto{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-    height: 490px;
-    width: 50%;
-    /* border: 2px solid blue; */
-    
-}
-.banner .container_login .card .card_foto img{
-    height: 100%;
-    width: 100%;
-    border-top-right-radius:10%;
-    border-bottom-right-radius:10%;
-}
-.banner  .container_login  .card_login{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-    height: 490px;
-    width: 40%;
-    /* border: 2px solid rgb(107, 22, 124); */
-
-}
-.container_login .card_login h2{
-    font-weight: 1000;
-    color: #3a3383;
-    font-size: 28px;
-}
-.card_login .icones_imagens{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.card_login .icones_imagens img{
-    height: 50px;
-    width: 50px;
-}
-.card_login .botoes{
-    display: flex;
-    /* border:2px solid rgb(90, 53, 53); */
-    flex-direction: row;
-    height: 60px;
-    width: 100%;
-    justify-content: space-around;
-    padding-bottom: 30px;
-    
-}
-.card_login .btn{
-    /* border:2px solid firebrick; */
-    height: 50px;
-    width: 180px;
-}
-
-/* Comeco do Cadastro */
-
-.banner .container_login .card .card_foto_cadastro{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-    height: 490px;
-    width: 50%;
-    padding-top: 50px;
-    /* border: 2px solid blue; */
-    
-}
-.banner .container_login .card .card_foto_cadastro img{
-    height: 100%;
-    width: 100%;
-    border-top-right-radius:10%;
-    border-bottom-right-radius:10%;
-}
-
-.card_cadastro .icones_imagens{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.card_cadastro .icones_imagens img{
-    height: 50px;
-    width: 50px;
-}
-.banner .container_login .card_cadastro {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-    height: 600px;
-    width: 45%;
-    /* border: 2px solid blue; */
-}
-
-.card_cadastro .botoes{
-    display: flex;
-    /* border:2px solid rgb(90, 53, 53); */
-    flex-direction: row;
-    height: 60px;
-    width: 100%;
-    justify-content: space-around;
-    /* padding-top: 30px; */
-
-    
-}
-.card_cadastro .btn{
-    /* border:2px solid firebrick; */
-    height: 50px;
-    width: 180px;
 }
 
 /* Começo Contato */
@@ -462,6 +335,129 @@ h2{
 }
 
 /* Fim Contato */  
+
+
+/* Comeco Do login */
+
+/* Comecando o login */
+
+/* Configurando a FOTO */
+.container .card_foto{
+    display: flex;
+    height:  100%;
+    width: 50%;
+    /* border: 2px solid saddlebrown; */
+}
+.card_foto img{
+    height: 100%;
+    width: 100%;
+    border-top-right-radius:10%;
+    border-bottom-right-radius:10%;
+}
+/* CONFIGURANDO a DIV LOGIN E O H3 */
+.container .card_login{
+    display: flex;
+    height:  100%;
+    width: 50%;
+    /* border: 2px solid rgb(12, 7, 3); */
+    flex-direction: column;
+}
+.card_login h3{
+    font-weight: 1000;
+    color: #3a3383;
+    font-size: 28px;
+    padding-left: 40px;
+}
+/* CONFIGURANDO OS ICONES */
+.card_login .icones_imagens img{
+    height: 50px;
+    width: 50px;
+}
+.card_login .icones_imagens{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+    justify-content: space-around;
+    /* border: 2px dashed firebrick; */
+}
+/* Configurando A LABEL DENTRO DA DIV*/
+.card_login .label{
+    height: 235px;
+    width: 80%;
+    color: #3a3383;
+    font-size: 20px;
+    /* border: 2px solid gold; */
+}
+.card_login .botoes{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-evenly;
+    /* border: 2px solid gold; */
+}
+.card_login .botoes .btn{
+    /* border:2px solid firebrick;  */
+    height: 50px;
+    width: 180px;
+}
+
+/* Fim do Login */
+
+
+/* COMEÇANDO O CADASTRO */
+.container .card_cadastro{
+    display: flex;
+    height:  110%;
+    width: 50%;
+    /* border: 2px solid rgb(12, 7, 3); */
+    flex-direction: column;
+}
+.card_cadastro h3{
+    font-weight: 1000;
+    color: #3a3383;
+    font-size: 30px;
+    padding-left: 30px;
+}
+/* CONFIGURANDO OS ICONES */
+.card_cadastro .icones_imagens img{
+    height: 50px;
+    width: 50px;
+}
+.card_cadastro .icones_imagens{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+    justify-content: space-around;
+    /* border: 2px dashed firebrick; */
+}
+/* Configurando A LABEL DENTRO DA DIV*/
+.card_cadastro .label{
+    height: 80%;
+    padding-top: 10px;
+    width: 85%;
+    color: #3a3383;
+    /* border: 2px solid gold; */
+    padding-left: 2px;
+}
+.card_cadastro .label h2{
+    font-size: 18px;
+}
+.card_cadastro .botoes{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-evenly;
+    /* border: 2px solid gold; */
+}
+.card_cadastro .botoes .btn{
+    /* border:2px solid firebrick;  */
+     height: 50px;
+    width: 180px;
+}  
+
+/* Fim do Cadastro */
 
 /* Rodapé começo */
 

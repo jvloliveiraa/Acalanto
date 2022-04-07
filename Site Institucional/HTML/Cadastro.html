@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="../CSS/Estilo.css">
     <script src="../JavaScript/Funcionalidade.js"></script>
-    <title>Acalanto - Cadastro</title>
+    <title>Acalanto - Cadastro </title>
 </head>
 <body>
-    <!-- Menu  -->
     <div class="header">
         <div class="container">
             <img onclick="go_index()" src="../img/Logo_Acalanto_icon.png">
             <h1><a href="Index.html">Acalanto</a></h1>
             <ul class="navbar">
                 <li><a href="Sobre Nós.html">Sobre nós</a></li>
-                <li><a href="Simulador.html">Simulador</a></li>
+                <li class="agora"><a href="Simulador.html">Simulador</a></li>
                 <li><a href="Contato.html">Contato</a></li>
                 <li><a href="Serviços.html">Serviços</a></li>
             </ul>
@@ -27,39 +27,38 @@
         </div>
     </div>
 
-    <!-- Começando o Cadastro -->
-    <div class="banner">
-        <div class="container_login">
-            <!-- Div para colocar as outras duas div da foto e a outra do login -->
-            <div class="card">
-                    <!-- Div para colocar a foto do bb -->
-                <div class="card_foto_cadastro">
-                    <img onclick="go_Login()" src="../img/bebe_cadastro.jpg">
-                </div>
-                <!-- Div para o login -->
-                <div class="card_cadastro">  
-                    <h2> Cadastro </h2>
-                        <div class="icones_imagens"> 
-                             <img onclick="go_Login()" src="../img/Icon_facebook.png"> 
-                             <img onclick="go_Login()" src="../img/Icon_google+.png"> 
-                             <img onclick="go_Login()" src="../img/Icon_linkedin.png"> 
-                        </div>
-                        <div class="label"> 
-                            <h3> Nome: </h3>
-                            <input type="text" id="input_cadastro_nome" placeholder="Escreva seu nome">
-                            <h3> Email: </h3>
-                            <input type="text" id="input_cadastro_email" placeholder="Escreva seu email">
-                            <h3> CNPJ: </h3>
-                            <input type="text" id="input_cadatro_cnpj" placeholder=" Escreva seu CNPJ">
-                            <h3> Senha: </h3>
-                            <input type="text" id="input_cadastro_senha" placeholder="Escreva sua senha">
-                            <h3> Confirmar Senha: </h3>
-                            <input type="text" id="input_cadastro_confirmar_senha" placeholder="Confirme sua senha">
-                        </div>
-                        <div class="botoes"> 
-                            <button class="btn">Entrar</button>
-                            <button class="btn">Cadastre-se</button>
-                       </div>
-                </div>
-            </div>
+<!-- BANNER E CONTAINER NÃO MEXE -->
+<div class="banner">
+    <div class="container">
+
+        <div class="card_foto">
+            <img src="../img/bebe_cadastro.jpg">
+        </div>
+       
+    <div class="card_cadastro">
+        <h3> Cadastro </h3>
+        <div class="icones_imagens"> 
+            <img onclick="go_Login()" src="../img/Icon_facebook.png"> 
+            <img onclick="go_Login()" src="../img/Icon_google+.png"> 
+            <img onclick="go_Login()" src="../img/Icon_linkedin.png"> 
+       </div> 
+
+        <div class="label">
+                <h2> Nome: </h2>
+                <input type="text" id="input_cadastro_nome" placeholder="Escreva seu nome">
+                <h2> Email: </h2>
+                <input type="text" id="input_cadastro_email" placeholder="Escreva seu email">
+                <h2> CNPJ: </h2>
+                <input type="text" id="input_cadatro_cnpj" placeholder=" Escreva seu CNPJ">
+                <h2> Senha: </h2>
+                <input type="text" id="input_cadastro_senha" placeholder="Escreva sua senha">
+                <h2> Confirmar Senha: </h2>
+                <input type="text" id="input_cadastro_confirmar_senha" placeholder="Confirme sua senha">
+         </div>
+
+        <div class="botoes"> 
+            <button class="btn">Entrar</button>
+            <button class="btn">Cadastre-se</button>
+       </div>  
+
     </div>
