@@ -95,7 +95,8 @@ h2{
 
 .banner .container{
     margin: auto;
-    height: 550px;
+    height: 500px;
+    border: 2px solid darkblue;
 }
 
 .card_result{
@@ -135,6 +136,7 @@ h2{
     height: 540px;
     width: 45%;
 }
+
 
 .card h3{
     font-family: Bahnschrift;
@@ -204,8 +206,9 @@ h2{
 .banner{
     margin: auto;
     height: 550px;
-    border: 2px solid seagreen;
+    /* border: 2px solid seagreen; */
 }
+
 .banner .container_login  .card{
     display: flex;
     flex-direction: row;
@@ -224,8 +227,8 @@ h2{
     
 }
 .banner .container_login .card .card_foto img{
-    height: 600px;
-    width: 600px;
+    height: 100%;
+    width: 100%;
     border-top-right-radius:10%;
     border-bottom-right-radius:10%;
 }
@@ -269,6 +272,61 @@ h2{
     width: 180px;
 }
 
+/* Comeco do Cadastro */
+
+.banner .container_login .card .card_foto_cadastro{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    height: 490px;
+    width: 50%;
+    padding-top: 50px;
+    /* border: 2px solid blue; */
+    
+}
+.banner .container_login .card .card_foto_cadastro img{
+    height: 100%;
+    width: 100%;
+    border-top-right-radius:10%;
+    border-bottom-right-radius:10%;
+}
+
+.card_cadastro .icones_imagens{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.card_cadastro .icones_imagens img{
+    height: 50px;
+    width: 50px;
+}
+.banner .container_login .card_cadastro {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    height: 600px;
+    width: 45%;
+    /* border: 2px solid blue; */
+}
+
+.card_cadastro .botoes{
+    display: flex;
+    /* border:2px solid rgb(90, 53, 53); */
+    flex-direction: row;
+    height: 60px;
+    width: 100%;
+    justify-content: space-around;
+    /* padding-top: 30px; */
+
+    
+}
+.card_cadastro .btn{
+    /* border:2px solid firebrick; */
+    height: 50px;
+    width: 180px;
+}
 
 /* Começo Contato */
 
