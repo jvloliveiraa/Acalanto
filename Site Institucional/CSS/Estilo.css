@@ -10,7 +10,7 @@ h1{
     display: flex;
 }
 
-.header .container{
+.header .container, .header_Absolute .container{
     font-family: Bahnschrift;
     margin: auto;
     align-items: center;
@@ -18,14 +18,14 @@ h1{
     border-radius: 0 10px 10px 0px;
 }
 
-.header .container .container{
+.header .container .container , .header_Absolute .container .container{
     justify-content: space-around;
     height: 60px;
     width: 22%;
     background-color: #3a3383;
 }
 
-.header .container img{
+.header .container img, .header_Absolute .container img{
     width: 8%;
     border: 5px solid rgb(58, 51, 131);
     padding: 1px;
@@ -33,7 +33,7 @@ h1{
     cursor: pointer;
 }
 
-.header .container h1{
+.header .container h1, .header_Absolute .container h1{
     background-color: rgb(58, 51, 131);
     color: rgb(107, 95, 255);
     width: 17%;
@@ -189,17 +189,97 @@ h2{
 
 /* Início código Index/Home */
 
-.banner_home{
-    background-image: url(imgs/bg-jelly-fish-para-home.png);
-    background-size: cover;
+body{
+    margin: 0;
+    padding: 0;
 }
 
-.card_titulo{
-    background-color: aliceblue;
-    font-size: 180px;
-    font-family: clarendon Blk Bt Black;
-    color: #6c5eff;
+.header_Absolute{
+    position: absolute;
+    z-index: 1000;
 }
+
+
+.banner_home{
+    background-image: url(../img/bebe_home.jpg);
+    background-size: cover;
+    position: relative;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* border: 2px solid darkblue;   */
+}
+
+.card_titulo .titulo{
+    font-size: 1000%;
+    font-family: clarendon Blk Bt Black;
+    margin-left: 2%;
+}
+
+.card_titulo p{
+    margin: 0;
+    font-size: 150%;
+    font-family: Bahnschrift;
+    margin-left: 5%;
+}
+
+ .card_titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #6c5eff;
+    background-color: white;
+    height: 100vh;
+    width: 60%;
+    padding-top: 4%;  
+    /* border: 2px solid red;   */
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-self: flex-start;
+    
+    width: 60%;
+    
+    /* border: 2px solid red; */
+}
+
+.btn_Cadastre{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+
+    font-family: Bahnschrift;
+    font-size: 30px;
+    color: #3a3383;
+    height: 60px;
+    width: 200px;
+    
+    border-radius: 15px;
+    border: 5px solid #6c5eff;
+    cursor: pointer;
+}
+
+.btn_Entrar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Bahnschrift;
+    font-size: 30px;
+    background-color: #3a3383;
+    color: white;
+    height: 70px;
+    width: 210px;    
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* Fim código Index/Home */
 
 /* Começo Contato */
 
