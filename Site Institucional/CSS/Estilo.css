@@ -95,7 +95,7 @@ h2{
 
 .banner .container{
     margin: auto;
-    height: 500px;
+    height: 600px;
     /* border: 2px solid darkblue; */
 }
 
@@ -287,12 +287,6 @@ h2{
     font-family: Bahnschrift;
 }
 
-
-.banner .container{
-    margin: auto;
-    height: 550px;
-}
-
 .card_result_formulario{
     font-family: Bahnschrift;
     background-color: rgb(107, 95, 255);
@@ -368,34 +362,13 @@ h2{
 
 }
 
-/* .card_informacoes .label h3{
-
-} */
-
- /* .card_informacoes #div_email{
-    border-top: 2px solid #6c5eff;
-    border-bottom: 2px solid #6c5eff;
-}
-
-.card_informacoes #div_endereco {
-    margin-bottom: 0;
-}
-
-.card_informacoes #div_endereco h3{
-    background-color: greenyellow;
-    margin-top: 0;
-    display: flex;
-    justify-content: center;
-} */
-
-
 /* Imagem */
 .card_informacoes .label .div_img_loca{
     display: flex;
     width: 20%;
     margin: auto;
     justify-content: center;
-    margin-right: 0;
+    margin-right: 20px;
 }
 
 .card_informacoes .label .label_info{
@@ -424,9 +397,6 @@ h2{
     margin-top: 0;
     margin-bottom: 0;
 }
-/* .card_informacoes #div_telefone{
-    margin-top: 0;
-} */
 
 .label_formulario input{
     width: 100%;
@@ -443,8 +413,6 @@ h2{
 
 
 /* Comeco Do login */
-
-/* Comecando o login */
 
 /* Configurando a FOTO */
 .container .card_foto{
@@ -511,9 +479,10 @@ h2{
 
 
 /* COMEÇANDO O CADASTRO */
+
 .container .card_cadastro{
     display: flex;
-    height:  110%;
+    height:  100%;
     width: 50%;
     /* border: 2px solid rgb(12, 7, 3); */
     flex-direction: column;
@@ -523,6 +492,11 @@ h2{
     color: #3a3383;
     font-size: 30px;
     padding-left: 30px;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 15px;
+    width: 90%;
+    /* border: 2px solid blue; */
 }
 /* CONFIGURANDO OS ICONES */
 .card_cadastro .icones_imagens img{
@@ -539,12 +513,13 @@ h2{
 }
 /* Configurando A LABEL DENTRO DA DIV*/
 .card_cadastro .label{
-    height: 80%;
+    height: 57%;
     padding-top: 10px;
     width: 85%;
     color: #3a3383;
     /* border: 2px solid gold; */
     padding-left: 2px;
+    margin-top: 0;
 }
 .card_cadastro .label h2{
     font-size: 18px;
@@ -552,13 +527,16 @@ h2{
 .card_cadastro .botoes{
     display: flex;
     width: 100%;
-    height: 80px;
+    height: 60px;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
     justify-content: space-evenly;
     /* border: 2px solid gold; */
 }
 .card_cadastro .botoes .btn{
-    /* border:2px solid firebrick;  */
-     height: 50px;
+    /* border:2px solid firebrick; */
+    height: 50px;
     width: 180px;
 }  
 

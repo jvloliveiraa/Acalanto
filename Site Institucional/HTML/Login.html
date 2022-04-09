@@ -1,16 +1,16 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="../CSS/Estilo.css">
     <script src="../JavaScript/Funcionalidade.js"></script>
     <title>Acalanto - Login</title>
 </head>
+
 <body>
     <div class="header">
         <div class="container">
@@ -18,9 +18,8 @@
             <h1><a href="Index.html">Acalanto</a></h1>
             <ul class="navbar">
                 <li><a href="Sobre Nós.html">Sobre nós</a></li>
-                <li class="agora"><a href="Simulador.html">Simulador</a></li>
+                <li><a href="Simulador.html">Simulador</a></li>
                 <li><a href="Contato.html">Contato</a></li>
-                <li><a href="Serviços.html">Serviços</a></li>
             </ul>
             <div class="container">
                 <button onclick="go_login()" class="btn">Entrar</button>
@@ -35,29 +34,31 @@
             <div class="card_foto">
                 <img src="../img/bebe_login.jpg">
             </div>
-           
-        <div class="card_login">
-            <h3> Login</h3>
-            <div class="icones_imagens"> 
-                <img onclick="go_Login()" src="../img/Icon_facebook.png"> 
-                <img onclick="go_Login()" src="../img/Icon_google+.png"> 
-                <img onclick="go_Login()" src="../img/Icon_linkedin.png"> 
-           </div>
 
-            <div class="label">
-                <h4> CNPJ: </h4>
-                <input id="input_login_cnpj">
-                <h4> Senha: </h4>
-                <input id="input_senha_cnpj">
+            <div class="card_login">
+                <h3> Login</h3>
+                <div class="icones_imagens">
+                    <img src="../img/Icon_facebook.png">
+                    <img src="../img/Icon_google+.png">
+                    <img src="../img/Icon_linkedin.png">
+                </div>
+
+                <div class="label">
+                    <h4> CNPJ: </h4>
+                    <input id="input_login_cnpj">
+                    <h4> Senha: </h4>
+                    <input id="input_senha_cnpj">
+                </div>
+
+                <div class="botoes">
+                    <button class="btn">Entrar</button>
+                    <button class="btn">Cadastre-se</button>
+                </div>
+
             </div>
-
-            <div class="botoes"> 
-                <button class="btn">Entrar</button>
-                <button class="btn">Cadastre-se</button>
-           </div>
-
         </div>
-    
-</body>
-</html>
+    </div>
 
+</body>
+
+</html>
