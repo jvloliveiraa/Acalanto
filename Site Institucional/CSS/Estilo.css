@@ -309,6 +309,7 @@ h2{
     color: white;
     font-size: 45px;
     margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .card_informacoes{
@@ -363,16 +364,15 @@ h2{
 .card_informacoes .label h2{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
+    color: black;
+
 }
 
-.card_informacoes .label h3{
-    display: flex;
-    justify-content: center;
-}
+/* .card_informacoes .label h3{
 
-.card_informacoes #div_email{
+} */
+
+ /* .card_informacoes #div_email{
     border-top: 2px solid #6c5eff;
     border-bottom: 2px solid #6c5eff;
 }
@@ -386,32 +386,57 @@ h2{
     margin-top: 0;
     display: flex;
     justify-content: center;
-}
+} */
+
 
 /* Imagem */
-.card_informacoes #div_img_loca{
+.card_informacoes .label .div_img_loca{
     display: flex;
-    background-color: red;
-    width: 10px;
-    align-self: flex-end;
+    width: 20%;
+    margin: auto;
+    justify-content: center;
+    margin-right: 0;
 }
 
-.card_informacoes #div_email{
+.card_informacoes .label .label_info{
+    width: 40%;
+    margin: auto;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card_informacoes #bordas_email{
+    border-top: 3px solid #6c5eff;
+    border-bottom: 3px solid #6c5eff;
+}
+
+.card_informacoes .label{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card_informacoes .label .div_img_em{
     margin-top: 0;
     margin-bottom: 0;
 }
-.card_informacoes #div_telefone{
+/* .card_informacoes #div_telefone{
     margin-top: 0;
-}
+} */
 
 .label_formulario input{
     width: 100%;
     border: 0;
-    border-bottom: 2px solid rgb(59, 58, 58);
+    border-bottom: 2px solid black;
     outline: none; /* Remove as bordas ao clicar na input */
     min-width: 180px; /* O mínimo da largura que pode chegar o input é 180 */
     font-size: 16px; 
     background-color: #6c5eff;
+    color: white;
 }
 
 /* Fim Contato */  
