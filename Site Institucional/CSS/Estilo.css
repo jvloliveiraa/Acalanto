@@ -1,4 +1,4 @@
-/* Código relacionado ao header */
+/* Código relacionado ao header //////////////////////////////////////////////////////////////////////*/
 
 h1{
     width: 90%;
@@ -10,7 +10,7 @@ h1{
     display: flex;
 }
 
-.header .container, .header_Absolute .container{
+.header .container , .header_Absolute .container , .header_sobre .container{
     font-family: Bahnschrift;
     margin: auto;
     align-items: center;
@@ -18,14 +18,14 @@ h1{
     border-radius: 0 10px 10px 0px;
 }
 
-.header .container .container , .header_Absolute .container .container{
+.header .container .container , .header_Absolute .container .container , .header_sobre .container .container{
     justify-content: space-around;
     height: 60px;
     width: 22%;
     background-color: #3a3383;
 }
 
-.header .container img, .header_Absolute .container img{
+.header .container img , .header_Absolute .container img , .header_sobre .container img{
     width: 8%;
     border: 5px solid rgb(58, 51, 131);
     padding: 1px;
@@ -33,9 +33,9 @@ h1{
     cursor: pointer;
 }
 
-.header .container h1, .header_Absolute .container h1{
-    background-color: rgb(58, 51, 131);
-    color: rgb(107, 95, 255);
+.header .container h1 , .header_Absolute .container h1 , .header_sobre .container h1{
+    background-color: #3a3383;
+    color: #6c5eff;
     width: 17%;
     font-size: 40px;
     height: 60px;
@@ -45,7 +45,7 @@ h1{
 }
 
 .navbar{
-    background-color: rgb(58, 51, 131);
+    background-color: #3a3383;
     font-size: 20px;
     display: flex;
     list-style: none;
@@ -84,9 +84,9 @@ h1 a{
     font-size: 22px;
 }
 
-/* Término do código relacionado ao header */
+/* Término do código relacionado ao header //////////////////////////////////////////////////////////*/
 
-/* Código relacionado ao simulador */
+/* Código relacionado ao simulador //////////////////////////////////////////////////////////////////*/
 
 h2{
     font-family: Bahnschrift;
@@ -185,32 +185,37 @@ h2{
     font-weight: bolder;
 }
 
-/* Término do código relacionado ao Simulador */
+/* Término do código relacionado ao Simulador ////////////////////////////////////////////////////////*/
 
-/* Início código Index/Home */
+/* Início código Index/Home //////////////////////////////////////////////////////////////////////////*/
 
 body{
     margin: 0;
     padding: 0;
 }
 
-.header_Absolute{
+.header_Absolute, .header_sobre{
     position: absolute;
     z-index: 1000;
+    width: 100%;
 }
 
 
 .banner_home{
     background-image: url(../img/bebe_home.jpg);
-    background-size: cover;
+    background-position: 40%;
+    background-position-y: 30%;
     position: relative;
     height: auto;
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     /* border: 2px solid darkblue;   */
+}
+
+.banner_home img{
+    width: 90%;
 }
 
 .card_titulo .titulo{
@@ -226,15 +231,15 @@ body{
     margin-left: 5%;
 }
 
- .card_titulo{
+.card_titulo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #6c5eff;
     background-color: white;
-    height: 100vh;
+    height: 75vh;
     width: 60%;
-    padding-top: 4%;  
+    padding-top: 25vh;  
     /* border: 2px solid red;   */
 }
 
@@ -242,9 +247,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-self: flex-start;
-    
     width: 60%;
-    
     /* border: 2px solid red; */
 }
 
@@ -279,9 +282,205 @@ body{
     cursor: pointer;
 }
 
-/* Fim código Index/Home */
+/* Fim código Index/Home /////////////////////////////////////////////////////////////////////////////*/
 
-/* Começo Contato */
+/* Começo Sobre nós /////////////////////////////////////////////////////////////////////////////////*/
+
+/* .header_sobre .container{
+    background-color: #6c5eff;
+} */
+
+.header_sobre .container img{
+    border: 5px solid #6c5eff;
+}
+
+.header_sobre .navbar{
+    background-color: #6c5eff;
+}
+
+.header_sobre .container h1 {
+    background-color: #6c5eff;
+}
+
+.header_sobre .container h1 a{
+    color: #3a3383;
+}
+
+.header_sobre .container .container {
+    background-color: #6c5eff;
+}
+
+.header_sobre .container .btn {
+    background-color: #3a3383;
+}
+
+.banner_sobre_nos {
+    background-size: cover;
+    position: relative;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card_sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    align-items: center;
+    color: #6c5eff;
+    height: 100vh;
+    width: 40%;
+
+    /* border: 2px solid red; */
+}
+
+.card_mis_vis_val{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #6c5eff;
+    background-color: #3a3383;
+    height: 85vh;
+    width: 60%;
+    padding-top: 15vh;
+
+    /* border: 2px solid red; */
+}
+
+.card_mis_vis_val .barra{
+    width: 10%;
+    height: 1px;
+    background-color: white;
+}
+
+
+.card_missao{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #6c5eff;
+    font-family: Bahnschrift;
+    color: white;
+    width: 70%;
+    /* height: 10%; */
+    border-radius: 30px;
+    padding: 1%;  
+}
+
+.card_missao img{
+    width: 20%;
+}
+
+.card_missao p{
+     width: 60%;
+}
+
+.card_visao{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #6c5eff;
+    font-family: Bahnschrift;
+    color: white;
+    width: 70%;
+    border-radius: 30px;
+    padding: 1%;  
+}
+
+.card_visao img{
+    width: 20%;
+}
+
+.card_visao p{
+     width: 60%;
+}
+
+.card_valores{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #6c5eff;
+    font-family: Bahnschrift;
+    color: white;
+    width: 70%;
+    border-radius: 30px;
+    padding: 1%;  
+}
+
+.card_valores img{
+    /* height: 5% */
+    width: 20%;
+}
+
+.card_valores p{
+     width: 60%;
+}
+
+.card_sobre{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: Bahnschrift;
+    height: 95vh;
+    width: 40%;
+    padding-top: 5vh;
+}
+
+.barra{
+    width: 70%;
+    height: 1px;
+    background-color: #6c5eff;
+}
+
+.card_sobre h1{
+    font-size: 50px;
+    border: 0;
+    width: 70%;
+}
+
+.card_sobre p{
+    border: 0;
+    width: 70%;
+}
+
+/* .container_sobre_nos {
+    border-color: blue;
+    border-style: solid;
+} */
+
+.card_sobre_nos {
+    font-family: Clarendon Blk BT Black;
+    margin-left: 1500px;
+    border-color: green;
+    border-style: solid;
+    font-size: 85px;
+}
+
+.card_servicos {
+    display: flex;
+    font-family: Clarendon Blk BT Black;
+    border-color: yellow;
+    border-style: solid;
+    font-size: 85px;
+    margin-top: 100px;
+    width: 50%;
+}
+.card_foto_sobre_nos {
+    display: flex;
+    height: 1000px;
+    width: 100px;
+    margin-left: 1220px;
+    border-color: pink;
+    border-style: solid;
+} 
+
+/* fim Sobre-Nos ////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Começo Contato ///////////////////////////////////////////////////////////////////////////////////*/
 
 h2{
     font-family: Bahnschrift;
@@ -409,10 +608,10 @@ h2{
     color: white;
 }
 
-/* Fim Contato */  
+/* Fim Contato //////////////////////////////////////////////////////////////////////////////////////*/  
 
 
-/* Comeco Do login */
+/* Comeco Do login ////////////////////////////////////////////////////////////////////////////////////*/
 
 /* Configurando a FOTO */
 .container .card_foto{
@@ -540,9 +739,9 @@ h2{
     width: 180px;
 }  
 
-/* Fim do Cadastro */
+/* Fim do Cadastro ////////////////////////////////////////////////////////////////////////////////////*/
 
-/* Rodapé começo */
+/* Rodapé começo /////////////////////////////////////////////////////////////////////////////////////*/
 
 .footer.footer{
    height: 100%;
@@ -565,50 +764,4 @@ h2{
  
 }
 
-/* Fim do Rodapé */
-
-/* Começo Sobre nós */
-
-.banner_sobre_nos {
-    padding: 0;
-    display: flex;
-    border-style: solid;
-    border-color: red;
-    height: 100%;
-    width: 100%;
-}
-
-.container_sobre_nos {
-    border-color: blue;
-    border-style: solid;
-}
-
-.card_sobre_nos {
-    font-family: Clarendon Blk BT Black;
-    margin-left: 1500px;
-    border-color: green;
-    border-style: solid;
-    font-size: 85px;
-}
-
-.card_servicos {
-    display: flex;
-    font-family: Clarendon Blk BT Black;
-    border-color: yellow;
-    border-style: solid;
-    font-size: 85px;
-    margin-top: 100px;
-    width: 50%;
-}
-.card_foto_sobre_nos {
-    display: flex;
-    height: 1000px;
-    width: 100px;
-    margin-left: 1220px;
-    border-color: pink;
-    border-style: solid;
-} 
-
-.card_valores {
-
-}
+/* Fim do Rodapé //////////////////////////////////////////////////////////////////////////////////////*/
