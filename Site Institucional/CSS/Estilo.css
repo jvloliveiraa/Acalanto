@@ -452,31 +452,49 @@ body{
     border-style: solid;
 } */
 
-.card_sobre_nos {
-    font-family: Clarendon Blk BT Black;
-    margin-left: 1500px;
-    border-color: green;
-    border-style: solid;
-    font-size: 85px;
-}
-
 .card_servicos {
     display: flex;
-    font-family: Clarendon Blk BT Black;
-    border-color: yellow;
-    border-style: solid;
-    font-size: 85px;
-    margin-top: 100px;
-    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    float: left;
+    align-items: center;
+    color: #6c5eff;
+    height: 100vh;
+    width: 40%;
+    font-family: Bahnschrift;
 }
 .card_foto_sobre_nos {
     display: flex;
     height: 1000px;
-    width: 100px;
-    margin-left: 1220px;
-    border-color: pink;
+    width: 760px;
+    margin-left: 1140px;
+}
+   /* border-color: pink;
     border-style: solid;
-} 
+    border-radius: 3px; */
+ 
+
+.card_foto_sobre_nos img{
+    width: 770px;
+}
+
+.barra_servicos {
+    width: 70%;
+    height: 1px;
+    background-color: #6c5eff;
+}
+
+.card_servicos h1{
+    font-size: 50px;
+    border: 0;
+    width: 70%;
+}
+
+.card_servicos p{
+    border: 0;
+    width: 70%;
+    font-size: 20px;
+}
 
 /* fim Sobre-Nos ////////////////////////////////////////////////////////////////////////////////////*/
 
