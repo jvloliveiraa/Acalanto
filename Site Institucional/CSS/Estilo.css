@@ -1,16 +1,52 @@
-/* Código relacionado ao header //////////////////////////////////////////////////////////////////////*/
+/* Títulos padrão */
 
 h1{
-    width: 90%;
     font-family: clarendon Blk Bt Black;
 }
+
+h2{
+    font-family: Bahnschrift;
+}
+
+h3{
+    font-family: Bahnschrift;
+}
+
+/*************************************************************************************************/
+
+/* Containers padrão */
 
 .container{
     width: 90%;
     display: flex;
 }
 
-.header .container , .header_Absolute .container , .header_sobre .container{
+.banner .container{
+    margin: auto;
+    height: 600px;
+}
+
+/***********************************************************************************************/
+
+/* Botões padrão */
+
+.btn{
+    font-family: Bahnschrift;
+    background-color: #6c5eff;
+    color: white;
+    height: 32px;
+    width: 120px;
+    font-size: 19px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+}
+
+/**************************************************************************************************/
+
+/* Código relacionado ao header */
+
+.header .container, .header_Absolute .container, .header_sobre .container{
     font-family: Bahnschrift;
     margin: auto;
     align-items: center;
@@ -18,14 +54,14 @@ h1{
     border-radius: 0 10px 10px 0px;
 }
 
-.header .container .container , .header_Absolute .container .container , .header_sobre .container .container{
+.header .container .container , .header_Absolute .container .container, .header_sobre .container .container{
     justify-content: space-around;
     height: 60px;
     width: 22%;
     background-color: #3a3383;
 }
 
-.header .container img , .header_Absolute .container img , .header_sobre .container img{
+.header .container img, .header_Absolute .container img, .header_sobre .container img{
     width: 8%;
     border: 5px solid rgb(58, 51, 131);
     padding: 1px;
@@ -33,9 +69,9 @@ h1{
     cursor: pointer;
 }
 
-.header .container h1 , .header_Absolute .container h1 , .header_sobre .container h1{
-    background-color: #3a3383;
-    color: #6c5eff;
+.header .container h1, .header_Absolute .container h1, .header_sobre .container h1{
+    background-color: rgb(58, 51, 131);
+    color: rgb(107, 95, 255);
     width: 17%;
     font-size: 40px;
     height: 60px;
@@ -45,7 +81,7 @@ h1{
 }
 
 .navbar{
-    background-color: #3a3383;
+    background-color: rgb(58, 51, 131);
     font-size: 20px;
     display: flex;
     list-style: none;
@@ -67,37 +103,14 @@ h1 a{
     font-family: clarendon Blk Bt Black;
 }
 
-.btn{
-    font-family: Bahnschrift;
-    background-color: #6c5eff;
-    color: white;
-    height: 32px;
-    width: 120px;
-    font-size: 19px;
-    border-radius: 8px;
-    border: 0;
-    cursor: pointer;
-}
-
 .agora{
     font-weight: bolder;
     font-size: 22px;
 }
 
-/* Término do código relacionado ao header //////////////////////////////////////////////////////////*/
+/****************************************************************************************/
 
-/* Código relacionado ao simulador //////////////////////////////////////////////////////////////////*/
-
-h2{
-    font-family: Bahnschrift;
-}
-
-
-.banner .container{
-    margin: auto;
-    height: 600px;
-    /* border: 2px solid darkblue; */
-}
+/* Código relacionado ao simulador */
 
 .card_result{
     font-family: Bahnschrift;
@@ -185,37 +198,328 @@ h2{
     font-weight: bolder;
 }
 
-/* Término do código relacionado ao Simulador ////////////////////////////////////////////////////////*/
+/* Término do código relacionado ao Simulador */
 
-/* Início código Index/Home //////////////////////////////////////////////////////////////////////////*/
+/******************************************************************************************************/
+
+/* Começo Contato */
+
+.card_result_formulario{
+    font-family: Bahnschrift;
+    background-color: rgb(107, 95, 255);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    height: 540px;
+    width: 45%;
+}
+
+.card_result_formulario h1{
+    color: white;
+    font-size: 45px;
+    margin: auto;
+}
+
+.card_informacoes{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    height: 540px;
+    width: 45%;
+}
+
+.card_informacoes h3{
+    color: rgb(107, 95, 255);
+}
+
+.card_result_formulario .container{
+    height: 70px;
+}
+
+.card_result_formulario .label input{
+    background-color: #6c5eff;
+    color: white;
+}
+
+.card_result_formulario .container .btn{
+    background-color: rgb(58, 51, 131);
+    height: 60px;
+    width: 150px;
+    margin: auto;
+    font-size: 25px;
+}
+
+.card_informacoes .label{
+    display: flex;
+    height: 200px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_informacoes .label_email{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid #6c5eff;
+    border-bottom: 3px solid #6c5eff;
+}
+
+.card_informacoes .label h2{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin: 0;
+}
+
+.card_informacoes .label .label_img{
+    display: flex;
+    width: 20%;
+    margin: auto;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.card_informacoes .label_email .label_img{
+    display: flex;
+    width: 20%;
+    margin: auto;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.card_informacoes .label_email .label_info{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card_informacoes .label_email .label_info h2{
+    margin-top: 0;
+}
+
+.card_informacoes .label .label_info{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Fim Contato */
+
+/*************************************************************************************************/
+
+/* Comeco Do login e cadastro*/
+
+.container .card_foto{
+    display: flex;
+    height: 90%;
+    width: 50%;
+}
+
+.card_foto img{
+    height: 100%;
+    width: 100%;
+    border-top-right-radius:10%;
+    border-bottom-right-radius:10%;
+}
+
+.container .card_login_cadastro{
+    display: flex;
+    height: 90%;
+    width: 50%;
+    flex-direction: column;
+}
+
+.card_login_cadastro h3{
+    color: #3a3383;
+    font-size: 28px;
+    width: 80%;
+    margin: auto;
+}
+
+.card_login_cadastro h4{
+    color: #3a3383;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.card_login_cadastro .icones_imagens img{
+    height: 50px;
+    width: 50px;
+}
+.card_login_cadastro .icones_imagens{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    height: 10%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.card_login_cadastro .label{
+    height: 350px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #3a3383;
+    font-size: 20px;
+}
+
+.card_login_cadastro .botoes{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-evenly;
+}
+.card_login_cadastro .botoes .btn{
+    margin: auto;
+    height: 50px;
+    width: 180px;
+}
+
+/* Fim do Login */
+
+/* Fim do Cadastro */
+
+/*************************************************************************************************/
+
+/* Rodapé começo */
+
+.footer .container{
+   height: 200px;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   background: #3a3383;
+}
+
+.footer_logo{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_img{
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.footer_labels{
+    display: flex;
+    width: 40%;
+    flex-direction: row;
+}
+
+.footer_labels h4{
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.footer_labels h3{
+    color: rgb(114, 93, 255);
+}
+
+.footer_info{
+    display: flex;
+    height: 180px;
+    width: 25%;
+    margin: auto;
+    flex-direction: column;
+}
+
+.footer_info h4 a{
+    text-decoration: none;
+    color: rgb(114, 93, 255);
+}
+
+.footer_sociais{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.footer_sociais h3{
+    color: rgb(114, 93, 255);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 60%;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.footer_icones{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30%;
+    width: 80%;
+}
+
+.footer_icones .footer_img{
+    margin: auto;
+    width: 15%;
+    height: 80%;
+}
+
+.footer_icones2{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30%;
+    width: 50%;
+}
+
+.footer_icones2 .footer_img{
+    margin: auto;
+    width: 25%;
+    height: 80%;
+}
+
+/* Término do rodapé */
+
+/*****************************************************************************************************/
+
+/* Início código Index/Home */
 
 body{
     margin: 0;
     padding: 0;
 }
 
-.header_Absolute, .header_sobre{
+.header_Absolute{
     position: absolute;
-    z-index: 1000;
     width: 100%;
+    z-index: 1000;
 }
 
-
-.banner_home{
-    background-image: url(../img/bebe_home.jpg);
-    background-position: 40%;
-    background-position-y: 30%;
-    position: relative;
-    height: auto;
-    width: auto;
+.container_home{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* border: 2px solid darkblue;   */
-}
-
-.banner_home img{
-    width: 90%;
+    flex-direction: row;
 }
 
 .card_titulo .titulo{
@@ -231,38 +535,41 @@ body{
     margin-left: 5%;
 }
 
-.card_titulo{
+ .container_home .card_titulo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #6c5eff;
-    background-color: white;
-    height: 75vh;
-    width: 60%;
-    padding-top: 25vh;  
-    /* border: 2px solid red;   */
+    height: 650px;
+    width: 55%;
+    padding-top: 4%;  
+}
+
+.img_home{
+    width: 45%;
+}
+
+.img_home img{
+    height: 100%;
+    width: 100%;
 }
 
 .buttons{
     display: flex;
     justify-content: space-evenly;
-    align-self: flex-start;
+    align-self: flex-start;  
     width: 60%;
-    /* border: 2px solid red; */
 }
 
 .btn_Cadastre{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
-
     font-family: Bahnschrift;
     font-size: 30px;
     color: #3a3383;
     height: 60px;
-    width: 200px;
-    
+    width: 200px; 
     border-radius: 15px;
     border: 5px solid #6c5eff;
     cursor: pointer;
@@ -282,13 +589,17 @@ body{
     cursor: pointer;
 }
 
-/* Fim código Index/Home /////////////////////////////////////////////////////////////////////////////*/
+/* Fim código Index/Home */
+
+/*****************************************************************************************************************************/
 
 /* Começo Sobre nós /////////////////////////////////////////////////////////////////////////////////*/
 
-/* .header_sobre .container{
-    background-color: #6c5eff;
-} */
+.header_sobre{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+}
 
 .header_sobre .container img{
     border: 5px solid #6c5eff;
@@ -314,13 +625,17 @@ body{
     background-color: #3a3383;
 }
 
-.banner_sobre_nos {
-    background-size: cover;
-    position: relative;
-    height: auto;
-    width: auto;
+.banner_sobre_nos .container{
+    width: 100%;
+    height: 1350px;
     display: flex;
     flex-direction: column;
+}
+
+.banner_sobre_nos .container .container{
+    height: 700px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -328,13 +643,11 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    float: right;
     align-items: center;
     color: #6c5eff;
-    height: 100vh;
+    height: 600px;
     width: 40%;
-
-    /* border: 2px solid red; */
+    padding-top: 10vh;
 }
 
 .card_mis_vis_val{
@@ -344,11 +657,9 @@ body{
     align-items: center;
     color: #6c5eff;
     background-color: #3a3383;
-    height: 85vh;
+    height: 600px;
     width: 60%;
     padding-top: 15vh;
-
-    /* border: 2px solid red; */
 }
 
 .card_mis_vis_val .barra{
@@ -366,9 +677,7 @@ body{
     font-family: Bahnschrift;
     color: white;
     width: 70%;
-    /* height: 10%; */
     border-radius: 30px;
-    padding: 1%;  
 }
 
 .card_missao img{
@@ -388,7 +697,7 @@ body{
     color: white;
     width: 70%;
     border-radius: 30px;
-    padding: 1%;  
+    padding: 1%; 
 }
 
 .card_visao img{
@@ -412,22 +721,11 @@ body{
 }
 
 .card_valores img{
-    /* height: 5% */
     width: 20%;
 }
 
 .card_valores p{
      width: 60%;
-}
-
-.card_sobre{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: Bahnschrift;
-    height: 95vh;
-    width: 40%;
-    padding-top: 5vh;
 }
 
 .barra{
@@ -446,36 +744,26 @@ body{
     border: 0;
     width: 70%;
 }
-
-/* .container_sobre_nos {
-    border-color: blue;
-    border-style: solid;
-} */
-
+/* MURILO MURILO MURILO MURILO ********************************************/
 .card_servicos {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    float: left;
     align-items: center;
     color: #6c5eff;
-    height: 100vh;
-    width: 40%;
     font-family: Bahnschrift;
+    height: 600px;
+    width: 60%;
 }
+
 .card_foto_sobre_nos {
     display: flex;
-    height: 1000px;
-    width: 760px;
-    margin-left: 1140px;
-}
-   /* border-color: pink;
-    border-style: solid;
-    border-radius: 3px; */
- 
+    height: 600px;
+    width: 40%;
+} 
 
 .card_foto_sobre_nos img{
-    width: 770px;
+    width: 100%;
 }
 
 .barra_servicos {
@@ -493,293 +781,7 @@ body{
 .card_servicos p{
     border: 0;
     width: 70%;
-    font-size: 20px;
+    font-size: 15px;
 }
-
+/* MURILO MURILO MURILO MURILO ********************************************/
 /* fim Sobre-Nos ////////////////////////////////////////////////////////////////////////////////////*/
-
-/* Começo Contato ///////////////////////////////////////////////////////////////////////////////////*/
-
-h2{
-    font-family: Bahnschrift;
-}
-
-.card_result_formulario{
-    font-family: Bahnschrift;
-    background-color: rgb(107, 95, 255);
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 25px;
-    height: 540px;
-    width: 45%;
-}
-
-.banner .container .card_result_formulario h1{
-    color: white;
-    font-size: 45px;
-    margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.card_informacoes{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    height: 540px;
-    width: 45%;
-}
-
-.card_informacoes h3{
-    font-family: Bahnschrift;
-    color: rgb(107, 95, 255);
-}
-
-.card_result_formulario .container{
-    height: 70px;
-}
-
-.card_result_formulario .container .btn_formulario{
-    height: 60px;
-    width: 150px;
-    margin: auto;
-    font-size: 25px;
-}
-
-.btn_formulario{
-    font-family: Bahnschrift;
-    background-color: rgb(58, 51, 131);
-    color: white;
-    height: 32px;
-    width: 120px;
-    font-size: 19px;
-    border-radius: 8px;
-    border: 0;
-    cursor: pointer;
-}
-
-.label_formulario{
-    margin: auto;
-    width: 90%;
-}
-
-.label_formulario h2{
-    color: rgb(58, 51, 131);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.card_informacoes .label h2{
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-
-}
-
-/* Imagem */
-.card_informacoes .label .div_img_loca{
-    display: flex;
-    width: 20%;
-    margin: auto;
-    justify-content: center;
-    margin-right: 20px;
-}
-
-.card_informacoes .label .label_info{
-    width: 40%;
-    margin: auto;
-    margin-left: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.card_informacoes #bordas_email{
-    border-top: 3px solid #6c5eff;
-    border-bottom: 3px solid #6c5eff;
-}
-
-.card_informacoes .label{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.card_informacoes .label .div_img_em{
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.label_formulario input{
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid black;
-    outline: none; /* Remove as bordas ao clicar na input */
-    min-width: 180px; /* O mínimo da largura que pode chegar o input é 180 */
-    font-size: 16px; 
-    background-color: #6c5eff;
-    color: white;
-}
-
-/* Fim Contato //////////////////////////////////////////////////////////////////////////////////////*/  
-
-
-/* Comeco Do login ////////////////////////////////////////////////////////////////////////////////////*/
-
-/* Configurando a FOTO */
-.container .card_foto{
-    display: flex;
-    height:  100%;
-    width: 50%;
-    /* border: 2px solid saddlebrown; */
-}
-.card_foto img{
-    height: 100%;
-    width: 100%;
-    border-top-right-radius:10%;
-    border-bottom-right-radius:10%;
-}
-/* CONFIGURANDO a DIV LOGIN E O H3 */
-.container .card_login{
-    display: flex;
-    height:  100%;
-    width: 50%;
-    /* border: 2px solid rgb(12, 7, 3); */
-    flex-direction: column;
-}
-.card_login h3{
-    font-weight: 1000;
-    color: #3a3383;
-    font-size: 28px;
-    padding-left: 40px;
-}
-/* CONFIGURANDO OS ICONES */
-.card_login .icones_imagens img{
-    height: 50px;
-    width: 50px;
-}
-.card_login .icones_imagens{
-    display: flex;
-    flex-direction: row;
-    height: 10%;
-    width: 100%;
-    justify-content: space-around;
-    /* border: 2px dashed firebrick; */
-}
-/* Configurando A LABEL DENTRO DA DIV*/
-.card_login .label{
-    height: 235px;
-    width: 80%;
-    color: #3a3383;
-    font-size: 20px;
-    /* border: 2px solid gold; */
-}
-.card_login .botoes{
-    display: flex;
-    width: 100%;
-    height: 80px;
-    justify-content: space-evenly;
-    /* border: 2px solid gold; */
-}
-.card_login .botoes .btn{
-    /* border:2px solid firebrick;  */
-    height: 50px;
-    width: 180px;
-}
-
-/* Fim do Login */
-
-
-/* COMEÇANDO O CADASTRO */
-
-.container .card_cadastro{
-    display: flex;
-    height:  100%;
-    width: 50%;
-    /* border: 2px solid rgb(12, 7, 3); */
-    flex-direction: column;
-}
-.card_cadastro h3{
-    font-weight: 1000;
-    color: #3a3383;
-    font-size: 30px;
-    padding-left: 30px;
-    margin: auto;
-    margin-top: 0;
-    margin-bottom: 15px;
-    width: 90%;
-    /* border: 2px solid blue; */
-}
-/* CONFIGURANDO OS ICONES */
-.card_cadastro .icones_imagens img{
-    height: 50px;
-    width: 50px;
-}
-.card_cadastro .icones_imagens{
-    display: flex;
-    flex-direction: row;
-    height: 10%;
-    width: 100%;
-    justify-content: space-around;
-    /* border: 2px dashed firebrick; */
-}
-/* Configurando A LABEL DENTRO DA DIV*/
-.card_cadastro .label{
-    height: 57%;
-    padding-top: 10px;
-    width: 85%;
-    color: #3a3383;
-    /* border: 2px solid gold; */
-    padding-left: 2px;
-    margin-top: 0;
-}
-.card_cadastro .label h2{
-    font-size: 18px;
-}
-.card_cadastro .botoes{
-    display: flex;
-    width: 100%;
-    height: 60px;
-    margin: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-    justify-content: space-evenly;
-    /* border: 2px solid gold; */
-}
-.card_cadastro .botoes .btn{
-    /* border:2px solid firebrick; */
-    height: 50px;
-    width: 180px;
-}  
-
-/* Fim do Cadastro ////////////////////////////////////////////////////////////////////////////////////*/
-
-/* Rodapé começo /////////////////////////////////////////////////////////////////////////////////////*/
-
-.footer.footer{
-   height: 100%;
-   background: #3a3383;
-   position: relative; 
-
-}
-
-.rodape{
-    text-decoration: none;
-
-}
-.paginas{
-    margin-left: 45px;
-}
-
-.footer.footer .container{
-    display: grid;
-    grid-template-columns: repeat(4,1 fr);
- 
-}
-
-/* Fim do Rodapé //////////////////////////////////////////////////////////////////////////////////////*/
