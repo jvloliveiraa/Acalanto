@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./CSS/Estilo.css">
+    <script src="./JavaScript/Funcionalidade.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Acalanto - Formulário </title>
+</head>
+
+<body>
+    <form action="https://formspree.io/f/xpzbyjol" method="POST" id="div_label_cadastro" class="label">
+        <label> Empresa </label>
+        <h4> Nome da Empresa: </h4>
+        <input name="NomeEmpresa" type="text" id="input_cadastro_empresa" required>
+        <h4> CNPJ: </h4>
+        <input name="CNPJ" type="text" id="input_cadastro_cnpj" required>
+        <label> Endereço </label>
+        <h4> Logradouro: </h4>
+        <input name="Rua" type="text" id="input_cadastro_logradouro" required>
+        <h4> Bairro: </h4>
+        <input name="Bairro" type="text" id="input_cadastro_bairro" required>
+        <h4> CEP: </h4>
+        <input name="CEP" type="text" id="input_cadastro_cep" required>
+        <h4> Cidade: </h4>
+        <input name="Cidade" type="text" id="input_cadastro_cidade" required>
+        <h4> Estado: </h4>
+        <select id="select_estado">
+            <option name="Estado" value="SP"> São Paulo </option>
+        </select>
+        <h4> Complemento: </h4>
+        <input name="Complemento" type="text" id="input_cadastro_complemento" required>
+        <h4> Telefone: </h4>
+        <input name="Telefone" type="text" id="input_cadastro_telefone" required>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <button onclick="cadastrarEmpresa()">Cadastrar</button>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <label> Usuário </label>
+        <h4> Nome: </h4>
+        <input name="NomeUsuário" type="text" id="input_usuario_nome" required>
+        <h4> Nome: </h4>
+        <input name="SobrenomeUsuário" type="text" id="input_usuario_sobrenome" required>
+        <h4> Email: </h4>
+        <input name="Email" type="text" id="input_usuario_email" required>
+        <h4> Senha: </h4>
+        <input name="Senha" type="text" id="input_usuario_senha" required>
+        <h4> Empresa: </h4>
+        <input name="UsuarioEmpresa" type="text" id="input_usuario_empresa" required>
+        <br>
+        <br>
+        <br>
+        <button onclick="cadastrarUsuario()">Cadastrar Usuário</button>
+    </form>
+</body>
+</html>
+
+<script>
+    function cadastrarEmpresa() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeEmpresa = input_cadastro_empresa.value;
+        var cnpjEmpresa = input_cadastro_cnpj.value;
+        var logradouroEmpresa = input_cadastro_logradouro.value;
+        var bairroEmpresa = input_cadastro_bairro.value;
+        var cepEmpresa = input_cadastro_cep.value;
+        var cidadeEmpresa = input_cadastro_cidade.value;
+        var estadoEmpresa = select_estado.value;
+        var complementoEmpresa = input_cadastro_complemento.value;
+        var telefoneEmpresa = input_cadastro_telefone.value;
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeEmpresa,
+                cnpjServer: cnpjEmpresa,
+                logradouroServer: logradouroEmpresa,
+                bairroServer: bairroEmpresa,
+                cepServer: cepEmpresa,
+                cidadeServer: cidadeEmpresa,
+                estadoServer: estadoEmpresa,
+                complementoServer: complementoEmpresa,
+                telefoneServer: telefoneEmpresa
+            })
+        }
+        ).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert('cadastro realizado');
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+    function cadastrarUsuario() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeUsuario = input_usuario_nome.value;
+        var sobrenomeUsuario = input_usuario_sobrenome.value;
+        var emailUsuario = input_usuario_email.value;
+        var senhaUsuario = input_usuario_senha.value;
+        var empresaUsuario = input_usuario_empresa.value;
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarUsuario", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeUsuarioServer: nomeUsuario,
+                sobrenomeUsuarioServer: sobrenomeUsuario,
+                emailUsuarioServer: emailUsuario,
+                senhaUsuarioServer: senhaUsuario,
+                empresaUsuarioServer: empresaUsuario
+            })
+        }
+        ).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert('cadastro realizado');
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+</script>

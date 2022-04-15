@@ -1,14 +1,14 @@
 /* Função do Header */
 
-function go_index(){
+function go_index() {
     window.location.href = "Index.html";
 }
 
-function go_login(){
+function go_login() {
     window.location.href = "Login.html";
 }
 
-function go_cadastro(){
+function go_cadastro() {
     window.location.href = "Cadastro.html";
 }
 
@@ -46,3 +46,27 @@ function simular_prejuizo() {
 }
 
 /* Término da função do Simulador Financeiro */
+
+/* Funções da página de cadastro */
+
+function solicitar_cadastro(){
+
+        /* Espaço reservado para condicionais */
+        div_botoes.innerHTML = `
+        <button class = "btn_Solicitar" onclick = "enviar_solicitacao()" 
+        type = "submit"> Confirmar solicitação </button>`;
+
+}
+
+
+function enviar_solicitacao(){
+    window.onbeforeunload = () => {
+        for(const form of document.getElementsByTagName('form')) {
+          form.reset();
+        }
+      }
+}
+
+/* Término das funções da página cadastro */
+
+/* Funções da página contato */

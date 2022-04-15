@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/Estilo.css">
-    <script src="../JavaScript/Funcionalidade.js"></script>
+    <link rel="stylesheet" href="./CSS/Estilo.css">
+    <script src="./JavaScript/Funcionalidade.js"></script>
     <title>Acalanto - Contato</title>
 </head>
 
 <body>
     <div class="header">
         <div class="container">
-            <img onclick="go_index()" src="../img/Logo_Acalanto_icon.png">
+            <img onclick="go_index()" src="./img/Logo_Acalanto_icon.png">
             <h1><a href="Index.html">Acalanto</a></h1>
             <ul class="navbar">
                 <li><a href="Sobre Nós.html">Sobre nós</a></li>
@@ -29,29 +29,29 @@
 
     <div class="banner">
         <div class="container">
-            <div class="card_result_formulario">
+            <form action="https://formspree.io/f/xeqnrlpa" method="POST" class="card_result_formulario">
                 <h1>Formulário</h1>
                 <div class="label">
                     <h2>Nome:</h2>
-                    <input id="input" type="text">
+                    <input name="name" id="input" type="text">
                 </div>
                 <div class="label">
                     <h2>Email:</h2>
-                    <input id="input" type="text">
+                    <input name="email" id="input" type="text">
                 </div>
                 <div class="label">
                     <h2>Digite sua mensagem:</h2>
-                    <input id="input" type="text">
+                    <input name="message" id="input" type="text">
                 </div>
                 <div class="container">
-                    <button class="btn">Enviar</button>
+                    <button onclick="enviar_solicitacao()" class="btn">Enviar</button>
                 </div>
-            </div>
+            </form>
 
             <div class="card_informacoes">
                 <div class="label">
                     <div class="label_img">
-                        <img src="../img/Icon_localizaçao.png">
+                        <img src="./img/Icon_localizaçao.png">
                     </div>
                     <div class="label_info">
                         <h3> Endereço </h3>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="label_email">
                     <div class="label_img">
-                        <img src="../img/Icon_email.png">
+                        <img src="./img/Icon_email.png">
                     </div>
                     <div class="label_info">
                         <h3> Email </h3>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="label">
                     <div class="label_img">
-                        <img src="../img/Icon_telefone.png">
+                        <img src="./img/Icon_telefone.png">
                     </div>
                     <div class="label_info">
                         <h3> Telefone </h3>
@@ -86,7 +86,7 @@
     <div class="footer">
         <div class="container">
             <div class="footer_logo">
-                <img class="footer_img" src="../img/Logo_Acalanto_rodape.png">
+                <img class="footer_img" src="./img/Logo_Acalanto_rodape.png">
             </div>
             <div class="footer_labels">
                 <div class="footer_info">
@@ -106,13 +106,13 @@
             <div class="footer_sociais">
                 <h3>Redes Sociais:</h3>
                 <div class="footer_icones">
-                    <img class="footer_img" src="../img/facebook_rodape.png">
-                    <img class="footer_img" src="../img/g+_rodape.png">
-                    <img class="footer_img" src="../img/linkedin_rodape.png">
+                    <img class="footer_img" src="./img/facebook_rodape.png">
+                    <img class="footer_img" src="./img/g+_rodape.png">
+                    <img class="footer_img" src="./img/linkedin_rodape.png">
                 </div>
                 <div class="footer_icones2">
-                    <img class="footer_img" src="../img/instagram_rodape.png">
-                    <img class="footer_img" src="../img/twitter_rodape.png">
+                    <img class="footer_img" src="./img/instagram_rodape.png">
+                    <img class="footer_img" src="./img/twitter_rodape.png">
                 </div>
             </div>
         </div>

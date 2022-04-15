@@ -1,14 +1,14 @@
 /* Títulos padrão */
 
-h1{
+h1 {
     font-family: clarendon Blk Bt Black;
 }
 
-h2{
+h2 {
     font-family: Bahnschrift;
 }
 
-h3{
+h3 {
     font-family: Bahnschrift;
 }
 
@@ -16,12 +16,12 @@ h3{
 
 /* Containers padrão */
 
-.container{
+.container {
     width: 90%;
     display: flex;
 }
 
-.banner .container{
+.banner .container {
     margin: auto;
     height: 600px;
 }
@@ -30,7 +30,7 @@ h3{
 
 /* Botões padrão */
 
-.btn{
+.btn {
     font-family: Bahnschrift;
     background-color: #6c5eff;
     color: white;
@@ -46,7 +46,9 @@ h3{
 
 /* Código relacionado ao header */
 
-.header .container, .header_Absolute .container, .header_sobre .container{
+.header .container,
+.header_Absolute .container,
+.header_sobre .container {
     font-family: Bahnschrift;
     margin: auto;
     align-items: center;
@@ -54,14 +56,18 @@ h3{
     border-radius: 0 10px 10px 0px;
 }
 
-.header .container .container , .header_Absolute .container .container, .header_sobre .container .container{
+.header .container .container,
+.header_Absolute .container .container,
+.header_sobre .container .container {
     justify-content: space-around;
     height: 60px;
     width: 22%;
     background-color: #3a3383;
 }
 
-.header .container img, .header_Absolute .container img, .header_sobre .container img{
+.header .container img,
+.header_Absolute .container img,
+.header_sobre .container img {
     width: 8%;
     border: 5px solid rgb(58, 51, 131);
     padding: 1px;
@@ -69,7 +75,9 @@ h3{
     cursor: pointer;
 }
 
-.header .container h1, .header_Absolute .container h1, .header_sobre .container h1{
+.header .container h1,
+.header_Absolute .container h1,
+.header_sobre .container h1 {
     background-color: rgb(58, 51, 131);
     color: rgb(107, 95, 255);
     width: 17%;
@@ -80,7 +88,7 @@ h3{
     justify-content: center;
 }
 
-.navbar{
+.navbar {
     background-color: rgb(58, 51, 131);
     font-size: 20px;
     display: flex;
@@ -92,18 +100,18 @@ h3{
     align-items: center;
 }
 
-li a{
+li a {
     text-decoration: none;
     color: white;
 }
 
-h1 a{
+h1 a {
     text-decoration: none;
     color: #6c5eff;
     font-family: clarendon Blk Bt Black;
 }
 
-.agora{
+.agora {
     font-weight: bolder;
     font-size: 22px;
 }
@@ -112,7 +120,7 @@ h1 a{
 
 /* Código relacionado ao simulador */
 
-.card_result{
+.card_result {
     font-family: Bahnschrift;
     background-color: rgb(58, 51, 131);
     margin: auto;
@@ -124,13 +132,13 @@ h1 a{
     width: 45%;
 }
 
-.banner .container .card_result h1{
+.banner .container .card_result h1 {
     color: rgb(107, 95, 255);
     font-size: 45px;
     margin: auto;
 }
 
-.banner .container .card_result p{
+.banner .container .card_result p {
     line-height: 40px;
     height: 420px;
     width: 90%;
@@ -139,7 +147,7 @@ h1 a{
     font-size: 15px;
 }
 
-.card{
+.card {
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -151,48 +159,51 @@ h1 a{
 }
 
 
-.card h3{
+.card h3 {
     font-family: Bahnschrift;
     color: rgb(107, 95, 255);
 }
 
-.card .container{
+.card .container {
     height: 70px;
 }
 
-.card .container .btn{
+.card .container .btn {
     height: 60px;
     width: 200px;
     margin: auto;
     font-size: 25px;
 }
 
-.label{
+.label {
     margin: auto;
     width: 90%;
 }
 
-.label h2{
+.label h2 {
     color: rgb(58, 51, 131);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.label input{
-    width: 100%;
+.label input {
+    width: 99%;
     border: 0;
     border-bottom: 2px solid rgb(59, 58, 58);
-    outline: none; /* Remove as bordas ao clicar na input */
-    min-width: 180px; /* O mínimo da largura que pode chegar o input é 180 */
-    font-size: 16px; 
+    outline: none;
+    /* Remove as bordas ao clicar na input */
+    min-width: 180px;
+    /* O mínimo da largura que pode chegar o input é 180 */
+    font-size: 16px;
 }
 
-.label input::-webkit-outer-spin-button,   /* Código para remover as setas do input number */
+.label input::-webkit-outer-spin-button,
+/* Código para remover as setas do input number */
 .label input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-.label .combo_box{
+.label .combo_box {
     width: 100%;
     text-align: center;
     font-weight: bolder;
@@ -204,7 +215,7 @@ h1 a{
 
 /* Começo Contato */
 
-.card_result_formulario{
+.card_result_formulario {
     font-family: Bahnschrift;
     background-color: rgb(107, 95, 255);
     margin: auto;
@@ -216,13 +227,13 @@ h1 a{
     width: 45%;
 }
 
-.card_result_formulario h1{
+.card_result_formulario h1 {
     color: white;
     font-size: 45px;
     margin: auto;
 }
 
-.card_informacoes{
+.card_informacoes {
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -233,20 +244,20 @@ h1 a{
     width: 45%;
 }
 
-.card_informacoes h3{
+.card_informacoes h3 {
     color: rgb(107, 95, 255);
 }
 
-.card_result_formulario .container{
+.card_result_formulario .container {
     height: 70px;
 }
 
-.card_result_formulario .label input{
+.card_result_formulario .label input {
     background-color: #6c5eff;
     color: white;
 }
 
-.card_result_formulario .container .btn{
+.card_result_formulario .container .btn {
     background-color: rgb(58, 51, 131);
     height: 60px;
     width: 150px;
@@ -254,7 +265,7 @@ h1 a{
     font-size: 25px;
 }
 
-.card_informacoes .label{
+.card_informacoes .label {
     display: flex;
     height: 200px;
     flex-direction: row;
@@ -262,7 +273,7 @@ h1 a{
     align-items: center;
 }
 
-.card_informacoes .label_email{
+.card_informacoes .label_email {
     margin: auto;
     width: 90%;
     display: flex;
@@ -273,14 +284,14 @@ h1 a{
     border-bottom: 3px solid #6c5eff;
 }
 
-.card_informacoes .label h2{
+.card_informacoes .label h2 {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     margin: 0;
 }
 
-.card_informacoes .label .label_img{
+.card_informacoes .label .label_img {
     display: flex;
     width: 20%;
     margin: auto;
@@ -288,7 +299,7 @@ h1 a{
     justify-content: center;
 }
 
-.card_informacoes .label_email .label_img{
+.card_informacoes .label_email .label_img {
     display: flex;
     width: 20%;
     margin: auto;
@@ -296,7 +307,7 @@ h1 a{
     justify-content: center;
 }
 
-.card_informacoes .label_email .label_info{
+.card_informacoes .label_email .label_info {
     width: 50%;
     height: 100%;
     display: flex;
@@ -308,11 +319,11 @@ h1 a{
     margin-bottom: 20px;
 }
 
-.card_informacoes .label_email .label_info h2{
+.card_informacoes .label_email .label_info h2 {
     margin-top: 0;
 }
 
-.card_informacoes .label .label_info{
+.card_informacoes .label .label_info {
     width: 50%;
     height: 100%;
     display: flex;
@@ -330,63 +341,70 @@ h1 a{
 
 /* Comeco Do login e cadastro*/
 
-.container .card_foto{
+.container .card_foto {
     display: flex;
     height: 90%;
     width: 50%;
 }
 
-.card_foto img{
+.card_foto img {
     height: 100%;
     width: 100%;
-    border-top-right-radius:10%;
-    border-bottom-right-radius:10%;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
 }
 
-.container .card_login{
+.container .card_login {
     display: flex;
     height: 90%;
     width: 50%;
     flex-direction: column;
-    border: 2px solid red;
 }
 
-.container .card_cadastro{
+.container .card_cadastro {
     display: flex;
     height: 90%;
     width: 50%;
     flex-direction: column;
-    border: 2px solid red;
 }
 
-.card_login h3, .card_cadastro h3{
+.card_login h3,
+.card_cadastro h3 {
     color: #3a3383;
     font-size: 28px;
     margin: auto;
     width: 80%;
-    border: 2px solid red;
 }
 
-.card_login h4, .card_cadastro h4{
+.card_login h4,
+.card_cadastro h4 {
     color: #3a3383;
     width: 80%;
-    border: 2px solid red;
 }
 
-.card_login .icones_imagens img, .card_cadastro .icones_imagens img{
+.card_cadastro .label label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 25px;
+    color: #6c5eff;
+}
+
+.card_login .icones_imagens img,
+.card_cadastro .icones_imagens img {
     height: 50px;
     width: 50px;
-    border: 2px solid red;
 }
 
-.card_login .icones_imagens, .card_cadastro .icones_imagens{
+.card_login .icones_imagens,
+.card_cadastro .icones_imagens {
     display: flex;
     flex-direction: row;
     margin: auto;
     height: 10%;
     width: 80%;
     justify-content: space-between;
-    border: 2px solid red;
 }
 
 .card_login .label {
@@ -396,32 +414,77 @@ h1 a{
     flex-direction: column;
     color: #3a3383;
     font-size: 20px;
-    border: 2px solid red;
 }
 
-.card_cadastro .label{
-    height: 300px;
+.card_cadastro .label {
+    height: 350px;
     width: 80%;
     display: flexbox;
     flex-direction: column;
     justify-content: center;
     color: #3a3383;
     font-size: 20px;
-    border: 2px solid red;
     overflow-y: scroll;
 }
 
-.card_login .botoes, .card_cadastro .botoes{
+.card_login .botoes {
     display: flex;
+    margin: auto;
     width: 100%;
-    height: auto;
+    height: 100px;
     justify-content: space-evenly;
 }
 
-.card_login .botoes .btn, .card_cadastro .botoes .btn{
+.card_login .botoes .btn {
     margin: auto;
     height: 50px;
     width: 180px;
+}
+
+.card_cadastro .label .botoes {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_login .botoes .btn_cadastro {
+    margin: auto;
+    font-family: Bahnschrift;
+    font-size: 20px;
+    background-color: white;
+    color: #3a3383;
+    height: 50px;
+    width: 180px;
+    border-radius: 15px;
+    border: 5px solid #6c5eff;
+    cursor: pointer;
+}
+
+
+.card_cadastro .botoes .btn_Solicitar {
+    font-family: Bahnschrift;
+    font-size: 20px;
+    background-color: white;
+    color: #3a3383;
+    height: 30%;
+    width: 50%;
+    border-radius: 15px;
+    border: 5px solid #6c5eff;
+    cursor: pointer;
+}
+
+.card_cadastro .botoes .btn_Entrar {
+    font-family: Bahnschrift;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    height: 30%;
+    width: 50%;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
 }
 
 /* Fim do Login */
@@ -432,42 +495,42 @@ h1 a{
 
 /* Rodapé começo */
 
-.footer .container{
-   height: 200px;
-   width: 100%;
-   display: flex;
-   flex-direction: row;
-   background: #3a3383;
+.footer .container {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: #3a3383;
 }
 
-.footer_logo{
+.footer_logo {
     width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.footer_img{
+.footer_img {
     width: 80%;
     margin-bottom: 20px;
 }
 
-.footer_labels{
+.footer_labels {
     display: flex;
     width: 40%;
     flex-direction: row;
 }
 
-.footer_labels h4{
+.footer_labels h4 {
     margin: 0;
     margin-bottom: 15px;
 }
 
-.footer_labels h3{
+.footer_labels h3 {
     color: rgb(114, 93, 255);
 }
 
-.footer_info{
+.footer_info {
     display: flex;
     height: 180px;
     width: 25%;
@@ -475,18 +538,18 @@ h1 a{
     flex-direction: column;
 }
 
-.footer_info h4 a{
+.footer_info h4 a {
     text-decoration: none;
     color: rgb(114, 93, 255);
 }
 
-.footer_sociais{
+.footer_sociais {
     display: flex;
     flex-direction: column;
     width: 30%;
 }
 
-.footer_sociais h3{
+.footer_sociais h3 {
     color: rgb(114, 93, 255);
     display: flex;
     justify-content: center;
@@ -496,7 +559,7 @@ h1 a{
     margin-top: 20px;
 }
 
-.footer_icones{
+.footer_icones {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -505,13 +568,13 @@ h1 a{
     width: 80%;
 }
 
-.footer_icones .footer_img{
+.footer_icones .footer_img {
     margin: auto;
     width: 15%;
     height: 80%;
 }
 
-.footer_icones2{
+.footer_icones2 {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -520,7 +583,7 @@ h1 a{
     width: 50%;
 }
 
-.footer_icones2 .footer_img{
+.footer_icones2 .footer_img {
     margin: auto;
     width: 25%;
     height: 80%;
@@ -532,62 +595,62 @@ h1 a{
 
 /* Início código Index/Home */
 
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-.header_Absolute{
+.header_Absolute {
     position: absolute;
     width: 100%;
     z-index: 1000;
 }
 
-.container_home{
+.container_home {
     display: flex;
     flex-direction: row;
 }
 
-.card_titulo .titulo{
+.card_titulo .titulo {
     font-size: 1000%;
     font-family: clarendon Blk Bt Black;
     margin-left: 2%;
 }
 
-.card_titulo p{
+.card_titulo p {
     margin: 0;
     font-size: 150%;
     font-family: Bahnschrift;
     margin-left: 5%;
 }
 
- .container_home .card_titulo{
+.container_home .card_titulo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #6c5eff;
     height: 650px;
     width: 55%;
-    padding-top: 4%;  
+    padding-top: 4%;
 }
 
-.img_home{
+.img_home {
     width: 45%;
 }
 
-.img_home img{
+.img_home img {
     height: 100%;
     width: 100%;
 }
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: space-evenly;
-    align-self: flex-start;  
+    align-self: flex-start;
     width: 60%;
 }
 
-.btn_Cadastre{
+.btn_Cadastre {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -595,13 +658,13 @@ body{
     font-size: 30px;
     color: #3a3383;
     height: 60px;
-    width: 200px; 
+    width: 200px;
     border-radius: 15px;
     border: 5px solid #6c5eff;
     cursor: pointer;
 }
 
-.btn_Entrar{
+.btn_Entrar {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -610,7 +673,7 @@ body{
     background-color: #3a3383;
     color: white;
     height: 70px;
-    width: 210px;    
+    width: 210px;
     border-radius: 15px;
     cursor: pointer;
 }
@@ -621,17 +684,17 @@ body{
 
 /* Começo Sobre nós /////////////////////////////////////////////////////////////////////////////////*/
 
-.header_sobre{
+.header_sobre {
     position: absolute;
     z-index: 1000;
     width: 100%;
 }
 
-.header_sobre .container img{
+.header_sobre .container img {
     border: 5px solid #6c5eff;
 }
 
-.header_sobre .navbar{
+.header_sobre .navbar {
     background-color: #6c5eff;
 }
 
@@ -639,7 +702,7 @@ body{
     background-color: #6c5eff;
 }
 
-.header_sobre .container h1 a{
+.header_sobre .container h1 a {
     color: #3a3383;
 }
 
@@ -651,21 +714,21 @@ body{
     background-color: #3a3383;
 }
 
-.banner_sobre_nos .container{
+.banner_sobre_nos .container {
     width: 100%;
     height: 1350px;
     display: flex;
     flex-direction: column;
 }
 
-.banner_sobre_nos .container .container{
+.banner_sobre_nos .container .container {
     height: 700px;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.card_sobre{
+.card_sobre {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -676,7 +739,7 @@ body{
     padding-top: 10vh;
 }
 
-.card_mis_vis_val{
+.card_mis_vis_val {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -688,14 +751,14 @@ body{
     padding-top: 15vh;
 }
 
-.card_mis_vis_val .barra{
+.card_mis_vis_val .barra {
     width: 10%;
     height: 1px;
     background-color: white;
 }
 
 
-.card_missao{
+.card_missao {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -706,15 +769,15 @@ body{
     border-radius: 30px;
 }
 
-.card_missao img{
+.card_missao img {
     width: 20%;
 }
 
-.card_missao p{
-     width: 60%;
+.card_missao p {
+    width: 60%;
 }
 
-.card_visao{
+.card_visao {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -723,18 +786,18 @@ body{
     color: white;
     width: 70%;
     border-radius: 30px;
-    padding: 1%; 
+    padding: 1%;
 }
 
-.card_visao img{
+.card_visao img {
     width: 20%;
 }
 
-.card_visao p{
-     width: 60%;
+.card_visao p {
+    width: 60%;
 }
 
-.card_valores{
+.card_valores {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -743,33 +806,34 @@ body{
     color: white;
     width: 70%;
     border-radius: 30px;
-    padding: 1%;  
+    padding: 1%;
 }
 
-.card_valores img{
+.card_valores img {
     width: 20%;
 }
 
-.card_valores p{
-     width: 60%;
+.card_valores p {
+    width: 60%;
 }
 
-.barra{
+.barra {
     width: 70%;
     height: 1px;
     background-color: #6c5eff;
 }
 
-.card_sobre h1{
+.card_sobre h1 {
     font-size: 50px;
     border: 0;
     width: 70%;
 }
 
-.card_sobre p{
+.card_sobre p {
     border: 0;
     width: 70%;
 }
+
 /* MURILO MURILO MURILO MURILO ********************************************/
 .card_servicos {
     display: flex;
@@ -786,9 +850,9 @@ body{
     display: flex;
     height: 600px;
     width: 40%;
-} 
+}
 
-.card_foto_sobre_nos img{
+.card_foto_sobre_nos img {
     width: 100%;
 }
 
@@ -798,16 +862,17 @@ body{
     background-color: #6c5eff;
 }
 
-.card_servicos h1{
+.card_servicos h1 {
     font-size: 50px;
     border: 0;
     width: 70%;
 }
 
-.card_servicos p{
+.card_servicos p {
     border: 0;
     width: 70%;
     font-size: 15px;
 }
+
 /* MURILO MURILO MURILO MURILO ********************************************/
 /* fim Sobre-Nos ////////////////////////////////////////////////////////////////////////////////////*/
