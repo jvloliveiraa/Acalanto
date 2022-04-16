@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acalanto - Graficos </title>
+    <link rel="stylesheet" href="../../public/CSS/Estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h3> Controle de Qualidade </h3>
+    <div class="card_grafico1"> 
+        <!-- Grafico para Controle de qualidade  -->
+      <div class="graficos">
+        <canvas id="myChart" ></canvas>
+      </div>
+      <div class="graficos">
+        <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+      <!-- Grafico 3 e 4  -->
+      <h3> Segundo Grafico </h3>
+      <div class="card_grafico2"> 
+    <div class="graficos">
+      <canvas id="myChart3"> </canvas>
+    </div>
+    <div class="graficos">
+      <canvas id="myChart4"> </canvas>
+    </div>
+      </div>
+</body>
+<script>
+
+    const labels = [
+      '0/1000',
+      '10/1000',
+      '20/1000',
+      '30/1000',
+      '40/1000',
+      '50/1000',
+    ];
+  
+    
+  
+    const data = {
+      labels: labels,
+ 
+      datasets: [{
+      
+        label: 'Controle de Qualidade',
+        backgroundColor: '#6c5eff',
+        borderColor: '#3a3383 ',
+        borderRadius: 10,
+     
+        data: [0.9, 0.7, 0.5, 0.3, 0.1],
+      }]
+    };
+  
+   
+    const config = {
+     
+      type: 'bar',
+      data: data,
+      options: {
+           scales: {
+        x: {
+            grid: {
+              offset: true
+            }
+        }
+      }
+    }
+ };
+
+     const config2 = {
+      type: 'line',
+      data: data,
+      options: {
+        scales: {
+        x: {
+            grid: {
+              offset: true
+            }
+        }
+      }
+      }
+    };
+
+
+    // Segundo Grafico
+
+    const labels3 = [
+      '0/1000',
+      '10/1000',
+      '20/1000',
+      '30/1000',
+      '40/1000',
+      '50/1000',
+    ];
+  
+    
+  
+    const data3 = {
+      labels: labels3,
+ 
+      datasets: [{
+      
+        label: 'Segundo Grafico',
+        backgroundColor: '#6c5eff',
+        borderColor: '#3a3383 ',
+        borderRadius: 10,
+     
+        data: [0.9, 0.7, 0.5, 0.3, 0.1],
+      }]
+    };
+  
+   
+    const config3 = {
+     
+      type: 'bar',
+      data: data3,
+      options: {
+           scales: {
+        x: {
+            grid: {
+              offset: true
+            }
+        }
+      }
+    }
+ };
+
+     const config4 = {
+      type: 'line',
+      data: data3,
+      options: {
+        scales: {
+        x: {
+            grid: {
+              offset: true
+            }
+        }
+      }
+      }
+    };
+
+  </script>
+
+  <script>
+    // GRAFICO 2 E 3
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    const myChart2 = new Chart(
+      document.getElementById('myChart2'),
+      config2
+    );
+
+     // GRAFICO 3 E  4
+    const myChart3 = new Chart(
+      document.getElementById('myChart3'),
+      config3
+    );
+     const myChart4 = new Chart(
+      document.getElementById('myChart4'),
+      config4
+    );
+
+
+  </script>
+   
+</html>
