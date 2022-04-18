@@ -7,6 +7,7 @@ h1 {
 h2 {
     font-family: Bahnschrift;
 }
+hxhsx
 
 h3 {
     font-family: Bahnschrift;
@@ -69,7 +70,7 @@ h3 {
 .header_Absolute .container img,
 .header_sobre .container img {
     width: 8%;
-    border: 5px solid rgb(58, 51, 131);
+    border: 5px solid #3a3383;
     padding: 1px;
     border-radius: 10px;
     cursor: pointer;
@@ -78,7 +79,7 @@ h3 {
 .header .container h1,
 .header_Absolute .container h1,
 .header_sobre .container h1 {
-    background-color: rgb(58, 51, 131);
+    background-color: #3a3383;
     color: rgb(107, 95, 255);
     width: 17%;
     font-size: 40px;
