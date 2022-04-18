@@ -82,8 +82,9 @@ li a {
     display: flex;
     justify-content: space-evenly;
     height: 100%;
-    width: 70%;
+    width: 100%;
     float: right;
+    border: 2px solid blue;
 }
 
 .refrigeradores{
