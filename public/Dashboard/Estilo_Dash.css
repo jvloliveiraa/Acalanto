@@ -19,7 +19,6 @@ body{
     justify-content: space-around;
     width: 40%;
     padding-top: 2%;
-
     /* border: red solid 10px; */
 }
 
@@ -78,72 +77,104 @@ li a {
 
 /* Inicio Meus Refrigeradores*/
 
-.banner {
+.banner .container{
+    margin: 0;
+    padding: 0%;
     display: flex;
     justify-content: space-evenly;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 80%;
     float: right;
-    border: 2px solid blue;
 }
 
 .refrigeradores{
     display: flex;
-    width: 500px;
-    border: red solid 10px;
-    align-content: stretch;
-    justify-content: space-evenly;
     flex-wrap: wrap;
-    flex-direction: column-reverse;
-    align-items: center;
-}
-
-.card_refri1, .card_refri2, .card_refri3, .card_refri4{
-    
-    background-color: #3a3383;
-    color: white ;
-    font-family: Bahnschrift;
-    font-size: 15px;
-    height: 130px;
-    width: 250px;
-    border-radius: 20px;
-    padding: 10px 20px 0px 20px;
+    justify-content: space-evenly;
+    width: 130vh;
+    height: 100vh;
 }
 
 .barra{
-    height: 2px;
+    height: 1px;
     background-color: white;
 }
 
+.card_refri{
+    height: 100px;
+    width: 350px;
+    border-radius: 20px;
+    padding: 0px 10px 20px 10px;
+    background-color: #3a3383;
+    font-family: Bahnschrift;
+    color: white;
+}
+
 .temperatura_atual{
-    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 50px;
+}
+
+.bola{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(60, 236, 113);
+    border-radius: 100px;
+}
+
+.grafico{
+    align-items: center;
+    background-color: #d8d8d8;
+    height: 60vh;
+    width: 150vh;
+}
+
+.grafico h2{
+    color: #6c5eff;
+    font-family: clarendon Blk Bt Black;
 }
 
 .card_metricas{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 98vh;
+    width: 150px;
+    border-radius: 20px;
+    background-color: #3a3383;
+    font-family: Bahnschrift;
+    font-size: 25px;
+    color: white;
+}
+
+.indicador{
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: white;
-    font-family: Bahnschrift;
-    background-color: #3a3383;
-    height: 600px;
-    width: 100px;
-    border-radius: 25px;
+    height: 100px;
+    width: 120px;
+    border-radius: 15px;
 }
 
-.perigo1{
-    justify-content: center;
-    background-color: green;
-    height: 30px;
-    width: 30px;
-    border-radius: 30px;
+.I{
+    background-color: rgb(60, 86, 236);
 }
 
-.perigo2{
-    justify-content: center;
-    background-color: red;
-    height: 30px;
-    width: 30px;
-    border-radius: 10px;
+.II{
+    background-color: #33bee0;
+}
+
+.III{
+    background-color: rgb(60, 236, 113);
+}
+
+.IIII{
+    background-color: rgb(236, 224, 60);
+}
+
+.IIIII{
+    background-color: rgb(236, 86, 60);
 }
