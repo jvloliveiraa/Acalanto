@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Estilo_Dash.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Acalanto - Meus Refrigeradores</title>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="container">
+            
+            <div class="card_logo">
+            <img onclick="go_index()" src="../../public/img/Logo_Acalanto_icon(2).png">
+            
+            <h2><a href="Index.html">Acalanto</a></h2>
+            </div>
+
+            <div class="card_perfil">
+                <img src="../../public/img/Logo_Acalanto_icon.png">
+                <li><a>Perfil</a></li>
+            </div>
+
+            <ul class="navbar">
+
+                <li><a href="MeusRefrigeradores.html">Meus Refrigeradores</a></li>
+                <li><a href="TodosRefrigeradores.html">Todos Refrigeradores</a></li>
+                <li><a href="NovoUsuario.html">Novo Usuario</a></li>
+                <li><a href="graficos.html">Graficos</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+     <!-- GRAFICOS -->
+     <div class="container2"> 
+              
+        <h3> Controle de Qualidade </h3>
+        <div class="card_grafico1"> 
+           <div class="graficos">
+            <canvas id="myChart" ></canvas>
+          </div>
+        </div> 
+        
+        <h3>BEBÊS em UTIs que RECEBERAM LEITE </h3>
+        <div class="card_grafico2"> 
+          <div class="graficos">
+          <canvas id="myChart2"></canvas>
+          </div>
+        </div>
+
+         <h3>QUEDA DE DOAÇÃO DE LEITE MATERNO - SÃO PAULO </h3>
+          <div class="card_grafico3"> 
+              <div class="graficos">
+                <canvas id="myChart3"> </canvas>
+              </div>
+          </div>
+
+          <!-- <h3> Temperatura em Relação ao ambiente </h3>
+          <div class="card_grafico4"> 
+              <div class="graficos">
+                <canvas id="myChart4"> </canvas>
+              </div>
+          </div> -->
+        
+     </div>
+</body>
+
+<!-- SCRIPT -->
+<script>
+
+//  Primeiro Grafico
+const labels = [
+  '0/1000',
+  '10/1000',
+  '20/1000',
+  '30/1000',
+  '40/1000',
+  '50/1000',
+];
+
+
+
+const data = {
+  labels: labels,
+
+  datasets: [{
+  
+    label: 'Controle de Qualidade',
+    backgroundColor: '#6c5eff',
+    borderColor: '#3a3383 ',
+    borderRadius: 10,
+ 
+    data: [0.9, 0.7, 0.5, 0.3, 0.1],
+  }]
+};
+
+
+const config = {
+ 
+  type: 'bar',
+  data: data,
+  options: {
+       scales: {
+    x: {
+        grid: {
+          offset: true
+        }
+    }
+  }
+}
+};
+
+  // Segundo Grafico
+  const labels2 =[
+    '2019',
+    '2020',
+    '2021'
+];
+
+
+
+const data2 = {
+    labels: labels,
+    datasets: [{
+        label: 'BEBÊS em UTIs que RECEBERAM LEITE',
+        backgroundColor: 'rgb(255, 0, 0)',
+        borderColor: 'rgb(255, 0, 0)',
+        data: [214000, 174000, 195000],
+    }
+]
+};
+
+
+const config2 = {
+ 
+  type: 'line',
+  data: data2,
+  options: {
+       scales: {
+    x: {
+        grid: {
+          offset: true
+        }
+    }
+  }
+}
+};
+
+  // Terceiro Grafico
+  const labels3 = [
+    '2019',
+    '2020',
+    '2021'
+];
+
+
+const data3 = {
+    labels: labels3,
+    datasets: [{
+        label: 'QUEDA na DOAÇÃO de LEITE MATERNO - SÃO PAULO',
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+         ],
+        data: [4600, 4038, 4400],
+    }
+]
+};
+
+const config3 = {
+ 
+  type: 'doughnut',
+  data: data3,
+  options: {
+       scales: {
+    x: {
+        grid: {
+          offset: true
+        }
+    }
+  }
+}
+};
+
+// QUARTO GRAFICO
+
+//     const labels4 = [
+//       '0/1000',
+//       '10/1000',
+//       '20/1000',
+//       '30/1000',
+//       '40/1000',
+//       '50/1000',
+//     ];
+
+
+
+//     const data4 = {
+//       labels: labels3,
+
+//       datasets: [{
+  
+//         label: 'Segundo Grafico',
+//         backgroundColor: '#6c5eff',
+//         borderColor: '#3a3383 ',
+//         borderRadius: 10,
+ 
+//         data: [0.9, 0.7, 0.5, 0.3, 0.1],
+//       }]
+//     };
+
+
+//     const config4 = {
+ 
+//       type: 'bar',
+//       data: data3,
+//       options: {
+//            scales: {
+//         x: {
+//             grid: {
+//               offset: true
+//             }
+//         }
+//       }
+//     }
+//  };
+
+</script>
+
+<script>
+// GRAFICO 1
+const myChart = new Chart(
+  document.getElementById('myChart'),
+  config
+);
+    // grafico 2
+const myChart2 = new Chart(
+  document.getElementById('myChart2'),
+  config2
+);
+
+ // GRAFICO 3 
+const myChart3 = new Chart(
+  document.getElementById('myChart3'),
+  config3
+);
+ // GRAFICO 4
+ const myChart4 = new Chart(
+  document.getElementById('myChart4'),
+  config4
+);
+
+
+</script>
+
+</html>
+
