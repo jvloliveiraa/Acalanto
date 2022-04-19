@@ -147,12 +147,17 @@ li a {
     border-radius: 20px;
     background-color: #3a3383;
     font-family: Bahnschrift;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
+}
+
+.numero{
+    font-size: 25px; 
 }
 
 .indicador{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     height: 100px;
