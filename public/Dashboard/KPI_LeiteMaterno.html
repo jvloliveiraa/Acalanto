@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI - Queda doação de leite materno</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="display: flex;">
+    <div>
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"> </canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+</body>
+
+<script>
+    // Gráfico de Baras
+    const labels = [
+        '2019',
+        '2020',
+        '2021'
+    ];
+
+    const labels2 = [
+        '2019',
+        '2020',
+        '2021'
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'BEBÊS em UTIs que RECEBERAM LEITE',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'rgb(255, 0, 0)',
+            data: [214000, 174000, 195000],
+        }
+    ]
+    };
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'QUEDA na DOAÇÃO de LEITE MATERNO - SÃO PAULO',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [4600, 4038, 4400],
+        }
+    ]
+    };
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+</script>
+
+
+</html>

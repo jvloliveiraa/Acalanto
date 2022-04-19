@@ -878,24 +878,3 @@ body {
 /* MURILO MURILO MURILO MURILO ********************************************/
 /* fim Sobre-Nos ////////////////////////////////////////////////////////////////////////////////////*/
 
-
-
-/* Comeco dos graficos  */
-
-.card_grafico1{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.card_grafico2{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 15px;
-}
-.graficos{
-    height: 40vh;
-    width: 40vw;
-}
-
