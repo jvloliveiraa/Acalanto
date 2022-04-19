@@ -240,8 +240,29 @@ li a {
     /* border: 2px solid rgb(46, 172, 67); */
     padding: 10px;
     justify-content: center; 
-    
+
 }
 
 
+/* COMECANDO A PAGINA DE ADICIONAR USUARIOS */
 
+.form{
+    display: flex;
+    height: 500px;
+    width: 50%;
+    border: 5px solid #3a3383;
+    margin-top: 30px;
+    border-radius: 40px;
+    background-color: #6c5eff;
+    justify-content: center;
+
+}
+
+.list_form h2{
+    color:white;
+}
+
+.form .list_form{
+    height: 80%;
+    width: 80%;
+}
