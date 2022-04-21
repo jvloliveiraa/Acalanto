@@ -45,7 +45,7 @@
         <br>
         <br>
         
-        <button onclick="cadastrarEmpresa()">Cadastrar</button>
+        <button type="button" onclick="cadastrarEmpresa()">Cadastrar</button>
 
         <br>
         <br>
@@ -66,7 +66,7 @@
         <br>
         <br>
         <br>
-        <button onclick="cadastrarUsuario()">Cadastrar Usuário</button>
+        <button type="button" onclick="cadastrarUsuario()">Cadastrar Usuário</button>
     </form>
 </body>
 </html>
@@ -130,7 +130,7 @@
         var sobrenomeUsuario = input_usuario_sobrenome.value;
         var emailUsuario = input_usuario_email.value;
         var senhaUsuario = input_usuario_senha.value;
-        var empresaUsuario = input_usuario_empresa.value;
+        var empresaUsuario = Number(input_usuario_empresa.value);
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrarUsuario", {
