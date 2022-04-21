@@ -132,12 +132,12 @@
 
 //  Primeiro Grafico
     const labels = [
-      '0/1000',
-      '10/1000',
-      '20/1000',
-      '30/1000',
-      '40/1000',
-      '50/1000',
+      '13:00',
+      '15:00',
+      '17:00',
+      '19:00',
+      '21:00',
+      '23:00',
     ];
   
     
@@ -147,19 +147,23 @@
  
       datasets: [{
       
-        label: 'Variação de temperatura de todos os Refrigeradores',
+        label: 'Temperatura',
         backgroundColor: '#6c5eff',
         borderColor: '#3a3383 ',
         borderRadius: 10,
-     
-        data: [0.9, 0.7, 0.5, 0.3, 0.1],
+        hoverBorderColor: 'black',
+        hoverBorderWidth: 20,
+
+        data: [30, 24, -10, -20, -31, -10],
+  
       }]
     };
   
-   
+
+    
     const config = {
      
-      type: 'bar',
+      type: 'line',
       data: data,
       options: {
            scales: {

@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="Estilo_Dash.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Acalanto - Meus Refrigeradores</title>
+    <title>Acalanto - Graficos </title>
 </head>
 
 <body>
@@ -37,42 +37,43 @@
             </ul>
         </div>
     </div>
-    <!-- GRAFICOS -->
 
-    <div class="banner">
+    <div class="banner"> 
         <div class="container">
-            <div class="tudo">
 
-                <div class="card_resul">
-                    <div class="graficos">
+            <div class="todos">
+               <h2> Dashboard de Produção  </h2>
+
+                <div class="grafico2">  
+                    <div class="sub_grafico">
                         <h3> Controle de Qualidade </h3>
-                        <canvas id="myChart"></canvas>
-                    </div>
-
-                    <div class="graficos">
-                        <h3>BEBÊS em UTIs que RECEBERAM LEITE </h3>
-                        <canvas id="myChart2"></canvas>
-                    </div>
-                </div>
-
-                
-                <div class="card_resul">
-                    <div class="graficos" style="height: 40%; width: 40%;">
-                        <h3>QUEDA DE DOAÇÃO DE LEITE MATERNO - SÃO PAULO </h3>
-                        <canvas id="myChart3"> </canvas>
-                    </div>
-
-                    <!-- <div class="graficos">
-                        <h3> Temperatura em Relação ao ambiente </h3>
+                        <canvas id="myChart"></canvas> 
+                    </div> <!-- Fechando a div sub-rafico -->
+                    <div class="sub_grafico">
+                        <h3> Valor das formulas por unidade </h3> 
                         <canvas id="myChart4"> </canvas>
-                    </div> -->
-                </div>
+                    </div> <!-- Fechando a div sub-grafico -->
+                </div> <!-- Fechando a div grafico -->
+
+                <div class="grafico2">  
+                    <div class="sub_grafico" style="width: 300px; height: 300px; margin-left: 50px;">
+                        <h3> Queda de doação de leite Materno </h3>
+                        <canvas id="myChart3"></canvas>
+                    </div> <!-- Fechando a div sub-rafico -->
+                    <div class="sub_grafico"> 
+                        <h3>Bebês em UTIs que receberam leite </h3>
+                        <canvas id="myChart2"></canvas>
+                    </div> <!-- Fechando a div sub-rafico -->
+                </div ><!-- Fechando a div grafico -->
+
+
             </div>
+
         </div>
     </div>
 </body>
+</html>
 
-<!-- SCRIPT -->
 <script>
 
     //  Primeiro Grafico
@@ -93,10 +94,17 @@
         datasets: [{
 
             label: 'Controle de Qualidade',
-            backgroundColor: '#6c5eff',
+            backgroundColor: [  'rgb(255, 99, 132)',
+                'rgb(75, 192, 192)',
+                'rgb(255, 205, 86)',
+                'rgb(201, 203, 207)',
+                'rgb(54, 162, 235)'
+
+            ],
             borderColor: '#3a3383 ',
             borderRadius: 10,
-
+            hoverBorderColor: 'black',
+            hoverBorderWidth: 3,
             data: [0.9, 0.7, 0.5, 0.3, 0.1],
         }]
     };
@@ -107,6 +115,7 @@
         type: 'bar',
         data: data,
         options: {
+            indexAxis: 'y',
             scales: {
                 x: {
                     grid: {
@@ -128,7 +137,7 @@
     const data2 = {
         labels: labels2,
         datasets: [{
-            label: 'Total de doaçoes leite',
+            label: 'Total de crianças',
             backgroundColor: [
                 'rgb(255, 99, 132)',
                 'rgb(75, 192, 192)',
@@ -137,7 +146,9 @@
                 'rgb(54, 162, 235)',
             ],
             borderRadius: 10,
-            data: [214000, 174000, 195000],
+            hoverBorderColor: 'black',
+            hoverBorderWidth: 5,
+            data: [214000, 174000, 145000],
         }
         ]
     };
@@ -175,7 +186,10 @@
                 'rgb(54, 162, 235)',
                 'rgb(255, 205, 86)'
             ],
-            data: [4600, 4038, 4400],
+            hoverOffset: 50,
+            hoverBorderWidth: 8,
+            borderColor: 'black',
+            data: [4600, 4038, 3000],
         }
         ]
     };
@@ -197,46 +211,48 @@
 
     // QUARTO GRAFICO
 
-    // const labels4 = [
-    //     '0/1000',
-    //     '10/1000',
-    //     '20/1000',
-    //     '30/1000',
-    //     '40/1000',
-    //     '50/1000',
-    // ];
+    const labels4 = [
+        'Nan Comfor',
+        'Enfamil',
+        'Aptamil',
+        'Nestogeno',
+        'LC-Pufas',
+        'Aptamil pro',
+    ];
 
 
 
-    // const data4 = {
-    //     labels: labels4,
+    const data4 = {
+        labels: labels4,
 
-    //     datasets: [{
+        datasets: [{
 
-    //         label: 'Segundo Grafico',
-    //         backgroundColor: '#6c5eff',
-    //         borderColor: '#3a3383 ',
-    //         borderRadius: 10,
+            label: 'Valor',
+            backgroundColor: 'black',
+            borderColor: '#6c5eff',
+            borderRadius: 10,
+            hoverBorderColor: 'black',
+            hoverBorderWidth: 10,
+            data: [60, 120, 70, 32, 100, 160],
+        }]
+    };
 
-    //         data: [0.9, 0.7, 0.5, 0.3, 0.1],
-    //     }]
-    // };
 
+    const config4 = {
 
-    // const config4 = {
-
-    //     type: 'bar',
-    //     data: data4,
-    //     options: {
-    //         scales: {
-    //             x: {
-    //                 grid: {
-    //                     offset: true
-    //                 }
-    //             }
-    //         }
-    //     }
-    // };
+  
+      type: 'line',
+        data: data4,
+        options: {
+            scales: {
+                x: {
+                    grid: {
+                        offset: true
+                    }
+                }
+            }
+        }
+    };
 
 </script>
 
@@ -258,10 +274,10 @@
         config3
     );
     // GRAFICO 4
-    // const myChart4 = new Chart(
-    //     document.getElementById('myChart4'),
-    //     config4
-    // );
+    const myChart4 = new Chart(
+        document.getElementById('myChart4'),
+        config4
+    );
 
 
 </script>

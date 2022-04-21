@@ -231,22 +231,39 @@ li a {
 }
 
 /* GRAFICOS */
-
-.graficos{
-    height: 100%;
-    width: 90%;
+.h2{
+    font-family: Bahnschrift;
+}
+.h3{
+    font-family: Bahnschrift;
 }
 
-.card_resul{
+.todos{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    /* border: 2px solid firebrick; */
+    height: 800px;
+    width: 1000px;
+    align-items: center;
+}
+
+.grafico2{
+    display: flex;
     height: 100%;
-    width: 100%;
-    /* border: 2px solid rgb(46, 172, 67); */
-    padding: 10px;
-    justify-content: center; 
+    width:  100%;
+    background-color: white;
+    justify-content: space-between;
 
 }
+
+.grafico2 .sub_grafico{
+    height: 90%;
+    width: 48%;
+
+}
+
+
+
 
 
 /* COMECANDO A PAGINA DE ADICIONAR USUARIOS */
