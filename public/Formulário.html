@@ -16,59 +16,69 @@
 </head>
 
 <body>
-    <form action="https://formspree.io/f/xpzbyjol" method="POST" id="div_label_cadastro" class="label">
-        <label> Empresa </label>
-        <h4> Nome da Empresa: </h4>
-        <input name="NomeEmpresa" type="text" id="input_cadastro_empresa" required>
-        <h4> CNPJ: </h4>
-        <input name="CNPJ" type="text" id="input_cadastro_cnpj" required>
-        <label> Endereço </label>
-        <h4> Logradouro: </h4>
-        <input name="Rua" type="text" id="input_cadastro_logradouro" required>
-        <h4> Bairro: </h4>
-        <input name="Bairro" type="text" id="input_cadastro_bairro" required>
-        <h4> CEP: </h4>
-        <input name="CEP" type="text" id="input_cadastro_cep" required>
-        <h4> Cidade: </h4>
-        <input name="Cidade" type="text" id="input_cadastro_cidade" required>
-        <h4> Estado: </h4>
-        <select id="select_estado">
-            <option name="Estado" value="SP"> São Paulo </option>
-        </select>
-        <h4> Complemento: </h4>
-        <input name="Complemento" type="text" id="input_cadastro_complemento" required>
-        <h4> Telefone: </h4>
-        <input name="Telefone" type="text" id="input_cadastro_telefone" required>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        
-        <button type="button" onclick="cadastrarEmpresa()">Cadastrar</button>
+    <div class="banner_formulario">
+        <div class="container">
+            <form id="div_label_cadastro" class="label">
+                <label> Empresa </label>
+                <h4> Nome da Empresa: </h4>
+                <input name="NomeEmpresa" type="text" id="input_cadastro_empresa" required>
+                <h4> CNPJ: </h4>
+                <input name="CNPJ" type="text" id="input_cadastro_cnpj" required>
+                <h4> Logradouro: </h4>
+                <input name="Rua" type="text" id="input_cadastro_logradouro" required>
+                <h4> Bairro: </h4>
+                <input name="Bairro" type="text" id="input_cadastro_bairro" required>
+                <h4> CEP: </h4>
+                <input name="CEP" type="text" id="input_cadastro_cep" required>
+                <h4> Cidade: </h4>
+                <input name="Cidade" type="text" id="input_cadastro_cidade" required>
+                <h4> Estado: </h4>
+                <select id="select_estado">
+                    <option name="Estado" value="SP"> São Paulo </option>
+                    <option name="Estado" value="RJ"> Rio de Janeiro </option>
+                    <option name="Estado" value="SC"> Santa Catarina </option>
+                    <option name="Estado" value="RS"> Rio Grande do Sul </option>
+                </select>
+                <h4> Complemento: </h4>
+                <input name="Complemento" type="text" id="input_cadastro_complemento" required>
+                <h4> Telefone: </h4>
+                <input name="Telefone" type="text" id="input_cadastro_telefone" required>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <label> Usuário </label>
-        <h4> Nome: </h4>
-        <input name="NomeUsuário" type="text" id="input_usuario_nome" required>
-        <h4> Sobrenome: </h4>
-        <input name="SobrenomeUsuário" type="text" id="input_usuario_sobrenome" required>
-        <h4> Email: </h4>
-        <input name="Email" type="text" id="input_usuario_email" required>
-        <h4> Senha: </h4>
-        <input name="Senha" type="text" id="input_usuario_senha" required>
-        <h4> Empresa: </h4>
-        <input name="UsuarioEmpresa" type="text" id="input_usuario_empresa" required>
-        <br>
-        <br>
-        <br>
-        <button type="button" onclick="cadastrarUsuario()">Cadastrar Usuário</button>
-    </form>
+                <button type="button" onclick="cadastrarEmpresa()" class="btn">Cadastrar Empresa</button>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <label> Usuário </label>
+                <h4> Nome: </h4>
+                <input name="NomeUsuário" type="text" id="input_usuario_nome" required>
+                <h4> Sobrenome: </h4>
+                <input name="SobrenomeUsuário" type="text" id="input_usuario_sobrenome" required>
+                <h4> Email: </h4>
+                <input name="Email" type="text" id="input_usuario_email" required>
+                <h4> Senha: </h4>
+                <input name="Senha" type="text" id="input_usuario_senha" required>
+                <h4> Empresa: </h4>
+                <input name="UsuarioEmpresa" type="text" id="input_usuario_empresa" required>
+                <br>
+                <br>
+                <br>
+                <button type="button" onclick="cadastrarUsuario()" class="btn">Cadastrar Usuário</button>
+                <br>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
 
 <script>

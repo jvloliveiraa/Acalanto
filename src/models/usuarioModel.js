@@ -26,9 +26,9 @@ function cadastrar(nomeEmpresa, cnpjEmpresa, logradouroEmpresa, bairroEmpresa, c
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    INSERT INTO empresa VALUES (null, '${nomeEmpresa}', '${cnpjEmpresa}', '${cepEmpresa}', 
-    '${logradouroEmpresa}', '${bairroEmpresa}', '${cidadeEmpresa}', '${estadoEmpresa}',
-    '${telefoneEmpresa}','${complementoEmpresa}');
+    INSERT INTO empresa VALUES (null, '${nomeEmpresa}', '${cnpjEmpresa}', '${cepEmpresa}',
+    '${estadoEmpresa}',  '${cidadeEmpresa}', '${bairroEmpresa}', '${logradouroEmpresa}',
+    '${complementoEmpresa}', '${telefoneEmpresa}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

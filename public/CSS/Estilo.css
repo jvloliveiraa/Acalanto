@@ -832,6 +832,7 @@ body {
 
 .card_sobre p {
     border: 0;
+    font-size: 30px;
     width: 70%;
 }
 
@@ -872,9 +873,38 @@ body {
 .card_servicos p {
     border: 0;
     width: 70%;
-    font-size: 15px;
+    font-size: 30px;
 }
 
 /* MURILO MURILO MURILO MURILO ********************************************/
 /* fim Sobre-Nos ////////////////////////////////////////////////////////////////////////////////////*/
 
+/* Formulário */
+
+.banner_formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3a3383;
+}
+
+.banner_formulario .container{
+    width: 50%;
+    border: 3px solid #3a3383;
+    background-color: white;
+    border-radius: 40px;
+}
+
+.banner_formulario .container .label h4{
+    color: #6c5eff;
+}
+
+.banner_formulario .container .label label{
+    color: #3a3383;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.banner_formulario .container .label .btn{
+    width: 30%;
+}
