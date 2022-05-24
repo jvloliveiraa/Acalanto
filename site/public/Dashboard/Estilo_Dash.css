@@ -1,0 +1,467 @@
+body {
+  margin: 0;
+}
+
+.aviso {
+  color: rgb(231, 18, 18);
+  font-family: Bahnschrift;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6c5eff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: #3a3383;
+}
+
+.btn {
+  font-family: Bahnschrift;
+  background-color: #6c5eff;
+  color: rgb(210, 180, 227);
+  height: 5%;
+  width: 40%;
+  font-size: 19px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+
+  transition: color 0.01s, background-color 0.01s, font-weight 0.01s,
+    border-bottom 0.05s;
+}
+
+.btn:hover {
+  color: white;
+  font-weight: 1000;
+  border-bottom: #1e0f77 solid 5px;
+}
+
+/* Inicio Header*/
+
+.header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3a3383;
+  height: 100vh;
+  width: 18%;
+  position: fixed;
+}
+
+.divisao{
+  height: 1px;
+  width: 100%;
+  background-color: #6c5eff;
+}
+.estar{
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.agora{
+  font-weight: 1000;
+  color: #ffffff;
+}
+
+hr{
+  width: 100%;
+}
+
+.card_logo {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  padding-top: 2%;
+  /* border: red solid 10px; */
+}
+
+h2 a {
+  text-decoration: none;
+  color: #6c5eff;
+  font-family: clarendon Blk Bt Black;
+  font-size: 35px;
+}
+
+.header .container img {
+  width: 70px;
+  height: 70px;
+}
+
+.card_perfil {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30%;
+  width: 70%;
+  border-radius: 20px;
+  background-color: #6c5eff;
+  list-style: none;
+}
+
+.header .container .card_perfil img {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 90px;
+  border: #3a3383 solid 10px;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  padding: 0;
+  justify-content: space-evenly;
+  height: 45vh;
+  align-items: center;
+
+  /* border: red solid 10px; */
+}
+
+li a {
+  text-decoration: none;
+  color: #6c5eff;
+  font-family: Bahnschrift;
+  font-size: 20px;
+}
+
+/* Fim Header*/
+
+/* Inicio Meus Refrigeradores ////////////////////////////////////////////////////////*/
+
+.banner .container {
+  margin: 0;
+  padding-right: 1%;
+  display: flex;
+  height: 100vh;
+  width: 82%;
+  float: right;
+  align-items: center;
+  /* background-color: #efefef; */
+  background-color: #c2c2c2;
+}
+
+.refrigeradores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5%;
+  width: 90%;
+  height: 90%;
+  /* background-color: #c2c2c2; */
+  background-color: #efefef;
+  border-radius: 20px;
+}
+
+.barra {
+  height: 1px;
+  background-color: white;
+}
+
+.card_refri {
+  height: 20%;
+  width: 20%;
+  border-radius: 20px;
+  padding: 0px 10px 20px 10px;
+  background-color: #6c5eff;
+  font-family: Bahnschrift;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.01s, font-size 0.01s;
+}
+
+.card_refri:hover {
+  background-color: #a186ff;
+  font-size: large;
+}
+
+.temperatura_atual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 50px;
+}
+
+.bola {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(60, 236, 113);
+  border-radius: 100px;
+}
+
+.card_grafico {
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  width: 80%;
+}
+
+.card_metricas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 95%;
+  width: 15%;
+  border-radius: 20px;
+  background-color: #6c5eff;
+}
+
+.numero {
+  font-size: 25px;
+}
+
+.indicador {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 16%;
+  width: 80%;
+  color: white;
+  font-family: Bahnschrift;
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+.I {
+  background-color: rgb(50, 52, 163);
+}
+
+.II {
+  background-color: #33bee0;
+}
+
+.III {
+  background-color: rgb(60, 236, 113);
+}
+
+.IIII {
+  background-color: rgb(238, 183, 30);
+}
+
+.IIIII {
+  background-color: rgb(236, 86, 60);
+}
+
+/* COMECANDO A PAGINA DE ADICIONAR USUARIOS //////////////////////////////////////////*/
+
+.banner_NU .container_NU{
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  width: 82%;
+  float: right;
+  align-items: center;
+  justify-content: center;
+  background-color: #1c0a5a;
+  background-image: linear-gradient( 200deg, #3a3383, #5c53bb, #6c5eff ); 
+}
+
+.form {
+  display: flex;
+  height: 90%;
+  width: 40%;
+  border-radius: 20px;
+  background-color: #efefef;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Bahnschrift;
+  font-size: 18px;
+  align-self: center;
+}
+
+h4{
+  color: #3a3383;
+}
+
+.list_form h2 {
+  color: #6c5eff;
+  font-family: Bahnschrift;
+}
+
+.form .list_form {
+  height: 88%;
+  width: 80%;
+}
+
+.form .btn {
+  font-family: Bahnschrift;
+  background-color: #6c5eff;
+  color: white;
+  height: 10%;
+  width: 50%;
+}
+
+
+input {
+  width: 99%;
+  border: 0;
+  border-bottom: 2px solid #3a3383;
+  outline: none;
+  /* Remove as bordas ao clicar na input */
+  min-width: 180px;
+  /* O mínimo da largura que pode chegar o input é 180 */
+  font-size: 16px;
+  background-color: transparent;
+}
+
+select {
+  border-radius: 5px;
+  height: 35px;
+  background-color: rgb(200, 214, 214);
+}
+
+/* PAGINA RELATORIO ////////////////////////////////////////////////////////////////////////////////////////*/
+.banner_re .container_re{
+  margin: 0;
+  display: flex;
+  height: 200vh;
+  width: 82%;
+  float: right;
+  align-items: center;
+  justify-content: center;
+  background-color: #c2c2c2;
+}
+
+.form_re {
+  display: flex;
+  height: 90%;
+  width: 70%;
+  border-radius: 20px;
+  background-color: #efefef;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Bahnschrift;
+  font-size: 18px;
+  align-self: center;
+}
+
+h4{
+  color: #3a3383;
+}
+
+.list_form_re h2 {
+  color: #6c5eff;
+  font-family: Bahnschrift;
+}
+
+.list_form_re {
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  flex-direction: column;
+  height: 90%;
+  width: 70%;
+}
+
+.form .btn {
+  font-family: Bahnschrift;
+  background-color: #6c5eff;
+  align-self: center;
+  color: white;
+  height: 10%;
+  width: 50%;
+}
+
+input {
+  width: 99%;
+  border: 0;
+  border-bottom: 2px solid #3a3383;
+  outline: none;
+  /* Remove as bordas ao clicar na input */
+  min-width: 180px;
+  /* O mínimo da largura que pode chegar o input é 180 */
+  font-size: 16px;
+  background-color: transparent;
+}
+
+select{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  border-radius: 5px;
+  height: 35px;
+  background-color: #6c5eff;
+}
+
+.txt_area{
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #3a3383;
+}
+
+/* Inicicio coddigo dos graficos //////////////////////////////////////////////////////////////////////////////*/
+
+.banner_graficos .container_graficos {
+  margin: 0;
+  /* padding: 1%; */
+  display: flex;
+  width: 82%;
+  height: 100vh;
+  float: right;
+  align-items: center;
+  justify-content: center;
+  background-color: #c2c2c2;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 90%;
+  /* background-color: #c2c2c2; */
+  background-color: #efefef;
+  border-radius: 20px;
+}
+
+.h2 {
+  font-family: Bahnschrift;
+  color: #6c5eff
+}
+.h3 {
+  font-family: Bahnschrift;
+}
+
+.grafico {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 55px;
+  font-family: Bahnschrift;
+}
+
+.grafico .sub_grafico {
+  height: 80%;
+  width: 70%;
+  /* border: 2px solid  black; */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 2em #1c0a5a;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+
+#formularioHeader{
+  display: none;
+}

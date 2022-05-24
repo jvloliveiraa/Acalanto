@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="Estilo_Dash.css" />
+  <script src="../JavaScript/Funcionalidade.js"></script>
+  <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+  <title>Acalanto - Meus Refrigeradores</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+  </style>
+
+</head>
+
+<body onload="validarSessao(), autenticarSensor(sessionStorage.FK_EMPRESA),
+autenticarRefrigerador(sessionStorage.FK_EMPRESA), atualizacaoPeriodica()">
+
+  <div class="header">
+    <div class="container">
+      <div class="card_logo">
+        <img src="../img/Logo_Acalanto_icon3.png" />
+
+        <h2><a href="MeusRefrigeradores.html">Acalanto</a></h2>
+      </div>
+
+      <div class="card_perfil">
+        <img src="../img/Logo_Acalanto_icon.png" />
+        <h4 id="perfil"></h4>
+      </div>
+
+      <ul class="navbar">
+        <li><a href="MeusRefrigeradores.html" class="agora">Refrigeradores</a></li>
+        <div class="divisao estar"></div>
+        <li><a href="NovoUsuario.html">Novo Usuario</a></li>
+        <div class="divisao"></div>
+        <li><a href="Relatorio.html">Relatório</a></li>
+        <div class="divisao"></div>
+        <li><a href="graficos.html">Gráficos</a></li>
+        <div class="divisao"></div>
+        <li><a id="formularioHeader" href="FormularioDashboard.html">Formulario</a></li>
+      </ul>
+      <button onclick="limparSessao()" class="btn">Sair</button>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="container">
+
+      <div class="refrigeradores">
+
+        <div onclick="obterDadosGrafico(sessionStorage.FK_SENSOR1)" class="card_refri" id="card_1">
+          <p>Refrigerador 1</p>
+          <div class="barra"></div>
+          <div id="refrigerador1" class="temperatura_atual">
+            0°
+            <span class="bola"></span>
+          </div>
+        </div>
+
+        <div onclick="obterDadosGrafico(sessionStorage.FK_SENSOR2)" class="card_refri" id="card_2">
+          <p>Refrigerador 2</p>
+          <div class="barra"></div>
+          <div id="refrigerador2" class="temperatura_atual">
+            0°
+            <span class="bola"></span>
+          </div>
+        </div>
+
+        <div onclick="obterDadosGrafico(sessionStorage.FK_SENSOR3)" class="card_refri" id="card_3">
+          <p>Refrigerador 3</p>
+          <div class="barra"></div>
+          <div id="refrigerador3" class="temperatura_atual">
+            0°
+            <span class="bola"></span>
+          </div>
+        </div>
+
+        <div onclick="obterDadosGrafico(sessionStorage.FK_SENSOR4)" class="card_refri" id="card_4">
+          <p>Refrigerador 4</p>
+          <div class="barra"></div>
+          <div id="refrigerador4" class="temperatura_atual">
+            0°
+            <span class="bola"></span>
+          </div>
+        </div>
+
+        <div class="card_grafico">
+          <div>
+            <canvas id="Chart_meus_refrigeradores"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="card_metricas">
+        <div class="indicador I">
+          Perigo Frio <span class="numero">-25°C</span>
+        </div>
+        <div class="indicador II">
+          Alerta Frio <span class="numero">-22°C</span>
+        </div>
+        <div class="indicador III">
+          Ideal <span class="numero">-20°C</span>
+        </div>
+        <div class="indicador IIII">
+          Alerta Quente <span class="numero">-19°C</span>
+        </div>
+        <div class="indicador IIIII">
+          Perigo Quente <span class="numero">-15°C</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+  function atualizacaoPeriodica() {
+    obterdados(sessionStorage.FK_SENSOR1);
+    obterdados(sessionStorage.FK_SENSOR2);
+    obterdados(sessionStorage.FK_SENSOR3);
+    obterdados(sessionStorage.FK_SENSOR4);
+
+    setTimeout(atualizacaoPeriodica, 2000);
+  }
+
+  function obterdados(idSensor) {
+    fetch(`/medidas/tempo-real/${idSensor}`)
+      .then(resposta => {
+
+        if (resposta.ok) {
+          resposta.json().then(resposta => {
+
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+            var dados = {
+              temperatura: resposta[0].temperaturaAtual,
+            }
+
+            alertar(resposta[0].temperaturaAtual, idSensor);
+          });
+        } else {
+
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+      });
+
+  }
+
+  var contadorRefrigerador1 = 0;
+  var contadorRefrigerador2 = 0;
+  var contadorRefrigerador3 = 0;
+  var contadorRefrigerador4 = 0;
+
+  function alertar(temperatura, idSensor) {
+    var limites = {
+      muito_quente: 25,
+      quente: 22,
+      ideal: 20,
+      frio: 19,
+      muito_frio: 15
+    };
+
+    var classe_temperatura = 'card_refri';
+
+    if (temperatura >= limites.muito_quente) {
+      classe_temperatura = 'card_refri I';
+      window.alert("Refrigerador está completamente congelado");
+      if(idSensor == sessionStorage.FK_SENSOR1){
+        contadorRefrigerador1++;
+        if(contadorRefrigerador1 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else if(idSensor == sessionStorage.FK_SENSOR2){
+        contadorRefrigerador2++;
+        if(contadorRefrigerador2 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else if(idSensor == sessionStorage.FK_SENSOR3){
+        contadorRefrigerador3++;
+        if(contadorRefrigerador3 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else {
+        contadorRefrigerador4++;
+        if(contadorRefrigerador4 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+    }
+    else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
+      classe_temperatura = 'card_refri II';
+      window.alert("Refrigerador está ficando muito frio");
+      if(idSensor == sessionStorage.FK_SENSOR1){
+        contadorRefrigerador1++;
+        if(contadorRefrigerador1 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else if(idSensor == sessionStorage.FK_SENSOR2){
+        contadorRefrigerador2++;
+        if(contadorRefrigerador2 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else if(idSensor == sessionStorage.FK_SENSOR3){
+        contadorRefrigerador3++;
+        if(contadorRefrigerador3 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else {
+        contadorRefrigerador4++;
+        if(contadorRefrigerador4 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+    }
+    else if (temperatura < limites.quente && temperatura > limites.frio) {
+      classe_temperatura = 'card_refri III';
+    }
+    else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
+      classe_temperatura = 'card_refri IIII';
+      window.alert("Refrigerador está ficando quente");
+      if(idSensor == sessionStorage.FK_SENSOR1){
+        contadorRefrigerador1++;
+        if(contadorRefrigerador1 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else if(idSensor == sessionStorage.FK_SENSOR2){
+        contadorRefrigerador2++;
+        if(contadorRefrigerador2 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else if(idSensor == sessionStorage.FK_SENSOR3){
+        contadorRefrigerador3++;
+        if(contadorRefrigerador3 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else {
+        contadorRefrigerador4++;
+        if(contadorRefrigerador4 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+    }
+    else if (temperatura <= limites.muito_frio) {
+      classe_temperatura = 'card_refri IIIII';
+      window.alert("Refrigerador está completamente quente");
+      if(idSensor == sessionStorage.FK_SENSOR1){
+        contadorRefrigerador1++;
+        if(contadorRefrigerador1 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else if(idSensor == sessionStorage.FK_SENSOR2){
+        contadorRefrigerador2++;
+        if(contadorRefrigerador2 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else if(idSensor == sessionStorage.FK_SENSOR3){
+        contadorRefrigerador3++;
+        if(contadorRefrigerador3 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+      else {
+        contadorRefrigerador4++;
+        if(contadorRefrigerador4 >= 10){
+          alert("Refrigerador com defeito")
+        }
+      }
+    }
+
+    var card;
+
+    if (idSensor == sessionStorage.FK_SENSOR1) {
+      refrigerador1.innerHTML = "- " + temperatura + "°C";
+      card = card_1;
+    } else if (idSensor == sessionStorage.FK_SENSOR2) {
+      refrigerador2.innerHTML = "- " + temperatura + "°C";
+      card = card_2
+    } else if (idSensor == sessionStorage.FK_SENSOR3) {
+      refrigerador3.innerHTML = "- " + temperatura + "°C";
+      card = card_3
+    } else if (idSensor == sessionStorage.FK_SENSOR4) {
+      refrigerador4.innerHTML = "- " + temperatura + "°C";
+      card = card_4
+    }
+
+    // alterando
+    card.className = classe_temperatura;
+
+  }
+
+</script>
+
+<script>
+  
+  function autenticarSensor(empresa) {
+    fetch(`/medidas/sensor/${empresa}`)
+      .then(resposta => {
+
+        if (resposta.ok) {
+          resposta.json().then(resposta => {
+
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+            var dados = {
+              sensor: resposta[0].idSensor,
+            }
+
+            sessionStorage.FK_SENSOR1 = resposta[0].idSensor;
+            sessionStorage.FK_SENSOR2 = resposta[1].idSensor;
+            sessionStorage.FK_SENSOR3 = resposta[2].idSensor;
+            sessionStorage.FK_SENSOR4 = resposta[3].idSensor;
+
+          });
+        } else {
+
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+      });
+
+  }
+
+    
+  function autenticarRefrigerador(empresa) {
+    fetch(`/medidas/refrigerador/${empresa}`)
+      .then(resposta => {
+
+        if (resposta.ok) {
+          resposta.json().then(resposta => {
+
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+            var dados = {
+              sensor: resposta[0].idRefrigerador,
+            }
+
+            sessionStorage.FK_REFRIGERADOR1 = resposta[0].idRefrigerador;
+            sessionStorage.FK_REFRIGERADOR2 = resposta[1].idRefrigerador;
+            sessionStorage.FK_REFRIGERADOR3 = resposta[2].idRefrigerador;
+            sessionStorage.FK_REFRIGERADOR4 = resposta[3].idRefrigerador;
+
+          });
+        } else {
+
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+      });
+
+  }
+
+</script>
+
+<!-- Tentiva de ligar graficos -->
+<script>
+
+  let proximaAtualizacao;
+
+  // altere aqui como os dados serão exibidos
+  // e como são recuperados do BackEnd
+  function obterDadosGrafico(idSensor) {
+      if (proximaAtualizacao != undefined) {
+          clearTimeout(proximaAtualizacao);
+      }
+
+      fetch(`/medidas/ultimas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+          if (response.ok) {
+              response.json().then(function (resposta) {
+                  console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                  resposta.reverse();
+
+                  plotarGrafico(resposta, idSensor);
+              });
+          } else {
+              console.error('Nenhum dado encontrado ou erro na API');
+          }
+      })
+          .catch(function (error) {
+              console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+          });
+
+  }
+
+  // só altere aqui se souber o que está fazendo!
+  function plotarGrafico(resposta, idSensor) {
+      console.log('iniciando plotagem do gráfico...');
+
+      var dados = {
+          labels: [],
+          datasets: [
+              {
+                  yAxisID: 'y-temperatura',
+                  label: 'Temperatura',
+                  borderColor: '#FFF',
+                  backgroundColor: '#32b9cd8f',
+                  fill: true,
+                  data: []
+              }
+          ]
+      };
+
+      for (i = 0; i < resposta.length; i++) {
+          var registro = resposta[i];
+          dados.labels.push(registro.momento_grafico);
+          dados.datasets[0].data.push(registro.temperaturaAtual);
+      }
+
+      console.log(JSON.stringify(dados));
+
+      var ctx = Chart_meus_refrigeradores.getContext('2d');
+      window.grafico_linha = Chart.Line(ctx, {
+          data: dados,
+          //Configurações do gráfico
+          options: {
+              responsive: true,
+              animation: { duration: 500 },
+              hoverMode: 'index',
+              stacked: false,
+              title: {
+                  display: true,
+                  text: `Histórico recente de temperatura`
+              },
+              scales: {
+                  yAxes: [{
+                      type: 'linear',
+                      display: true,
+                      position: 'left',
+                      id: 'y-temperatura',
+                      ticks: {
+                          beginAtZero: true,
+                          max: 100,
+                          min: 0
+                      }
+                  }]
+              }
+          }
+      });
+
+      //Atualiza os dados de 5 em 5 segundos
+      setTimeout(() => atualizarGrafico(idSensor, dados), 2000);
+  }
+
+  // só mexer se quiser alterar o tempo de atualização
+  // ou se souber o que está fazendo!
+  function atualizarGrafico(idSensor, dados) {
+
+      fetch(`/medidas/tempo-real/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+          if (response.ok) {
+              response.json().then(function (novoRegistro) {
+
+                  console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                  console.log(`Dados atuais do gráfico: ${dados}`);
+
+                  // tirando e colocando valores no gráfico
+                  dados.labels.shift(); // apagar o primeiro
+                  console.log(novoRegistro[0].momento_grafico)
+                  dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+                  dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                  dados.datasets[0].data.push(novoRegistro[0].temperaturaAtual); // incluir uma nova medida de umidade
+
+                  window.grafico_linha.update();
+
+                  proximaAtualizacao = setTimeout(() => atualizarGrafico(idSensor, dados), 2000);
+              });
+          } else {
+              console.error('Nenhum dado encontrado ou erro na API');
+              proximaAtualizacao = setTimeout(() => atualizarGrafico(idSensor, dados), 2000);
+          }
+      })
+          .catch(function (error) {
+              console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+          });
+
+  }
+</script>

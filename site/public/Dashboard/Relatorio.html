@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="Estilo_Dash.css" />
+  <script src="../JavaScript/Funcionalidade.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Acalanto - Meus Refrigeradores</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+  </style>
+
+</head>
+
+<body>
+  <!-- <body onload="validarSessao()"> -->
+  <div class="header">
+    <div class="container">
+      <div class="card_logo">
+        <img src="../img/Logo_Acalanto_icon3.png" />
+
+        <h2><a href="MeusRefrigeradores.html">Acalanto</a></h2>
+      </div>
+
+      <div class="card_perfil">
+        <img src="../img/Logo_Acalanto_icon.png" />
+        <h4 id="perfil"></h4>
+      </div>
+
+      <ul class="navbar">
+        <li><a href="MeusRefrigeradores.html">Refrigeradores</a></li>
+        <div class="divisao"></div>
+        <li><a href="NovoUsuario.html">Novo Usuario</a></li>
+        <div class="divisao"></div>
+        <li><a href="Relatorio.html" class="agora">Relatório</a></li>
+        <div class="divisao estar"></div>
+        <li><a href="graficos.html">Gráficos</a></li>
+        <div class="divisao"></div>
+        <li><a id="formularioHeader" href="FormularioDashboard.html">Formulario</a></li>
+      </ul>
+      <button onclick="limparSessao()" class="btn">Sair</button>
+    </div>
+  </div>
+
+
+  <div class="banner_re">
+    <div class="container_re">
+      <div class="form_re">
+        <label class="list_form_re">
+          <h2>Relatorio Diário:</h2>
+
+          <h4>Quantidade(L) do estoque de leite:</h4>
+          <select id="select_qtd_estoque">
+            <option value="0">0L</option>
+            <option value="10">10L</option>
+            <option value="20">20L</option>
+            <option value="30">30L</option>
+            <option value="40">40L</option>
+          </select>
+
+          <h4>Quantidade(L) de doações de leite:</h4>
+          <select id="select_qtd_doacao">
+            <option value="0">0L</option>
+            <option value="10">10L</option>
+            <option value="20">20L</option>
+            <option value="30">30L</option>
+            <option value="40">40L</option>
+          </select>
+
+          <h4>Quantidade(L) de Desperdicio:</h4>
+          <select id="select_qtd_desperdicio">
+            <option value="0">0L</option>
+            <option value="5">5L</option>
+            <option value="10">10L</option>
+            <option value="15">15L</option>
+            <option value="20">20L</option>
+          </select>
+
+          <h4>Observação:</h4>
+          <textarea name="mensagem" id="input_observacao" cols="30" rows="10" class="txt_area"></textarea><br><br>
+
+          <button onclick="cadastrarRelatorio()" class="btn">Reportar</button>
+
+        </label>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function cadastrarRelatorio() {
+    var qtd_estoque = Number(select_qtd_estoque.value);
+    var qtd_doacao = Number(select_qtd_doacao.value);
+    var qtd_desperdicio = Number(select_qtd_desperdicio.value);
+    var observacao = input_observacao.value;
+    var fkUsuario = sessionStorage.ID_USUARIO;
+    var fkEmpresa = sessionStorage.FK_EMPRESA;
+    var fkRefrigerador = sessionStorage.FK_REFRIGERADOR1;
+
+    fetch("/usuarios/cadastrarRelatorio", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        qtd_estoqueServer: qtd_estoque,
+        qtd_doacaoServer: qtd_doacao,
+        qtd_desperdicioServer: qtd_desperdicio,
+        observacaoServer: observacao,
+        fkUsuarioServer: fkUsuario,
+        fkEmpresaServer: fkEmpresa,
+        fkRefrigeradorServer: fkRefrigerador
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          alert("cadastro realizado");
+        } else {
+          alert(
+            "Não foi possível realizar cadastro, o email atual já está cadastrado!"
+          );
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+
+</script>

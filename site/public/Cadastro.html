@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./CSS/Estilo.css">
+    <script src="./JavaScript/Funcionalidade.js"></script>
+    <title>Acalanto - Cadastro </title>
+</head>
+
+<body>
+
+
+    <div class="banner_log_cad">
+        <div class="container_log_cad">
+
+                <div class="card_setinha_foto">
+                    <img src="img/icone-fleche-gauche-violet.png" onclick="go_index()">
+                </div>
+                
+                <div class="card_foto">
+                    <img src="./img/bebe_cadastro.jpg">
+                </div>
+
+                <div class="card_cadastro">
+                    <h3> Solicitar Cadastro </h3>
+                    <div class="icones_imagens">
+                        <img src="./img/facebook_rodape.png">
+                        <img src="./img/g+_rodape.png">
+                        <img src="./img/linkedin_rodape.png">
+                    </div>
+
+                    <form action="https://formspree.io/f/xzbojjgn" method="POST" id="div_label_cadastro" class="label">
+                        <label> Empresa </label>
+                        <h4> Nome da Empresa: </h4>
+                        <input name="NomeEmpresa" type="text" id="input_cadastro_empresa">
+                        <div class="aviso" id="aviso1"></div>
+
+                        <h4> CNPJ: </h4>
+                        <input name="CNPJ" type="number" id="input_cadastro_cnpj">
+                        <div class="aviso" id="aviso2"></div>
+
+                        <label> Endereço </label>
+                        <h4> Logradouro: </h4>
+                        <input name="Rua" type="text" id="input_cadastro_logradouro">
+                        <div class="aviso" id="aviso3"></div>
+
+                        <h4> Bairro: </h4>
+                        <input name="Bairro" type="text" id="input_cadastro_bairro">
+                        <div class="aviso" id="aviso4"></div>
+
+                        <h4> CEP: </h4>
+                        <input name="CEP" type="number" id="input_cadastro_cep">
+                        <div class="aviso" id="aviso5"></div>
+
+                        <h4> Cidade: </h4>
+                        <input name="Cidade" type="text" id="input_cadastro_cidade">
+                        <div class="aviso" id="aviso6"></div>
+
+                        <h4> Estado: </h4>
+                        <select id="select_estado">
+                            <option name="Estado" value="SP"> São Paulo </option>
+                            <option name="Estado" value="RJ"> Rio de Janeiro </option>
+                            <option name="Estado" value="SC"> Santa Catarina </option>
+                            <option name="Estado" value="RS"> Rio Grande do Sul </option>
+                        </select>
+
+
+                        <h4> Complemento: </h4>
+                        <input name="Complemento" type="text" id="input_cadastro_complemento">
+                        <div class="aviso" id="aviso7"></div>
+
+                        <h4> Telefone: </h4>
+                        <input name="Telefone" type="number" id="input_cadastro_telefone">
+                        <div class="aviso" id="aviso8"></div>
+
+                        <label> Usuário </label>
+                        <h4> Nome: </h4>
+                        <input name="NomeUsuário" type="text" id="input_usuario_nome">
+                        <div class="aviso" id="aviso9"></div>
+
+                        <h4> Email: </h4>
+                        <input name="Email" type="text" id="input_usuario_email">
+                        <div class="aviso" id="aviso10"></div>
+
+                        <h4> Senha: </h4>
+                        <input name="Senha" type="password" id="input_usuario_senha">
+                        <h4> Confirmar Senha: </h4>
+                        <input name="SenhaConfirma" type="password" id="input_usuario_confirmar_senha"><br><br>
+
+                        <div class="aviso" id="div_aviso"></div>
+
+                        <div id="div_botoes" class="botoes">
+                            <button onclick="solicitar_cadastro()" type="button" class="btn_2">Solicitar cadastro</button> <br>
+                            <button onclick="go_login()" type="submit" class="btn">Entrar</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+
+    </body>
+
+</html>
+
+<script>
+    function solicitar_cadastro() {
+    var nomeEmpresa = input_cadastro_empresa.value
+    var CNPJ = input_cadastro_cnpj.value;
+    var logradouro = input_cadastro_logradouro.value;
+    var bairro = input_cadastro_bairro.value;
+    var cep = input_cadastro_cep.value;
+    var cidade = input_cadastro_cidade.value;
+    var complemento = input_cadastro_complemento.value;
+    var telefone = input_cadastro_telefone.value;
+
+    var nomeUsuario = input_usuario_nome.value;
+    var email = input_usuario_email.value.toLowerCase();
+    var senha = input_usuario_senha.value;
+    var confirmarSenha = input_usuario_confirmar_senha.value;
+
+    if (nomeEmpresa == "" || CNPJ == "" || logradouro == "" || bairro == "" || cep == "" || cidade == "" ||
+        complemento == "" || telefone == "" || nomeUsuario == "" || email == "" || 
+        senha == "" || confirmarSenha == "") {
+        div_aviso.innerHTML = "Preencha todos os campos para prosseguir!";
+    }
+    else if(nomeEmpresa.length > 90){
+        div_aviso.innerHTML = 'Limite de 90 caracteres excedido!'
+    }
+    else if(CNPJ.length > 18 || CNPJ.length < 14){
+        div_aviso.innerHTML = 'CNPJ inválido!'
+    }
+    else if(logradouro.length < 4 || logradouro.length > 90){
+        div_aviso.innerHTML = 'Logradouro deve conter no mínimo 4 e no máximo 90 caracteres'
+    }
+    else if(bairro.length < 4 || bairro.length > 90){
+        div_aviso.innerHTML = 'Bairro deve conter no mínimo 4 e no máximo 90 caracteres'
+    }
+    else if(cep.length > 9 || cep.length < 8){
+        div_aviso.innerHTML = 'CEP inválido!'
+    }
+    else if(cidade.length < 2 || cidade.length > 90){
+        div_aviso.innerHTML = 'Cidade deve conter no mínimo 2 e no máximo 90 caracteres'
+    }
+    else if(complemento.length > 90){
+        div_aviso.innerHTML = 'Limite de 90 caracteres excedido!'
+    }
+    else if(telefone.length > 14 || telefone.length < 8){
+        div_aviso.innerHTML = 'Número de telefone inválido!'
+    }
+    else if(nomeUsuario.length > 90){
+        div_aviso.innerHTML = 'Limite de 90 caracteres excedido!'
+    }
+    else if(email.indexOf('@') <= 0 || email.indexOf('.com') == -1
+        || email.indexOf('.com') < email.indexOf('@'))
+    {
+        div_aviso.innerHTML = 'Email inválido!'
+    }
+    else if(senha.length < 5){
+        div_aviso.innerHTML = 'Senha muito fraca! Mínimo de 5 caracteres'
+    }
+    else if(confirmarSenha != senha){
+        div_aviso.innerHTML = 'As senhas não estão iguais!'
+    }
+    else{
+        div_botoes.innerHTML = `
+        <button class = "btn_Solicitar" onclick = "enviar_solicitacao()" 
+        type = "submit"> Confirmar solicitação </button>`;
+    }
+}
+</script>

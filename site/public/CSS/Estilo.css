@@ -1,0 +1,987 @@
+hr {
+  width: 90%;
+  height: 0.3vh;
+  background-color: #5d53cf;
+}
+
+.aviso {
+  color: rgb(231, 18, 18);
+  font-family: Bahnschrift;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.card_cadastro ::-webkit-scrollbar-track {
+  border-radius: 20px;
+}
+
+.divisao {
+  background-color: #1e0f77;
+  height: 10vh;
+}
+
+.container_img {
+  padding: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3a3383;
+  color: #6c5eff;
+  font-size: 50px;
+  height: 100vh;
+  width: 100%;
+}
+
+.container_img img {
+  height: 30vh;
+}
+
+.transitionColor {
+  transition: color 0.4s, font-weight 0, 2s;
+}
+
+.transitionColor:hover {
+  color: #ffffff;
+  font-weight: 1000;
+}
+
+select {
+  border: 0;
+  font-family: Bahnschrift;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 30px;
+  height: 50px;
+  background-color: #6c5eff;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6c5eff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: #3a3383;
+}
+
+/* Títulos padrão */
+
+h1 {
+  font-family: "Orelega One", cursive;
+}
+
+h2 {
+  font-family: Bahnschrift;
+}
+
+h3 {
+  font-family: Bahnschrift;
+}
+
+/*************************************************************************************************/
+
+/* Containers padrão */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.banner .container {
+  margin: auto;
+  height: 100vh;
+}
+
+/***********************************************************************************************/
+
+/* Botões padrão */
+.btn {
+  font-family: Bahnschrift;
+  background-color: #5d53cf;
+  color: rgb(219, 219, 219);
+  height: 32px;
+  width: 120px;
+  font-size: 19px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+
+  transition: color 0.01s, background-color 0.01s, font-weight 0.01s,
+    border-bottom 0.05s;
+}
+
+.btn:hover {
+  /* background-color: #3a3383; */
+  color: white;
+  font-weight: 1000;
+  border-bottom: #1e0f77 solid 5px;
+}
+
+.solicitar {
+  width: 55%;
+}
+
+/**************************************************************************************************/
+
+/* Código relacionado ao header */
+
+.header {
+  position: fixed;
+  z-index: 1000;
+  /* width: 90%; */
+}
+
+.header .container {
+  font-family: Bahnschrift;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 10px 10px 0px;
+  width: 90%;
+}
+
+.header .container .container {
+  justify-content: space-around;
+  height: 60px;
+  width: 30%;
+  background-color: #6c5eff;
+}
+
+.header .container img {
+  width: 10%;
+  cursor: pointer;
+  border-radius: 25%;
+}
+
+.header .container h1 {
+  /* background-color: #3a3383; */
+  background-color: #6c5eff;
+  color: #3a3383;
+  /* color: rgb(107, 95, 255); */
+  width: 17%;
+  font-size: 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  background-color: #6c5eff;
+  font-size: 20px;
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  padding: 0;
+  height: 60px;
+  width: 53%;
+  align-items: center;
+}
+
+li a {
+  text-decoration: none;
+  color: rgb(219, 219, 219);
+}
+
+h1 a {
+  color: #3a3383;
+  text-decoration: none;
+  /* color: #6c5eff; */
+  font-family: "Orelega One", cursive;
+}
+
+.agora {
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+/****************************************************************************************/
+
+/* Código relacionado ao simulador */
+
+b {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.card_result {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  height: 100vh;
+  width: 100%;
+}
+
+.banner .container .card_result h1 {
+  align-self: center;
+  width: 60%;
+  color: rgb(107, 95, 255);
+  font-size: 45px;
+  margin: auto;
+}
+
+.banner .container .card_result p {
+  line-height: 40px;
+  height: 420px;
+  width: 80%;
+  text-align: left;
+  color: #7b7a85;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.card {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  height: 540px;
+  width: 45%;
+  border: #5d53cf solid 5px;
+}
+
+.card h3 {
+  font-family: Bahnschrift;
+  color: rgb(107, 95, 255);
+}
+
+.card .container {
+  height: 100%;
+}
+
+.card .container .btn {
+  height: 60px;
+  width: 200px;
+  margin: auto;
+  font-size: 25px;
+}
+
+.label {
+  margin: auto;
+  width: 90%;
+}
+
+.label h2 {
+  color: rgb(58, 51, 131);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.label input {
+  width: 99%;
+  border: 0;
+  border-bottom: 2px solid rgb(59, 58, 58);
+  background-color: transparent;
+  outline: none;
+  /* Remove as bordas ao clicar na input */
+  min-width: 180px;
+  /* O mínimo da largura que pode chegar o input é 180 */
+  font-size: 16px;
+}
+
+.label input::-webkit-outer-spin-button,
+/* Código para remover as setas do input number */
+.label input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.label .combo_box {
+  width: 100%;
+  text-align: center;
+  font-weight: bolder;
+}
+
+/* Término do código relacionado ao Simulador */
+
+/******************************************************************************************************/
+
+/* Começo Contato */
+
+.card_result_formulario {
+  font-family: Bahnschrift;
+  background-color: rgb(107, 95, 255);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px;
+  height: 540px;
+  width: 45%;
+}
+
+.card_result_formulario h1 {
+  color: white;
+  font-size: 45px;
+  margin: auto;
+}
+
+.card_informacoes {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  height: 540px;
+  width: 45%;
+}
+
+.card_informacoes h3 {
+  color: rgb(107, 95, 255);
+}
+
+.card_result_formulario .container {
+  height: 70px;
+}
+
+.card_result_formulario .label input {
+  background-color: #6c5eff;
+  color: white;
+}
+
+.card_result_formulario .container .btn {
+  background-color: rgb(58, 51, 131);
+  height: 60px;
+  width: 150px;
+  margin: auto;
+  font-size: 25px;
+}
+
+.card_informacoes .label {
+  display: flex;
+  height: 200px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_informacoes .label_email {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid #6c5eff;
+  border-bottom: 3px solid #6c5eff;
+}
+
+.card_informacoes .label h2 {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  margin: 0;
+}
+
+.card_informacoes .label .label_img {
+  display: flex;
+  width: 20%;
+  margin: auto;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.card_informacoes .label_email .label_img {
+  display: flex;
+  width: 20%;
+  margin: auto;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.card_informacoes .label_email .label_info {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-left: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card_informacoes .label_email .label_info h2 {
+  margin-top: 0;
+}
+
+.card_informacoes .label .label_info {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-left: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.txt_area{
+  width: 100%;
+  height: 60px;
+  background-color: #6c5eff;
+  color: white;
+  border: 0;
+  border-bottom: rgb(46, 44, 44) solid 2px;
+}
+
+/* Fim Contato */
+
+/*************************************************************************************************/
+
+/* Comeco Do login e cadastro*/
+
+.banner_log_cad{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: -webkit-linear-gradient(200deg, #1e0f77, #3a3383, #6c5eff);
+  width: 100vw;
+  height: 100vh;
+}
+
+.banner_log_cad .container_log_cad{
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 20px;
+  height: 95%;
+  width: 80%;
+}
+
+.container_log_cad .card_setinha_foto {
+  display: flex;
+  height: 11%;
+  width: 5%;
+  cursor: pointer;
+  position: absolute;
+}
+
+.container_log_cad .card_foto {
+  display: flex;
+  height: 100%;
+  width: 50%;
+}
+
+.card_foto img {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.container_log_cad .card_login {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex-direction: column;
+}
+
+.container_log_cad .card_cadastro {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex-direction: column;
+  font-family: Bahnschrift;
+}
+
+.card_login h3,
+.card_cadastro h3 {
+  color: #3a3383;
+  font-size: 28px;
+  margin: auto;
+  width: 80%;
+}
+
+.card_login h4,
+.card_cadastro h4 {
+  color: #3a3383;
+  width: 80%;
+}
+
+.card_cadastro .label label {
+  display: flex;
+  margin-top: 20px;
+  font-size: 25px;
+  color: #6c5eff;
+}
+
+.card_login .icones_imagens img,
+.card_cadastro .icones_imagens img {
+  height: 50px;
+  width: 50px;
+}
+
+.card_login .icones_imagens,
+.card_cadastro .icones_imagens {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  height: 10%;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.card_login .label {
+  height: 250px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  color: #3a3383;
+  font-size: 20px;
+  font-family: Bahnschrift;
+}
+
+.card_cadastro .label {
+  height: 250px;
+  width: 80%;
+  display: flexbox;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #efefef;
+  color: #3a3383;
+  font-size: 20px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  padding: 3%;
+}
+
+.card_login .botoes {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  height: 20%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card_login .botoes .btn {
+  margin: auto;
+  height: 50px;
+  width: 180px;
+}
+
+.card_cadastro .label .botoes {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_login .botoes .btn_cadastro {
+  margin: auto;
+  font-family: Bahnschrift;
+  font-size: 20px;
+  background-color: white;
+  color: #3a3383;
+  height: 50px;
+  width: 180px;
+  border-radius: 15px;
+  border: 5px solid #6c5eff;
+  cursor: pointer;
+}
+
+/* .card_cadastro .botoes .btn_Solicitar {
+  font-family: Bahnschrift;
+  font-size: 20px;
+  background-color: white;
+  color: #3a3383;
+  height: 30%;
+  width: 50%;
+  border-radius: 15px;
+  border: 5px solid #6c5eff;
+  cursor: pointer;
+}
+
+.card_cadastro .botoes .btn_Entrar {
+  font-family: Bahnschrift;
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  height: 30%;
+  width: 50%;
+  border-radius: 15px;
+  border: 0;
+  cursor: pointer;
+} */
+
+/* Fim do Login */
+
+/* Fim do Cadastro */
+
+/*************************************************************************************************/
+
+/* Rodapé começo */
+
+.footer .container {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: #3a3383;
+}
+
+.footer_logo {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_img {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.footer_labels {
+  display: flex;
+  width: 40%;
+  flex-direction: row;
+}
+
+.footer_labels h4 {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.footer_labels h3 {
+  color: rgb(114, 93, 255);
+}
+
+.footer_info {
+  display: flex;
+  height: 180px;
+  width: 25%;
+  margin: auto;
+  flex-direction: column;
+}
+
+.footer_info h4 a {
+  text-decoration: none;
+  color: rgb(114, 93, 255);
+}
+
+.footer_sociais {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.footer_sociais h3 {
+  color: rgb(114, 93, 255);
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 60%;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.footer_icones {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 30%;
+  width: 80%;
+}
+
+.footer_icones .footer_img {
+  margin: auto;
+  width: 15%;
+  height: 80%;
+}
+
+.footer_icones2 {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 30%;
+  width: 50%;
+}
+
+.footer_icones2 .footer_img {
+  margin: auto;
+  width: 25%;
+  height: 80%;
+}
+
+/* Término do rodapé */
+
+/*****************************************************************************************************/
+
+/* Início código Index/Home */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container_home {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.card_titulo .titulo {
+  font-size: 24vh;
+  font-family: "Orelega One", cursive;
+  margin-left: 2%;
+}
+
+.card_titulo p {
+  margin: 0;
+  font-size: 150%;
+  font-family: Bahnschrift;
+  margin-left: 5%;
+}
+
+.container_home .card_titulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #6c5eff;
+  height: 100vh;
+  width: 50vw;
+  padding-top: 4%;
+  padding-left: 3%;
+}
+
+.img_home img {
+  height: 100%;
+  width: 50vw;
+  object-fit: cover;
+}
+
+.buttons {
+  display: flex;
+  align-self: flex-start;
+  width: 60%;
+  padding-left: 2%;
+}
+
+.btn_2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: Bahnschrift;
+  font-size: 30px;
+  color: #3a3383;
+  height: 60px;
+  width: 300px;
+  border-radius: 15px;
+  border: 5px solid #6c5eff;
+  cursor: pointer;
+}
+
+.btn_2:hover {
+  background-color: #3a3383;
+  color: white;
+  border: 5px solid #3a3383;
+}
+
+/* Fim código Index/Home */
+
+/*****************************************************************************************************************************/
+
+/* Começo Sobre nós /////////////////////////////////////////////////////////////////////////////////*/
+
+.banner_sobre_nos .container {
+  width: 100%;
+  height: 1350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner_sobre_nos .container .container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.card_sobre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Bahnschrift;
+  font-size: 10px;
+  color: white;
+  background-color: #3a3383;
+  width: 45%;
+}
+
+.card_mis_vis_val {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #3a3383;
+  height: 100vh;
+  width: 55%;
+}
+
+.card_mis_vis_val .barra {
+  width: 10%;
+  height: 1px;
+  background-color: white;
+}
+
+.card_mvv {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #6c5eff;
+  font-family: Bahnschrift;
+  color: white;
+  height: 20%;
+  width: 70%;
+  border-radius: 30px;
+  padding-left: 20px;
+}
+
+.card_mvv img {
+  width: 20%;
+  padding-right: 2%;
+}
+
+.card_mvv p {
+  padding-left: 5%;
+  padding-right: 2%;
+}
+
+.barra {
+  width: 70%;
+  height: 1px;
+  background-color: #6c5eff;
+}
+
+.card_sobre h1 {
+  font-size: 50px;
+  border: 0;
+  width: 70%;
+}
+
+.card_sobre p {
+  border: 0;
+  font-size: 20px;
+  width: 70%;
+}
+
+/* MURILO MURILO MURILO MURILO ********************************************/
+.card_servicos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Bahnschrift;
+  font-size: 10px;
+  background-color: #3a3383;
+  color: white;
+  width: 55%;
+}
+
+.card_foto_sobre_nos {
+  display: flex;
+  height: 100vh;
+  width: 45%;
+  background-color: #3a3383;
+}
+
+.card_foto_sobre_nos img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.card_servicos h1 {
+  font-size: 50px;
+  border: 0;
+  width: 70%;
+}
+
+.card_servicos p {
+  border: 0;
+  font-size: 20px;
+  width: 70%;
+  padding-left: 20px;
+}
+
+/* MURILO MURILO MURILO MURILO ********************************************/
+/* fim Sobre-Nos ////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Formulário */
+
+.banner_formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3a3383;
+}
+
+.banner_formulario .container {
+  width: 50%;
+  border: 3px solid #3a3383;
+  background-color: white;
+  border-radius: 40px;
+}
+
+.banner_formulario .container .label h4 {
+  color: #6c5eff;
+}
+
+.banner_formulario .container .label label {
+  color: #3a3383;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.banner_formulario .container .label .btn {
+  width: 30%;
+}
+
+/*  ////////////////////////////////////////////////////////////////////////////////////*/
+
+/* SUPORTE */
+
+#label_suporte{
+  height: 350px;
+}
+#botao-suporte2{
+  display: none;
+}
+
+.card_login #botoes{
+  /* border: 2px solid gold; */
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content:end;
+} 
+
+#div_aviso{
+  /* position: absolute; */
+  /* border: 2px solid black; */
+  margin-top: 10px;
+}
+
+#h3-suporte{
+  margin-top: 10px;
+}

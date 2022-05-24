@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="Estilo_Dash.css" />
+    <script src="../JavaScript/Funcionalidade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Acalanto - Meus Refrigeradores</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+    </style>
+
+</head>
+
+<body onload="validarSessao()">
+    <!-- <body onload="validarSessao()"> -->
+    <div class="header">
+        <div class="container">
+            <div class="card_logo">
+                <img src="../img/Logo_Acalanto_icon3.png" />
+
+                <h2><a href="MeusRefrigeradores.html">Acalanto</a></h2>
+            </div>
+
+            <div class="card_perfil">
+                <img src="../img/Logo_Acalanto_icon.png" />
+                <h4 id="perfil"></h4>
+            </div>
+
+            <ul class="navbar">
+                <li><a href="MeusRefrigeradores.html">Refrigeradores</a></li>
+                <div class="divisao"></div>
+                <li><a href="NovoUsuario.html">Novo Usuario</a></li>
+                <div class="divisao estar"></div>
+                <li><a href="Relatorio.html">Relatório</a></li>
+                <div class="divisao"></div>
+                <li><a href="graficos.html">Gráficos</a></li>
+                <div class="divisao"></div>
+                <li><a id="formularioHeader" href="FormularioDashboard.html"  class="agora">Formulario</a></li>
+            </ul>
+            <button onclick="limparSessao()" class="btn">Sair</button>
+        </div>
+    </div>
+
+    <div class="banner_formulario" style="width: 50%; float: right;">
+        <div class="container">
+            <form id="div_label_cadastro" class="label">
+                <label> Empresa </label>
+                <h4> Nome da Empresa: </h4>
+                <input name="NomeEmpresa" type="text" id="input_cadastro_empresa">
+                <div class="aviso" id="aviso1"></div>
+
+                <h4> CNPJ: </h4>
+                <input name="CNPJ" type="number" id="input_cadastro_cnpj">
+                <div class="aviso" id="aviso2"></div>
+
+                <h4> Logradouro: </h4>
+                <input name="Rua" type="text" id="input_cadastro_logradouro">
+                <div class="aviso" id="aviso3"></div>
+
+                <h4> Bairro: </h4>
+                <input name="Bairro" type="text" id="input_cadastro_bairro">
+                <div class="aviso" id="aviso4"></div>
+
+                <h4> CEP: </h4>
+                <input name="CEP" type="number" id="input_cadastro_cep">
+                <div class="aviso" id="aviso5"></div>
+
+                <h4> Cidade: </h4>
+                <input name="Cidade" type="text" id="input_cadastro_cidade">
+                <div class="aviso" id="aviso6"></div>
+
+                <h4> Estado: </h4>
+                <select id="select_estado">
+                    <option name="Estado" value="SP"> São Paulo </option>
+                    <option name="Estado" value="RJ"> Rio de Janeiro </option>
+                    <option name="Estado" value="SC"> Santa Catarina </option>
+                    <option name="Estado" value="RS"> Rio Grande do Sul </option>
+                </select>
+
+                <h4> Complemento: </h4>
+                <input name="Complemento" type="text" id="input_cadastro_complemento">
+                <div class="aviso" id="aviso7"></div>
+
+                <h4> Telefone: </h4>
+                <input name="Telefone" type="number" id="input_cadastro_telefone">
+                <div class="aviso" id="aviso8"></div>
+
+                <button type="button" onclick="cadastrarEmpresa()" class="btn">Cadastrar Empresa</button>
+
+                <label> Usuário </label>
+                <h4> Nome: </h4>
+                <input name="NomeUsuário" type="text" id="input_usuario_nome">
+                <div class="aviso" id="aviso9"></div>
+
+                <h4> Sobrenome: </h4>
+                <input name="SobrenomeUsuário" type="text" id="input_usuario_sobrenome">
+                <div class="aviso" id="aviso10"></div>
+
+                <h4> Email: </h4>
+                <input name="Email" type="text" id="input_usuario_email">
+                <div class="aviso" id="aviso11"></div>
+
+                <h4> Senha: </h4>
+                <input name="Senha" type="text" id="input_usuario_senha">
+                <h4> Confirmar senha: </h4>
+                <input name="ConfirmarSenha" type="text" id="input_usuario_confirmar_senha">
+                <div class="aviso" id="aviso12"></div>
+
+                <h4> Chave Empresa: </h4>
+                <input name="UsuarioEmpresa" type="number" id="input_usuario_empresa">
+                <div class="aviso" id="aviso13"></div>
+
+                <div class="aviso" id="aviso14"></div>
+
+                <button type="button" onclick="cadastrarUsuario()" class="btn">Cadastrar Usuário</button>
+
+                <label>Refrigerador</label>
+                <h4>Marca do Refrigerador</h4>
+                <input id="input_marca_refrigerador">
+
+                <h4>Tipo do Refrigerador</h4>
+                <input id="input_tipo_refrigerador">
+
+                <h4>Localização do Refrigeador</h4>
+                <input id="input_localizacao_refrigerador">
+
+                <h4>Chave Usuario</h4>
+                <input id="input_chave_usuario" type="number">
+
+                <h4>Chave Empresa</h4>
+                <input id="input_chave_empresa" type="number">
+
+                <button onclick="cadastrarRefrigerador()" class="btn">Cadastrar Refrigerador</button>
+
+                <label>Sensor</label>
+                <h4>Nome do Sensor</h4>
+                <input id="input_nome_sensor">
+
+                <h4>Tipo do Sensor</h4>
+                <input id="input_tipo_sensor">
+
+                <h4>Chave Refrigerador</h4>
+                <input id="input_chave_refrigerador" type="number">
+
+                <button onclick="cadastrarSensor()" class="btn">Cadastrar Sensor</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function cadastrarEmpresa() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeEmpresa = input_cadastro_empresa.value;
+        var cnpjEmpresa = input_cadastro_cnpj.value;
+        var logradouroEmpresa = input_cadastro_logradouro.value;
+        var bairroEmpresa = input_cadastro_bairro.value;
+        var cepEmpresa = input_cadastro_cep.value;
+        var cidadeEmpresa = input_cadastro_cidade.value;
+        var estadoEmpresa = select_estado.value;
+        var complementoEmpresa = input_cadastro_complemento.value;
+        var telefoneEmpresa = input_cadastro_telefone.value;
+
+        if (nomeEmpresa == "" || cnpjEmpresa == "" || logradouroEmpresa == "" || bairroEmpresa == "" ||
+            cepEmpresa == "" || cidadeEmpresa == "" || complementoEmpresa == "" || telefoneEmpresa == "") {
+            aviso14.innerHTML = "Preencha todos os campos para prosseguir!";
+        }
+        else if (nomeEmpresa.length > 90) {
+            aviso1.innerHTML = 'Limite de 90 caracteres excedido!'
+        }
+        else if (cnpjEmpresa.length > 18 || cnpjEmpresa.length < 14) {
+            aviso2.innerHTML = 'CNPJ inválido!'
+        }
+        else if (logradouroEmpresa.length > 90 || logradouroEmpresa.length < 4) {
+            aviso3.innerHTML = 'Logradouro deve conter no mínimo 4 e no máximo 90 caracteres!'
+        }
+        else if (bairroEmpresa.length > 90 || bairroEmpresa.length < 4) {
+            aviso4.innerHTML = 'Bairro deve conter no mínimo 4 e no máximo 90 caracteres!'
+        }
+        else if (cepEmpresa.length > 9 || cepEmpresa.length < 8) {
+            aviso5.innerHTML = 'CEP inválido!'
+        }
+        else if (cidadeEmpresa.length > 90 || cidadeEmpresa.length < 2) {
+            aviso6.innerHTML = 'Cidade deve conter no mínimo 2 e no máximo 90 caracteres!'
+        }
+        else if (complementoEmpresa.length > 90) {
+            aviso7.innerHTML = 'Limite de 90 caracteres excedido!'
+        }
+        else if (telefoneEmpresa.length > 14 || telefoneEmpresa.length < 8) {
+            aviso8.innerHTML = 'Número de telefone inválido!'
+        }
+        else {
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeEmpresa,
+                    cnpjServer: cnpjEmpresa,
+                    logradouroServer: logradouroEmpresa,
+                    bairroServer: bairroEmpresa,
+                    cepServer: cepEmpresa,
+                    cidadeServer: cidadeEmpresa,
+                    estadoServer: estadoEmpresa,
+                    complementoServer: complementoEmpresa,
+                    telefoneServer: telefoneEmpresa
+                })
+            }
+            ).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    alert('Cadastro realizado !!!');
+                } else {
+                    alert('Não foi possível realizar cadastro, o CNPJ atual já está cadastrado!');
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+            return false;
+        }
+    }
+
+    function cadastrarUsuario() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeUsuario = input_usuario_nome.value;
+        var sobrenomeUsuario = input_usuario_sobrenome.value;
+        var emailUsuario = input_usuario_email.value.toLowerCase();
+        var senhaUsuario = input_usuario_senha.value;
+        var confirmarSenha = input_usuario_confirmar_senha.value;
+        var empresaUsuario = Number(input_usuario_empresa.value);
+
+        if (nomeUsuario == "" || sobrenomeUsuario == "" || emailUsuario == "" ||
+            senhaUsuario == "" || confirmarSenha == "" || empresaUsuario == 0) {
+            aviso9.innerHTML = "Preencha todos os campos para prosseguir!";
+        }
+        else if (nomeUsuario.length > 90) {
+            aviso10.innerHTML = 'Limite de 90 caracteres excedido!'
+        }
+        else if (sobrenomeUsuario.length > 90) {
+            aviso11.innerHTML = 'Limite de 90 caracteres excedido!'
+        }
+        else if (emailUsuario.indexOf('@') <= 0 || emailUsuario.indexOf('.com') == -1
+            || emailUsuario.indexOf('.com') < emailUsuario.indexOf('@')) {
+            aviso12.innerHTML = 'Email inválido!'
+        }
+        else if (senhaUsuario < 5) {
+            aviso13.innerHTML = 'Senha muito fraca! Mínimo de 5 caracteres'
+        }
+        else if (confirmarSenha != senhaUsuario) {
+            aviso13.innerHTML = 'As senhas não estão iguais!'
+        }
+        else {
+
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrarUsuario", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeUsuarioServer: nomeUsuario,
+                    sobrenomeUsuarioServer: sobrenomeUsuario,
+                    emailUsuarioServer: emailUsuario,
+                    senhaUsuarioServer: senhaUsuario,
+                    empresaUsuarioServer: empresaUsuario
+                })
+            }
+            ).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    alert('cadastro realizado');
+                } else {
+                    alert('Não foi possível realizar cadastro, o email atual já está cadastrado!');
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+    }
+
+    function cadastrarRefrigerador() {
+
+        var marcaRefrigerador = input_marca_refrigerador.value
+        var tipoRefrigerador = input_tipo_refrigerador.value
+        var localizacaoRefrigerador = input_localizacao_refrigerador.value
+        var chaveUsuario = Number(input_chave_usuario.value)
+        var chaveEmpresa = Number(input_chave_empresa.value)
+
+        if (marcaRefrigerador == "" || tipoRefrigerador == "" || localizacaoRefrigerador == ""
+            || chaveUsuario == 0 || chaveEmpresa == 0) {
+            alert("Preencha todos os campos para prosseguir!")
+        }
+        else if (marcaRefrigerador > 90 || marcaRefrigerador < 5) {
+            alert("A marca do refrigerador deve ter no mínimo 4 e no máximo 90 caracteres.")
+        }
+        else if (tipoRefrigerador > 90 || tipoRefrigerador < 3) {
+            alert("O tipo do refrigerador deve ter no mínimo 2 e no máximo 90 caracteres.")
+        }
+        else if (localizacaoRefrigerador > 90) {
+            alert("A localização do refrigerador deve ter no máximo 90 caracteres.")
+        }
+        else {
+
+            fetch("/usuarios/cadastrarRefrigerador", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    marcaRefrigeradorServer: marcaRefrigerador,
+                    tipoRefrigeradorServer: tipoRefrigerador,
+                    localizacaoRefrigeradorServer: localizacaoRefrigerador,
+                    chaveUsuarioServer: chaveUsuario,
+                    chaveEmpresaServer: chaveEmpresa
+                })
+            }
+            ).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    alert('cadastro realizado');
+                } else {
+                    alert('Não foi possível realizar cadastro, o email atual já está cadastrado!');
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+    }
+
+    function cadastrarSensor() {
+
+        var nomeSensor = input_nome_sensor.value
+        var tipoSensor = input_tipo_sensor.value
+        var chaveRefrigerador = Number(input_chave_refrigerador.value)
+
+        if (nomeSensor == "" || tipoSensor == "" || chaveRefrigerador == 0) {
+            alert("Preencha todos os campos para prosseguir!")
+        }
+        else if (nomeSensor > 45 || nomeSensor < 3) {
+            alert("O nome do sensor deve ter no mínimo 2 e no máximo 45 caracteres.")
+        }
+        else if (tipoSensor > 45) {
+            alert("O tipo do sensor deve ter no máximo 45 caracteres.")
+        }
+        else {
+
+            fetch("/usuarios/cadastrarSensor", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeSensorServer: nomeSensor,
+                    tipoSensorServer: tipoSensor,
+                    chaveRefrigeradorServer: chaveRefrigerador,
+                })
+            }
+            ).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    alert('cadastro realizado');
+                } else {
+                    alert('Não foi possível realizar cadastro, o email atual já está cadastrado!');
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+    }
+</script>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="Estilo_Dash.css" />
+  <script src="../JavaScript/Funcionalidade.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Acalanto - Meus Refrigeradores</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+  </style>
+
+</head>
+
+<body onload="validarSessao()">
+  <!-- <body onload="validarSessao()"> -->
+  <div class="header">
+    <div class="container">
+      <div class="card_logo">
+        <img src="../img/Logo_Acalanto_icon3.png" />
+
+        <h2><a href="MeusRefrigeradores.html">Acalanto</a></h2>
+      </div>
+
+      <div class="card_perfil">
+        <img src="../img/Logo_Acalanto_icon.png" />
+        <h4 id="perfil"></h4>
+      </div>
+
+      <ul class="navbar">
+        <li><a href="MeusRefrigeradores.html">Refrigeradores</a></li>
+        <div class="divisao"></div>
+        <li><a href="NovoUsuario.html" class="agora">Novo Usuario</a></li>
+        <div class="divisao estar"></div>
+        <li><a href="Relatorio.html">Relatório</a></li>
+        <div class="divisao"></div>
+        <li><a href="graficos.html">Gráficos</a></li>
+        <div class="divisao"></div>
+        <li><a id="formularioHeader" href="FormularioDashboard.html">Formulario</a></li>
+      </ul>
+      <button onclick="limparSessao()" class="btn">Sair</button>
+    </div>
+  </div>
+
+  <div class="banner_NU">
+    <div class="container_NU">
+      <div class="form" style="height: 600px">
+        <label class="list_form">
+          <h2>Novo Usuário</h2>
+          <h4>Nome:</h4>
+          <input id="input_nome_novoUsuario" type="text" />
+          <div class="aviso" id="aviso1"></div>
+
+          <h4>Sobrenome:</h4>
+          <input id="input_sobrenome_novoUsuario" type="text" />
+          <div class="aviso" id="aviso2"></div>
+
+          <h4>Email:</h4>
+          <input id="input_email_novoUsuario" type="text" />
+          <div class="aviso" id="aviso3"></div>
+
+          <h4>Senha:</h4>
+          <input id="input_senha_novoUsuario" type="password" />
+
+          <h4>Confirmar Senha:</h4>
+          <input id="input_confirmar_senha_novoUsuario" type="password" />
+          <div class="aviso" id="aviso4"></div>
+          <br /><br />
+
+          <div class="aviso" id="div_aviso"></div>
+
+        </label>
+
+        <button onclick="cadastrarUsuarioNovoUsuario()" class="btn">
+          Cadastrar novo usuário
+        </button>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<script>
+  function cadastrarUsuarioNovoUsuario() {
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeUsuario = input_nome_novoUsuario.value;
+    var sobrenomeUsuario = input_sobrenome_novoUsuario.value;
+    var emailUsuario = input_email_novoUsuario.value.toLowerCase();
+    var senhaUsuario = input_senha_novoUsuario.value;
+    var confirmarSenha = input_confirmar_senha_novoUsuario.value;
+    var fkEmpresa = sessionStorage.FK_EMPRESA;
+
+    if (nomeUsuario == "" || sobrenomeUsuario == "" || emailUsuario == "" || senhaUsuario == "" ||
+      confirmarSenha == "") {
+      div_aviso.innerHTML = "Preencha todos os campos para prosseguir!";
+    }
+    else if (nomeUsuario.length > 90) {
+      div_aviso.innerHTML = "Limite de 90 caracteres excedido!";
+    }
+    else if (sobrenomeUsuario.length > 90) {
+      div_aviso.innerHTML = "Limite de 90 caracteres excedido!";
+    }
+    else if (emailUsuario.indexOf("@") <= 0 || emailUsuario.indexOf(".com") == -1
+    || emailUsuario.indexOf(".com") < emailUsuario.indexOf("@")) {
+      div_aviso.innerHTML = "Email inválido!";
+    }
+    else if(senhaUsuario.length < 5){
+      div_aviso.innerHTML = 'Senha muito fraca! Mínimo de 5 caracteres'
+    } 
+    else if (confirmarSenha != senhaUsuario) {
+      div_aviso.innerHTML = "As senhas não estão iguais!";
+    } 
+    else {
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrarUsuarioNovoUsuario", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeUsuarioServer: nomeUsuario,
+          sobrenomeUsuarioServer: sobrenomeUsuario,
+          emailUsuarioServer: emailUsuario,
+          senhaUsuarioServer: senhaUsuario,
+          empresaUsuarioServer: fkEmpresa,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+
+          if (resposta.ok) {
+            alert("cadastro realizado");
+          } else {
+            alert(
+              "Não foi possível realizar cadastro, o email atual já está cadastrado!"
+            );
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+    }
+  }
+</script>

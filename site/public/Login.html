@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./CSS/Estilo.css">
+    <script src="./JavaScript/Funcionalidade.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+    >
+    <title>Acalanto - Login</title>
+</head>
+
+<body>
+    
+    <div class="banner_log_cad">
+        <div class="container_log_cad">
+
+            <div class="card_setinha_foto">
+                <img src="img/icone-fleche-gauche-violet.png" onclick="go_index()">
+            </div>
+
+            <div class="card_foto">
+                <img src="./img/bebe_login.jpg">
+            </div>
+
+            <div class="card_login">
+                <h3> Login</h3>
+                <div class="icones_imagens">
+                    <img src="./img/facebook_rodape.png">
+                    <img src="./img/g+_rodape.png">
+                    <img src="./img/linkedin_rodape.png">
+                </div>
+
+                <div class="label">
+                    <h4> Email: </h4>
+                    <input id="input_email" type="text">
+                    <div class="aviso" id="aviso1"></div>
+
+                    <h4> Senha: </h4>
+                    <input id="input_senha" type="password">
+                    <div class="aviso" id="aviso2"></div><br><br>
+
+                    <div class="aviso" id="div_aviso"></div>
+
+                </div>
+
+                <div class="botoes">
+                    <button onclick="entrar()" class="btn_2">Entrar</button>
+                    <button onclick="go_cadastro()" class="btn">Cadastre-se</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar == "" || senhaVar == "") {
+            div_aviso.innerHTML = "Preencha todos os campos para prosseguir!";
+            return false;
+        }
+
+        else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            div_aviso.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+            return false;
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.FK_EMPRESA = json.fkEmpresa;
+
+                    setTimeout(function () {
+                        alert("Bem vindo");
+                        window.location = "Dashboard/MeusRefrigeradores.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+                div_aviso.innerHTML = "Usuário ou senha incorretos";
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>
