@@ -155,6 +155,7 @@
                 <div class="aviso" id="avisoGeral4"></div>
 
                 <button type="button" onclick="cadastrarSensor()" class="btn">Cadastrar Sensor</button>
+          <div class="avisos" id="avisos"> </div>
 
             </form>
         </div>
@@ -232,9 +233,9 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    alert('Cadastro realizado !!!');
+                    avisos.innerHTML ='Cadastro realizado !!!';
                 } else {
-                    alert('Não foi possível realizar cadastro, o CNPJ atual já está cadastrado!');
+                    avisos.innerHTML ='Não foi possível realizar cadastro, o CNPJ atual já está cadastrado!';
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {
@@ -299,9 +300,9 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    alert('cadastro realizado');
+                    avisos.innerHTML ='cadastro realizado';
                 } else {
-                    alert('Não foi possível realizar cadastro, o email atual já está cadastrado!');
+                    avisos.innerHTML ='Não foi possível realizar cadastro, o email atual já está cadastrado!';
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {
@@ -353,9 +354,9 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    alert('cadastro realizado');
+                    avisos.innerHTML ='cadastro realizado';
                 } else {
-                    alert('Não foi possível realizar cadastro, o email atual já está cadastrado!');
+                    avisos.innerHTML ='Não foi possível realizar cadastro, o email atual já está cadastrado!';
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {
@@ -399,9 +400,9 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    alert('cadastro realizado');
+                    avisos.innerHTML = 'cadastro realizado';
                 } else {
-                    alert('Não foi possível realizar cadastro, o email atual já está cadastrado!');
+                    avisos.innerHTML ='Não foi possível realizar cadastro, o email atual já está cadastrado!';
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {

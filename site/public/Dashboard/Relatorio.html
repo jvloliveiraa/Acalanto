@@ -85,6 +85,7 @@
           <textarea name="mensagem" id="input_observacao" cols="30" rows="10" class="txt_area"></textarea><br><br>
 
           <button onclick="cadastrarRelatorio()" class="btn">Reportar</button>
+          <div class="avisos" id="avisos"> </div>
 
         </label>
 
@@ -124,11 +125,11 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          alert("cadastro realizado");
+         avisos.innerHTML = "cadastro realizado";
         } else {
-          alert(
+          avisos.innerHTML = 
             "Não foi possível realizar cadastro, o email atual já está cadastrado!"
-          );
+          ;
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })

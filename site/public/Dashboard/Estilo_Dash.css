@@ -8,6 +8,12 @@ body {
   font-size: 15px;
   font-weight: bolder;
 }
+.avisos {
+  color: rgb(231, 18, 18);
+  font-family: Bahnschrift;
+  font-size: 15px;
+  font-weight: bolder;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
