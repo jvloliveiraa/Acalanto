@@ -18,7 +18,6 @@
 </head>
 
 <body onload="validarSessao()">
-    <!-- <body onload="validarSessao()"> -->
     <div class="header">
         <div class="container">
             <div class="card_logo">
@@ -35,45 +34,46 @@
             <ul class="navbar">
                 <li><a href="MeusRefrigeradores.html">Refrigeradores</a></li>
                 <div class="divisao"></div>
-                <li><a href="NovoUsuario.html">Novo Usuario</a></li>
-                <div class="divisao estar"></div>
                 <li><a href="Relatorio.html">Relatório</a></li>
                 <div class="divisao"></div>
                 <li><a href="graficos.html">Gráficos</a></li>
                 <div class="divisao"></div>
+                <li><a href="NovoUsuario.html">Novo Usuario</a></li>
+                <div class="divisao"></div>
                 <li><a id="formularioHeader" href="FormularioDashboard.html"  class="agora">Formulario</a></li>
+                <div id="formularioHeader" class="divisao estar"></div>
             </ul>
             <button onclick="limparSessao()" class="btn">Sair</button>
         </div>
     </div>
 
-    <div class="banner_formulario" style="width: 50%; float: right;">
+    <div class="banner_formulario">
         <div class="container">
             <form id="div_label_cadastro" class="label">
-                <label> Empresa </label>
+                <h2> Empresa </h2>
                 <h4> Nome da Empresa: </h4>
                 <input name="NomeEmpresa" type="text" id="input_cadastro_empresa">
-                <div class="aviso" id="aviso1"></div>
+                <!-- <div class="aviso" id="aviso1"></div> -->
 
                 <h4> CNPJ: </h4>
                 <input name="CNPJ" type="number" id="input_cadastro_cnpj">
-                <div class="aviso" id="aviso2"></div>
+                <!-- <div class="aviso" id="aviso2"></div> -->
 
                 <h4> Logradouro: </h4>
                 <input name="Rua" type="text" id="input_cadastro_logradouro">
-                <div class="aviso" id="aviso3"></div>
+                <!-- <div class="aviso" id="aviso3"></div> -->
 
                 <h4> Bairro: </h4>
                 <input name="Bairro" type="text" id="input_cadastro_bairro">
-                <div class="aviso" id="aviso4"></div>
+                <!-- <div class="aviso" id="aviso4"></div> -->
 
                 <h4> CEP: </h4>
                 <input name="CEP" type="number" id="input_cadastro_cep">
-                <div class="aviso" id="aviso5"></div>
+                <!-- <div class="aviso" id="aviso5"></div> -->
 
                 <h4> Cidade: </h4>
                 <input name="Cidade" type="text" id="input_cadastro_cidade">
-                <div class="aviso" id="aviso6"></div>
+                <!-- <div class="aviso" id="aviso6"></div> -->
 
                 <h4> Estado: </h4>
                 <select id="select_estado">
@@ -85,42 +85,44 @@
 
                 <h4> Complemento: </h4>
                 <input name="Complemento" type="text" id="input_cadastro_complemento">
-                <div class="aviso" id="aviso7"></div>
+                <!-- <div class="aviso" id="aviso7"></div> -->
 
                 <h4> Telefone: </h4>
                 <input name="Telefone" type="number" id="input_cadastro_telefone">
-                <div class="aviso" id="aviso8"></div>
+                <!-- <div class="aviso" id="aviso8"></div> -->
+
+                <div class="aviso" id="avisoGeral1"></div>
 
                 <button type="button" onclick="cadastrarEmpresa()" class="btn">Cadastrar Empresa</button>
 
-                <label> Usuário </label>
+                <h2> Usuário </h2>
                 <h4> Nome: </h4>
                 <input name="NomeUsuário" type="text" id="input_usuario_nome">
-                <div class="aviso" id="aviso9"></div>
+                <!-- <div class="aviso" id="aviso9"></div> -->
 
                 <h4> Sobrenome: </h4>
                 <input name="SobrenomeUsuário" type="text" id="input_usuario_sobrenome">
-                <div class="aviso" id="aviso10"></div>
+                <!-- <div class="aviso" id="aviso10"></div> -->
 
                 <h4> Email: </h4>
                 <input name="Email" type="text" id="input_usuario_email">
-                <div class="aviso" id="aviso11"></div>
+                <!-- <div class="aviso" id="aviso11"></div> -->
 
                 <h4> Senha: </h4>
                 <input name="Senha" type="text" id="input_usuario_senha">
                 <h4> Confirmar senha: </h4>
                 <input name="ConfirmarSenha" type="text" id="input_usuario_confirmar_senha">
-                <div class="aviso" id="aviso12"></div>
+                <!-- <div class="aviso" id="aviso12"></div> -->
 
                 <h4> Chave Empresa: </h4>
                 <input name="UsuarioEmpresa" type="number" id="input_usuario_empresa">
-                <div class="aviso" id="aviso13"></div>
+                <!-- <div class="aviso" id="aviso13"></div> -->
 
-                <div class="aviso" id="aviso14"></div>
+                <div class="aviso" id="avisoGeral2"></div>
 
                 <button type="button" onclick="cadastrarUsuario()" class="btn">Cadastrar Usuário</button>
 
-                <label>Refrigerador</label>
+                <h2>Refrigerador</h2>
                 <h4>Marca do Refrigerador</h4>
                 <input id="input_marca_refrigerador">
 
@@ -136,9 +138,11 @@
                 <h4>Chave Empresa</h4>
                 <input id="input_chave_empresa" type="number">
 
+                <div class="aviso" id="avisoGeral3"></div>
+
                 <button onclick="cadastrarRefrigerador()" class="btn">Cadastrar Refrigerador</button>
 
-                <label>Sensor</label>
+                <h2>Sensor</h2>
                 <h4>Nome do Sensor</h4>
                 <input id="input_nome_sensor">
 
@@ -147,6 +151,8 @@
 
                 <h4>Chave Refrigerador</h4>
                 <input id="input_chave_refrigerador" type="number">
+
+                <div class="aviso" id="avisoGeral4"></div>
 
                 <button onclick="cadastrarSensor()" class="btn">Cadastrar Sensor</button>
 
@@ -174,31 +180,31 @@
 
         if (nomeEmpresa == "" || cnpjEmpresa == "" || logradouroEmpresa == "" || bairroEmpresa == "" ||
             cepEmpresa == "" || cidadeEmpresa == "" || complementoEmpresa == "" || telefoneEmpresa == "") {
-            aviso14.innerHTML = "Preencha todos os campos para prosseguir!";
+            avisoGeral1.innerHTML = "Preencha todos os campos para prosseguir!";
         }
         else if (nomeEmpresa.length > 90) {
-            aviso1.innerHTML = 'Limite de 90 caracteres excedido!'
+            avisoGeral1.innerHTML = 'Limite de 90 caracteres excedido!'
         }
         else if (cnpjEmpresa.length > 18 || cnpjEmpresa.length < 14) {
-            aviso2.innerHTML = 'CNPJ inválido!'
+            avisoGeral1.innerHTML = 'CNPJ inválido!'
         }
         else if (logradouroEmpresa.length > 90 || logradouroEmpresa.length < 4) {
-            aviso3.innerHTML = 'Logradouro deve conter no mínimo 4 e no máximo 90 caracteres!'
+            avisoGeral1.innerHTML = 'Logradouro deve conter no mínimo 4 e no máximo 90 caracteres!'
         }
         else if (bairroEmpresa.length > 90 || bairroEmpresa.length < 4) {
-            aviso4.innerHTML = 'Bairro deve conter no mínimo 4 e no máximo 90 caracteres!'
+            avisoGeral1.innerHTML = 'Bairro deve conter no mínimo 4 e no máximo 90 caracteres!'
         }
         else if (cepEmpresa.length > 9 || cepEmpresa.length < 8) {
-            aviso5.innerHTML = 'CEP inválido!'
+            avisoGeral1.innerHTML = 'CEP inválido!'
         }
         else if (cidadeEmpresa.length > 90 || cidadeEmpresa.length < 2) {
-            aviso6.innerHTML = 'Cidade deve conter no mínimo 2 e no máximo 90 caracteres!'
+            avisoGeral1.innerHTML = 'Cidade deve conter no mínimo 2 e no máximo 90 caracteres!'
         }
         else if (complementoEmpresa.length > 90) {
-            aviso7.innerHTML = 'Limite de 90 caracteres excedido!'
+            avisoGeral1.innerHTML = 'Limite de 90 caracteres excedido!'
         }
         else if (telefoneEmpresa.length > 14 || telefoneEmpresa.length < 8) {
-            aviso8.innerHTML = 'Número de telefone inválido!'
+            avisoGeral1.innerHTML = 'Número de telefone inválido!'
         }
         else {
             // Enviando o valor da nova input
@@ -252,23 +258,23 @@
 
         if (nomeUsuario == "" || sobrenomeUsuario == "" || emailUsuario == "" ||
             senhaUsuario == "" || confirmarSenha == "" || empresaUsuario == 0) {
-            aviso9.innerHTML = "Preencha todos os campos para prosseguir!";
+            avisoGeral2.innerHTML = "Preencha todos os campos para prosseguir!";
         }
         else if (nomeUsuario.length > 90) {
-            aviso10.innerHTML = 'Limite de 90 caracteres excedido!'
+            avisoGeral2.innerHTML = 'Limite de 90 caracteres excedido!'
         }
         else if (sobrenomeUsuario.length > 90) {
-            aviso11.innerHTML = 'Limite de 90 caracteres excedido!'
+            avisoGeral2.innerHTML = 'Limite de 90 caracteres excedido!'
         }
         else if (emailUsuario.indexOf('@') <= 0 || emailUsuario.indexOf('.com') == -1
             || emailUsuario.indexOf('.com') < emailUsuario.indexOf('@')) {
-            aviso12.innerHTML = 'Email inválido!'
+            avisoGeral2.innerHTML = 'Email inválido!'
         }
         else if (senhaUsuario < 5) {
-            aviso13.innerHTML = 'Senha muito fraca! Mínimo de 5 caracteres'
+            avisoGeral2.innerHTML = 'Senha muito fraca! Mínimo de 5 caracteres'
         }
         else if (confirmarSenha != senhaUsuario) {
-            aviso13.innerHTML = 'As senhas não estão iguais!'
+            avisoGeral2.innerHTML = 'As senhas não estão iguais!'
         }
         else {
 
@@ -314,16 +320,16 @@
 
         if (marcaRefrigerador == "" || tipoRefrigerador == "" || localizacaoRefrigerador == ""
             || chaveUsuario == 0 || chaveEmpresa == 0) {
-            alert("Preencha todos os campos para prosseguir!")
+            avisoGeral3.innerHTML = "Preencha todos os campos para prosseguir!";
         }
         else if (marcaRefrigerador > 90 || marcaRefrigerador < 5) {
-            alert("A marca do refrigerador deve ter no mínimo 4 e no máximo 90 caracteres.")
+            avisoGeral3.innerHTML = "A marca do refrigerador deve ter no mínimo 4 e no máximo 90 caracteres."
         }
         else if (tipoRefrigerador > 90 || tipoRefrigerador < 3) {
-            alert("O tipo do refrigerador deve ter no mínimo 2 e no máximo 90 caracteres.")
+            avisoGeral3.innerHTML = "O tipo do refrigerador deve ter no mínimo 2 e no máximo 90 caracteres."
         }
         else if (localizacaoRefrigerador > 90) {
-            alert("A localização do refrigerador deve ter no máximo 90 caracteres.")
+            avisoGeral3.innerHTML = "A localização do refrigerador deve ter no máximo 90 caracteres."
         }
         else {
 
@@ -365,13 +371,13 @@
         var chaveRefrigerador = Number(input_chave_refrigerador.value)
 
         if (nomeSensor == "" || tipoSensor == "" || chaveRefrigerador == 0) {
-            alert("Preencha todos os campos para prosseguir!")
+            avisoGeral4.innerHTML = "Preencha todos os campos para prosseguir!";
         }
         else if (nomeSensor > 45 || nomeSensor < 3) {
-            alert("O nome do sensor deve ter no mínimo 2 e no máximo 45 caracteres.")
+            avisoGeral4.innerHTML = "O nome do sensor deve ter no mínimo 2 e no máximo 45 caracteres."
         }
         else if (tipoSensor > 45) {
-            alert("O tipo do sensor deve ter no máximo 45 caracteres.")
+            avisoGeral4.innerHTML = "O tipo do sensor deve ter no máximo 45 caracteres."
         }
         else {
 
