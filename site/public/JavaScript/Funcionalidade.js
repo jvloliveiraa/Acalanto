@@ -72,6 +72,7 @@ function validarSessao() {
         perfil.innerHTML = `Olá, ${nome}`
         if (empresa == 1) {
             formularioHeader.style.display = `flex`
+            formularioHeader2.style.display = `flex`
         }
     } else {
         window.location = "../Login.html";

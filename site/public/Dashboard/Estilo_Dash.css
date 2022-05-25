@@ -461,7 +461,7 @@ select{
 }
 
 
-#formularioHeader{
+#formularioHeader, #formularioHeader2{
   display: none;
 }
 
