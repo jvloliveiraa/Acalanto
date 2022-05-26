@@ -17,8 +17,8 @@
 
 </head>
 
-<body onload="validarSessao(), autenticarSensor(sessionStorage.FK_EMPRESA),
-autenticarRefrigerador(sessionStorage.FK_EMPRESA), atualizacaoPeriodica()">
+<body onload="validarSessao(), autenticarSensor(sessionStorage.FK_EMPRESA, ()=> atualizacaoPeriodica(()=>obterDadosGrafico(sessionStorage.FK_SENSOR1))),
+autenticarRefrigerador(sessionStorage.FK_EMPRESA)">
 
   <div class="header">
     <div class="container">
@@ -127,13 +127,14 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA), atualizacaoPeriodica()">
 
 <script>
 
-  function atualizacaoPeriodica() {
+  function atualizacaoPeriodica(_callback) {
     obterdados(sessionStorage.FK_SENSOR1);
     obterdados(sessionStorage.FK_SENSOR2);
     obterdados(sessionStorage.FK_SENSOR3);
     obterdados(sessionStorage.FK_SENSOR4);
 
     setTimeout(atualizacaoPeriodica, 2000);
+    _callback();
   }
 
   function obterdados(idSensor) {
@@ -319,7 +320,7 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA), atualizacaoPeriodica()">
 
 <script>
   
-  function autenticarSensor(empresa) {
+  function autenticarSensor(empresa, _callback) {
     fetch(`/medidas/sensor/${empresa}`)
       .then(resposta => {
 
@@ -336,11 +337,11 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA), atualizacaoPeriodica()">
             sessionStorage.FK_SENSOR2 = resposta[1].idSensor;
             sessionStorage.FK_SENSOR3 = resposta[2].idSensor;
             sessionStorage.FK_SENSOR4 = resposta[3].idSensor;
-
+            _callback();
           });
         } else {
-
           console.error('Nenhum dado encontrado ou erro na API');
+          _callback();
         }
       })
       .catch(function (error) {
@@ -423,7 +424,7 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA), atualizacaoPeriodica()">
                   yAxisID: 'y-temperatura',
                   label: 'Temperatura',
                   borderColor: '#FFF',
-                  backgroundColor: '#32b9cd8f',
+                  backgroundColor: 'rgb(108, 94, 255)',
                   fill: true,
                   data: []
               }

@@ -125,11 +125,8 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-         avisos.innerHTML = "cadastro realizado";
+         avisos.innerHTML = "Relatório reportado com sucesso!";
         } else {
-          avisos.innerHTML = 
-            "Não foi possível realizar cadastro, o email atual já está cadastrado!"
-          ;
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })

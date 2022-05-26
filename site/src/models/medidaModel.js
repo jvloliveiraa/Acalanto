@@ -33,10 +33,42 @@ function autenticarRefrigerador(empresa) {
     return database.executar(instrucaoSql);
 }
 
+function obterLitro0(idEmpresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+    select count(*) as contagem from [dbo].[RelatorioDiario] where leitePerdido = 0 and fkEmpresa = ${idEmpresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function obterLitro10(idEmpresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+    select count(*) as contagem from [dbo].[RelatorioDiario] where leitePerdido >= 5 and leitePerdido <=10
+     and fkEmpresa = ${idEmpresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function obterLitro20(idEmpresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+    select count(*) as contagem from [dbo].[RelatorioDiario] where leitePerdido >= 15 and leitePerdido <=20
+     and fkEmpresa = ${idEmpresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 module.exports = {
     buscarUltimasMedidas,
     autenticarSensor,
     autenticarRefrigerador,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    obterLitro0,
+    obterLitro10,
+    obterLitro20
 }

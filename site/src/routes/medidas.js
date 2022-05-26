@@ -19,4 +19,16 @@ router.get("/refrigerador/:empresa", function (req, res) {
     medidaController.autenticarRefrigerador(req, res);
 })
 
+router.get("/litro0/:idEmpresa", function (req, res) {
+    medidaController.obterLitro0(req, res);
+})
+
+router.get("/litro10/:idEmpresa", function (req, res) {
+    medidaController.obterLitro10(req, res);
+})
+
+router.get("/litro20/:idEmpresa", function (req, res) {
+    medidaController.obterLitro20(req, res);
+})
+
 module.exports = router;

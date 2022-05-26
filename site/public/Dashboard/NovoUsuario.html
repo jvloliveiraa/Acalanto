@@ -140,11 +140,9 @@
           console.log("resposta: ", resposta);
 
           if (resposta.ok) {
-            alert("cadastro realizado");
+            div_aviso.innerHTML = "Cadastro realizado!";
           } else {
-            alert(
-              "Não foi possível realizar cadastro, o email atual já está cadastrado!"
-            );
+            div_aviso.innerHTML = "Não foi possível realizar cadastro, o email atual já está cadastrado!";
             throw "Houve um erro ao tentar realizar o cadastro!";
           }
         })

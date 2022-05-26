@@ -233,9 +233,9 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    avisos.innerHTML ='Cadastro realizado !!!';
+                    avisoGeral1.innerHTML ='Cadastro realizado !!!';
                 } else {
-                    avisos.innerHTML ='Não foi possível realizar cadastro, o CNPJ atual já está cadastrado!';
+                    avisoGeral1.innerHTML ='Não foi possível realizar cadastro, o CNPJ atual já está cadastrado!';
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {
@@ -300,9 +300,9 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    avisos.innerHTML ='cadastro realizado';
+                    avisoGeral2.innerHTML ='Cadastro realizado!!!';
                 } else {
-                    avisos.innerHTML ='Não foi possível realizar cadastro, o email atual já está cadastrado!';
+                    avisoGeral2.innerHTML ='Não foi possível realizar cadastro, o email atual já está cadastrado!';
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {
@@ -354,9 +354,9 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    avisos.innerHTML ='cadastro realizado';
+                    avisoGeral3.innerHTML ='Cadastro realizado!!!';
                 } else {
-                    avisos.innerHTML ='Não foi possível realizar cadastro, o email atual já está cadastrado!';
+                    avisoGeral3.innerHTML ='Não foi possível realizar cadastro!';
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {
@@ -400,9 +400,9 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    avisos.innerHTML = 'cadastro realizado';
+                    avisoGeral4.innerHTML = 'Cadastro realizado!!!';
                 } else {
-                    avisos.innerHTML ='Não foi possível realizar cadastro, o email atual já está cadastrado!';
+                    avisoGeral4.innerHTML ='Não foi possível realizar cadastro!';
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {

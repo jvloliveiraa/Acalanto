@@ -14,69 +14,72 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
     </style>
-    
+
 </head>
 
-<body onload="validarSessao()">
-<!-- <body onload="validarSessao()"> -->
+<body onload="validarSessao(), obterLitro0(sessionStorage.FK_EMPRESA,()=> 
+obterLitro10(sessionStorage.FK_EMPRESA,()=>obterLitro20(sessionStorage.FK_EMPRESA,()=>
+setTimeout(atualizarGraficoRelatorio, 600))))">
+    <!-- <body onload="validarSessao()"> -->
 
     <div class="header">
         <div class="container">
-          <div class="card_logo">
-            <img src="../img/Logo_Acalanto_icon3.png" />
-  
-            <h2><a href="MeusRefrigeradores.html">Acalanto</a></h2>
-          </div>
-        
-          <div class="card_perfil">
-            <img src="../img/Logo_Acalanto_icon.png" />
-            <h4 id="perfil"></h4>
-          </div>
-  
-          <ul class="navbar">
-            <li><a href="MeusRefrigeradores.html">Refrigeradores</a></li>
-            <div class="divisao"></div>
-            <li><a href="Relatorio.html">Relatório</a></li>
-            <div class="divisao"></div>
-            <li><a href="graficos.html" class="agora">Gráficos</a></li>
-            <div class="divisao estar"></div>
-            <li><a href="NovoUsuario.html">Novo Usuario</a></li>
-            <div class="divisao"></div>
-            <li><a id="formularioHeader" href="FormularioDashboard.html">Formulario</a></li>
-            <div id="formularioHeader2" class="divisao"></div>
-            
-          </ul>
-          <button onclick="limparSessao()" class="btn">Sair</button>
+            <div class="card_logo">
+                <img src="../img/Logo_Acalanto_icon3.png" />
+
+                <h2><a href="MeusRefrigeradores.html">Acalanto</a></h2>
+            </div>
+
+            <div class="card_perfil">
+                <img src="../img/Logo_Acalanto_icon.png" />
+                <h4 id="perfil"></h4>
+            </div>
+
+            <ul class="navbar">
+                <li><a href="MeusRefrigeradores.html">Refrigeradores</a></li>
+                <div class="divisao"></div>
+                <li><a href="Relatorio.html">Relatório</a></li>
+                <div class="divisao"></div>
+                <li><a href="graficos.html" class="agora">Gráficos</a></li>
+                <div class="divisao estar"></div>
+                <li><a href="NovoUsuario.html">Novo Usuario</a></li>
+                <div class="divisao"></div>
+                <li><a id="formularioHeader" href="FormularioDashboard.html">Formulario</a></li>
+                <div id="formularioHeader2" class="divisao"></div>
+
+            </ul>
+            <button onclick="limparSessao()" class="btn">Sair</button>
         </div>
     </div>
 
-    <div class="banner_graficos"> 
+    <div class="banner_graficos">
         <div class="container_graficos">
 
             <div class="todos">
 
 
-                <div class="grafico">  
-                    <h2> Dashboard de Produção  </h2>
+                <div class="grafico">
+                    <h2> Dashboard de Produção </h2>
                     <div class="sub_grafico">
                         <h3> Desperdicio de Leite Materno </h3>
-                        <canvas id="myChart"></canvas> 
+                        <canvas id="myChart"></canvas>
                     </div> <!-- Fechando a div sub-rafico -->
 
-            </div>
+                </div>
 
+            </div>
         </div>
-    </div>
 </body>
+
 </html>
 
 <script>
 
     //  Primeiro Grafico
     const labels = [
-        '2020',
-        '2021',
-        '2022',
+        '0 Litros',
+        '5-10 Litros',
+        '15-20 Litros',
     ];
 
 
@@ -86,35 +89,34 @@
 
         datasets: [{
 
-            label: 'Controle de Qualidade',
-            backgroundColor: [ 
-            '#6c5eff',
+            label: 'Quantidade em dias que ocorreram desperdícios',
+            backgroundColor: [
+                '#6c5eff',
             ],
             borderColor: '#3a3383 ',
             borderRadius: 10,
             hoverBorderColor: 'black',
             hoverBorderWidth: 3,
-            data: [15, 20, 12],
+            data: [],
         }]
     };
 
 
     const config = {
 
-  
-type: 'bar',
-  data: data,
-  options: {
-      scales: {
-          x: {
-              grid: {
-                  offset: true
-              }
-          }
-      }
-  }
-};
-    
+
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+                x: {
+                    grid: {
+                        offset: true
+                    }
+                }
+            }
+        }
+    };
 
 </script>
 
@@ -128,3 +130,80 @@ type: 'bar',
 </script>
 
 </html>
+
+<script>
+
+    var litroPerdido0 = 0;
+    var litroPerdido10 = 0;
+    var litroPerdido20 = 0;
+
+    function obterLitro0(idEmpresa, _callback) {
+
+        fetch(`/medidas/litro0/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    console.log(`1`);
+                    litroPerdido0 = resposta[0].contagem;
+                    _callback();
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                _callback();
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    function obterLitro10(idEmpresa,_callback) {
+
+        fetch(`/medidas/litro10/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    console.log(`1`);
+                    litroPerdido10 = resposta[0].contagem;
+                    _callback();
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                _callback();
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    function obterLitro20(idEmpresa,_callback) {
+
+        fetch(`/medidas/litro20/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    console.log(`1`);
+                    litroPerdido20 = resposta[0].contagem;
+                    _callback();
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                _callback();
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    function atualizarGraficoRelatorio(){
+        data.datasets[0].data.push(litroPerdido0);
+        data.datasets[0].data.push(litroPerdido10);
+        data.datasets[0].data.push(litroPerdido20);
+        myChart.update();
+    }
+</script>
