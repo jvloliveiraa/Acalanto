@@ -90,11 +90,17 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA)">
           </div>
         </div>
 
+        <div class="avisos">
+          <h4 id="avisos1">Refrigerador 1 com defeito!</h4>
+          <h4 id="avisos2">Refrigerador 2 com defeito!</h4>
+          <h4 id="avisos3">Refrigerador 3 com defeito!</h4>
+          <h4 id="avisos4">Refrigerador 4 com defeito!</h4>
+        </div>
+
         <div class="card_grafico">
           <div>
             <canvas id="Chart_meus_refrigeradores"></canvas>
           </div>
-          <div class="avisos" id="avisos"> </div>
         </div>
 
       </div>
@@ -102,19 +108,19 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA)">
 
       <div class="card_metricas">
         <div class="indicador I">
-          Perigo Frio <span class="numero">-25°C</span>
+          Perigo Frio <span class="numero">-26°C</span>
         </div>
         <div class="indicador II">
           Alerta Frio <span class="numero">-22°C</span>
         </div>
         <div class="indicador III">
-          Ideal <span class="numero">-20°C</span>
+          Ideal <span class="numero">-18°C</span>
         </div>
         <div class="indicador IIII">
-          Alerta Quente <span class="numero">-19°C</span>
+          Alerta Quente <span class="numero">-16°C</span>
         </div>
         <div class="indicador IIIII">
-          Perigo Quente <span class="numero">-15°C</span>
+          Perigo Quente <span class="numero">-13°C</span>
         </div>
       </div>
 
@@ -170,11 +176,11 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA)">
 
   function alertar(temperatura, idSensor) {
     var limites = {
-      muito_quente: 25,
+      muito_quente: 26,
       quente: 22,
-      ideal: 20,
-      frio: 19,
-      muito_frio: 15
+      ideal: 18,
+      frio: 16,
+      muito_frio: 13
     };
 
     var classe_temperatura = 'card_refri';
@@ -185,25 +191,25 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA)">
       if(idSensor == sessionStorage.FK_SENSOR1){
         contadorRefrigerador1++;
         if(contadorRefrigerador1 >= 10){
-          avisos.innerHTML +="Refrigerador com defeito"
+          avisos1.style.display = 'flex';
         }
       }
       else if(idSensor == sessionStorage.FK_SENSOR2){
         contadorRefrigerador2++;
         if(contadorRefrigerador2 >= 10){
-          avisos.innerHTML +="Refrigerador com defeito"
+          avisos2.style.display = 'flex';
         }
       }
       else if(idSensor == sessionStorage.FK_SENSOR3){
         contadorRefrigerador3++;
         if(contadorRefrigerador3 >= 10){
-          avisos.innerHTML +="Refrigerador com defeito"
+          avisos3.style.display = 'flex';
         }
       }
       else {
         contadorRefrigerador4++;
         if(contadorRefrigerador4 >= 10){
-          avisos.innerHTML +="Refrigerador com defeito"
+          avisos4.style.display = 'flex';
         }
       }
     }
@@ -213,25 +219,25 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA)">
       if(idSensor == sessionStorage.FK_SENSOR1){
         contadorRefrigerador1++;
         if(contadorRefrigerador1 >= 10){
-           avisos.innerHTML +="Refrigerador com defeito"
+          avisos1.style.display = 'flex';
         }
       }
       else if(idSensor == sessionStorage.FK_SENSOR2){
         contadorRefrigerador2++;
         if(contadorRefrigerador2 >= 10){
-           avisos.innerHTML +="Refrigerador com defeito"
+          avisos2.style.display = 'flex';
         }
       }
       else if(idSensor == sessionStorage.FK_SENSOR3){
         contadorRefrigerador3++;
         if(contadorRefrigerador3 >= 10){
-           avisos.innerHTML +="Refrigerador com defeito"
+          avisos3.style.display = 'flex';
         }
       }
       else {
         contadorRefrigerador4++;
         if(contadorRefrigerador4 >= 10){
-           avisos.innerHTML +="Refrigerador com defeito"
+          avisos4.style.display = 'flex';
         }
       }
     }
@@ -244,25 +250,25 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA)">
       if(idSensor == sessionStorage.FK_SENSOR1){
         contadorRefrigerador1++;
         if(contadorRefrigerador1 >= 10){
-           avisos.innerHTML +="Refrigerador com defeito"
+          avisos1.style.display = 'flex';
         }
       }
       else if(idSensor == sessionStorage.FK_SENSOR2){
         contadorRefrigerador2++;
         if(contadorRefrigerador2 >= 10){
-           avisos.innerHTML +="Refrigerador com defeito"
+          avisos2.style.display = 'flex';
         }
       }
       else if(idSensor == sessionStorage.FK_SENSOR3){
         contadorRefrigerador3++;
         if(contadorRefrigerador3 >= 10){
-           avisos.innerHTML +="Refrigerador com defeito"
+          avisos3.style.display = 'flex';
         }
       }
       else {
         contadorRefrigerador4++;
         if(contadorRefrigerador4 >= 10){
-           avisos.innerHTML +="Refrigerador com defeito"
+          avisos4.style.display = 'flex';
         }
       }
     }
@@ -272,25 +278,25 @@ autenticarRefrigerador(sessionStorage.FK_EMPRESA)">
       if(idSensor == sessionStorage.FK_SENSOR1){
         contadorRefrigerador1++;
         if(contadorRefrigerador1 >= 10){
-         avisos.innerHTML += "Refrigerador com defeito"
+          avisos1.style.display = 'flex';
         }
       }
       else if(idSensor == sessionStorage.FK_SENSOR2){
         contadorRefrigerador2++;
         if(contadorRefrigerador2 >= 10){
-         avisos.innerHTML += "Refrigerador com defeito"
+          avisos2.style.display = 'flex';
         }
       }
       else if(idSensor == sessionStorage.FK_SENSOR3){
         contadorRefrigerador3++;
         if(contadorRefrigerador3 >= 10){
-         avisos.innerHTML += "Refrigerador com defeito"
+          avisos3.style.display = 'flex';
         }
       }
       else {
         contadorRefrigerador4++;
         if(contadorRefrigerador4 >= 10){
-         avisos.innerHTML += "Refrigerador com defeito"
+          avisos4.style.display = 'flex';
         }
       }
     }

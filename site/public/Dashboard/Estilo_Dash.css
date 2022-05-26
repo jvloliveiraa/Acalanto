@@ -8,11 +8,21 @@ body {
   font-size: 15px;
   font-weight: bolder;
 }
+
 .avisos {
-  color: rgb(231, 18, 18);
-  font-family: Bahnschrift;
-  font-size: 15px;
-  font-weight: bolder;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  height: 3%;
+  width: 95%;
+}
+
+.avisos h4{
+  display: none;
+  margin: 0;
+  margin: auto;
+  font-size: 14px;
+  color: red;
 }
 
 ::-webkit-scrollbar {
