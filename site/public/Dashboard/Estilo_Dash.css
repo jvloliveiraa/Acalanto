@@ -297,8 +297,10 @@ li a {
   align-self: center;
 }
 
-h4{
+.form .list_form h4{
   color: #3a3383;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .list_form h2 {
@@ -316,7 +318,7 @@ h4{
   background-color: #6c5eff;
   color: white;
   height: 10%;
-  width: 50%;
+  width: 70%;
 }
 
 
@@ -342,7 +344,7 @@ select {
 .banner_re .container_re{
   margin: 0;
   display: flex;
-  height: 200vh;
+  height: 130vh;
   width: 82%;
   float: right;
   align-items: center;
@@ -414,7 +416,7 @@ select{
 
 .txt_area{
   width: 100%;
-  height: 60px;
+  height: 100px;
   background-color: transparent;
   border: 0;
   border-bottom: 2px solid #3a3383;
@@ -425,7 +427,7 @@ select{
 .banner_graficos .container_graficos {
   margin: 0;
   display: flex;
-  height: 200vh;
+  height: 100vh;
   width: 82%;
   float: right;
   align-items: center;
@@ -488,7 +490,7 @@ select{
   margin: 0;
   padding: 10vh 0;
   display: flex;
-  height: 500vh;
+  height: 410vh;
   width: 82%;
   float: right;
   align-items: center;

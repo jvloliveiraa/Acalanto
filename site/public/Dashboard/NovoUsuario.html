@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="Estilo_Dash.css" />
   <script src="../JavaScript/Funcionalidade.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <title>Acalanto - Meus Refrigeradores</title>
+  <title>Acalanto - Novo Usuário</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
@@ -17,7 +17,8 @@
 
 </head>
 
-<body onload="validarSessao()">
+<body>
+<!-- <body onload="validarSessao()"> -->
   <div class="header">
     <div class="container">
       <div class="card_logo">
@@ -49,7 +50,7 @@
 
   <div class="banner_NU">
     <div class="container_NU">
-      <div class="form" style="height: 600px">
+      <div class="form">
         <label class="list_form">
           <h2>Novo Usuário</h2>
           <h4>Nome:</h4>
@@ -69,16 +70,15 @@
 
           <h4>Confirmar Senha:</h4>
           <input id="input_confirmar_senha_novoUsuario" type="password" />
-          <div class="aviso" id="aviso4"></div>
-          <br /><br />
+          <div class="aviso" id="aviso4"></div><br>
+          
+          <div class="aviso" id="div_aviso"></div><br>
 
-          <div class="aviso" id="div_aviso"></div>
+          <button onclick="cadastrarUsuarioNovoUsuario()" class="btn">
+            Cadastrar novo usuário
+          </button>
 
         </label>
-
-        <button onclick="cadastrarUsuarioNovoUsuario()" class="btn">
-          Cadastrar novo usuário
-        </button>
 
       </div>
     </div>

@@ -459,7 +459,7 @@ b {
 .banner_log_cad .container_log_cad{
   display: flex;
   background-color: #ffffff;
-  border-radius: 20px;
+  border-radius: 30px;
   height: 95%;
   width: 80%;
 }
@@ -548,12 +548,13 @@ b {
 }
 
 .card_cadastro .label {
-  height: 250px;
-  width: 80%;
+  height: 90%;
+  width: 85%;
   display: flexbox;
   flex-direction: column;
   justify-content: center;
-  background-color: #efefef;
+  /* background-color: #efefef; */
+  background-image: linear-gradient( to top, #efefef, #fff, #fff); 
   color: #3a3383;
   font-size: 20px;
   overflow-y: scroll;
